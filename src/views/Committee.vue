@@ -68,7 +68,7 @@
           </li>
             <li>
             <span class="member-role">Committee Member:</span>
-            <span class="member-name">Aikaterini Selvi</span>
+            <span class="member-name">Katerina Selvi</span>
           </li>
         </ul>
 
