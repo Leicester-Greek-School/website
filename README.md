@@ -86,9 +86,19 @@ leicester-greek-school/
 
 ## Color Scheme
 
-The website uses colors inspired by the Leicester Greek School brand:
-- Primary: `#003d7a` (Deep Blue)
-- Secondary: `#0066cc` (Bright Blue)
+The website uses an accessible color scheme based on burgundy (#591434):
+
+- **Primary Burgundy**: `#591434` - Main brand color (WCAG AAA compliant)
+- **Dark Burgundy**: `#3d0d23` - Dark accents and deep shadows
+- **Medium Burgundy**: `#8b3a5d` - Secondary accents
+- **Accent Gold**: `#d4a574` - Warm highlights and decorative elements
+- **Light Pink**: `#f5e6ed` - Soft background accent
+- **Cream Background**: `#faf7f9` - Main page background
+- **Text Dark**: `#2d1a22` - Primary text (WCAG AAA compliant)
+- **Text Medium**: `#5a4450` - Secondary text
+- **Link Color**: `#7a2448` - Accessible link color (WCAG AA compliant)
+
+All color combinations meet WCAG 2.1 Level AA standards for accessibility, with many meeting AAA standards for enhanced readability.
 
 ## License
 
