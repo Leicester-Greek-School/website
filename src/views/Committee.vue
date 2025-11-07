@@ -29,6 +29,49 @@
           </ul>
         </div>
 
+        <!-- Added detailed committee members list -->
+        <h3 class="section-title" id="committeeMembersHeading">Current Committee</h3>
+        <ul class="members-list" aria-labelledby="committeeMembersHeading">
+          <li>
+            <span class="member-role">Chair:</span>
+            <span class="member-name">Antonios Pavlakis</span>
+            <a href="mailto:chair@leicestergreekschool.com" class="member-email" aria-label="Email Chair">chair@leicestergreekschool.com</a>
+          </li>
+          <li>
+            <span class="member-role">Vice Chair:</span>
+            <span class="member-name">Chrysa Avdellidou</span>
+            <a href="mailto:vc@leicestergreekschool.com" class="member-email" aria-label="Email Vice Chair">vc@leicestergreekschool.com</a>
+          </li>
+          <li>
+            <span class="member-role">Treasurer:</span>
+            <span class="member-name">Gregoris Tzokatziou</span>
+            <a href="mailto:treasurer@leicestergreekschool.com" class="member-email" aria-label="Email Treasurer">treasurer@leicestergreekschool.com</a>
+          </li>
+          <li>
+            <span class="member-role">Vice Treasurer:</span>
+            <span class="member-name">Sofia Thodi</span>
+            <a href="mailto:secretary@leicestergreekschool.com" class="member-email" aria-label="Email Vice Treasurer">secretary@leicestergreekschool.com</a>
+          </li>
+          <li>
+            <span class="member-role">Health and Safety:</span>
+            <span class="member-name">George Anastasakis</span>
+            <a href="mailto:safety@leicestergreekschool.com" class="member-email" aria-label="Email Health and Safety">safety@leicestergreekschool.com</a>
+          </li>
+          <li>
+            <span class="member-role">Secretary:</span>
+            <span class="member-name">Sofia Thodi</span>
+            <a href="mailto:secretary@leicestergreekschool.com" class="member-email" aria-label="Email Secretary">secretary@leicestergreekschool.com</a>
+          </li>
+          <li>
+            <span class="member-role">Committee Member:</span>
+            <span class="member-name">Esmeralda Toskaj</span>
+          </li>
+            <li>
+            <span class="member-role">Committee Member:</span>
+            <span class="member-name">Aikaterini Selvi</span>
+          </li>
+        </ul>
+
         <h3 class="section-title">Get Involved</h3>
         <p class="text-justify">
           We welcome parents and community members who are interested in contributing to the school.
@@ -150,5 +193,29 @@
   border-bottom: 2px solid #591434;
   text-decoration: none;
 }
-</style>
 
+.members-list {
+  list-style: none;
+  margin: 1rem 0 2rem 0;
+  padding: 0;
+  background-color: #ffffff;
+  border: 1px solid #d4b5c4;
+  border-radius: 6px;
+}
+.members-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+.members-list li:last-child { border-bottom: none; }
+.member-role { font-weight: 700; color: #591434; }
+.member-name { color: #2d1a22; }
+.member-email { margin-left: auto; color: #7a2448; text-decoration: none; font-size: 0.9rem; }
+.member-email:hover, .member-email:focus { color: #591434; text-decoration: underline; }
+@media (max-width: 600px) {
+  .member-email { width: 100%; margin-left: 0; }
+}
+</style>
