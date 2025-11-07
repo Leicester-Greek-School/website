@@ -25,3 +25,9 @@ export const STAFF = {
   ]
 };
 
+export const PAGE_TITLES = {
+  teaching: {
+    en: 'The Teaching Staff',
+    el: 'Διδακτικό Προσωπικό'
+  }
+};

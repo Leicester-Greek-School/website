@@ -10,7 +10,7 @@
             type="button"
             class="btn-locale"
             :class="{ active: loc === selectedLocale }"
-            @click="setLocale(loc)"
+            @click="onSetLocale(loc)"
           >
             {{ loc === 'en' ? 'English' : 'Ελληνικά' }}
           </button>
@@ -36,41 +36,32 @@
 </template>
 
 <script>
-import { STAFF, LOCALES } from '@/data/staff';
+import { STAFF, LOCALES, PAGE_TITLES } from '@/data/staff';
+import { localeStore, setLocale } from '@/stores/locale';
 
 export default {
   name: 'Teaching',
   data() {
     return {
-      selectedLocale: 'en',
       locales: LOCALES,
       titleId: 'teachingTitle'
     };
   },
   computed: {
+    selectedLocale() {
+      return localeStore.locale;
+    },
     staffList() {
       return STAFF[this.selectedLocale] || STAFF.en;
     },
     pageTitle() {
-      return this.selectedLocale === 'en' ? 'The Teaching Staff' : 'Διδακτικό Προσωπικό';
-    }
-  },
-  created() {
-    try {
-      const saved = localStorage.getItem('teachingLocale');
-      if (saved && this.locales.includes(saved)) {
-        this.selectedLocale = saved;
-      }
-    } catch (_) {
-      /* no-op for environments without localStorage */
+      const map = PAGE_TITLES.teaching || {};
+      return map[this.selectedLocale] || map.en || 'The Teaching Staff';
     }
   },
   methods: {
-    setLocale(loc) {
-      if (this.locales.includes(loc)) {
-        this.selectedLocale = loc;
-        try { localStorage.setItem('teachingLocale', loc); } catch (_) { /* ignore */ }
-      }
+    onSetLocale(loc) {
+      setLocale(loc);
     }
   }
 };

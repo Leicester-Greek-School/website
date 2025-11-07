@@ -2,12 +2,28 @@
   <div>
     <div class="top-header border-top-primary">
       <div class="container py-3">
-        <h1 class="school-title mb-0">
-          <router-link to="/" class="text-decoration-none" aria-label="Leicester Greek School - Home">
-            Leicester Greek School
-          </router-link>
-        </h1>
-        <p class="school-subtitle mb-0">Saint Nicholas and Xenophon</p>
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+          <div>
+            <h1 class="school-title mb-0">
+              <router-link to="/" class="text-decoration-none" aria-label="Leicester Greek School - Home">
+                Leicester Greek School
+              </router-link>
+            </h1>
+            <p class="school-subtitle mb-0">Saint Nicholas and Xenophon</p>
+          </div>
+          <div class="locale-switch" role="group" aria-label="Language selection">
+            <button
+              v-for="loc in locales"
+              :key="loc"
+              type="button"
+              class="btn-locale"
+              :class="{ active: loc === selectedLocale }"
+              @click="onSetLocale(loc)"
+            >
+              {{ loc === 'en' ? 'English' : 'Ελληνικά' }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light" aria-label="Main navigation">
@@ -49,6 +65,30 @@
   </div>
 </template>
 
+<script>
+import { LOCALES } from '@/data/staff';
+import { localeStore, setLocale } from '@/stores/locale';
+
+export default {
+  name: 'Navbar',
+  data() {
+    return {
+      locales: LOCALES
+    };
+  },
+  computed: {
+    selectedLocale() {
+      return localeStore.locale;
+    }
+  },
+  methods: {
+    onSetLocale(loc) {
+      setLocale(loc);
+    }
+  }
+};
+</script>
+
 <style scoped>
 .top-header {
   background: linear-gradient(135deg, #faf7f9 0%, #f5e6ed 100%);
@@ -81,6 +121,38 @@
   color: #5a4450;
   font-style: italic;
   margin-top: 0.25rem;
+}
+
+.locale-switch {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-locale {
+  background: #ffffff;
+  border: 2px solid #591434;
+  color: #591434;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.25s ease;
+}
+
+.btn-locale:hover, .btn-locale:focus {
+  background: #591434;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(89, 20, 52, 0.25);
+  outline: none;
+}
+
+.btn-locale.active {
+  background: linear-gradient(135deg, #591434 0%, #7a2448 100%);
+  color: #ffffff;
+  border-color: #591434;
+  box-shadow: 0 2px 6px rgba(89, 20, 52, 0.35);
 }
 
 .navbar {
@@ -153,4 +225,3 @@
   }
 }
 </style>
-
