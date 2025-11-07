@@ -1,20 +1,8 @@
 <template>
   <div class="teaching" role="main" :aria-labelledby="titleId">
     <div class="container my-5">
-      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+      <div class="mb-3">
         <h2 :id="titleId" class="page-title mb-0">{{ pageTitle }}</h2>
-        <div class="locale-switch" role="group" aria-label="Language selection">
-          <button
-            v-for="loc in locales"
-            :key="loc"
-            type="button"
-            class="btn-locale"
-            :class="{ active: loc === selectedLocale }"
-            @click="onSetLocale(loc)"
-          >
-            {{ loc === 'en' ? 'English' : 'Ελληνικά' }}
-          </button>
-        </div>
       </div>
 
       <div class="info-section" aria-label="Teaching staff list">
@@ -36,14 +24,13 @@
 </template>
 
 <script>
-import { STAFF, LOCALES, PAGE_TITLES } from '@/data/staff';
-import { localeStore, setLocale } from '@/stores/locale';
+import { STAFF, PAGE_TITLES } from '@/data/staff';
+import { localeStore } from '@/stores/locale';
 
 export default {
   name: 'Teaching',
   data() {
     return {
-      locales: LOCALES,
       titleId: 'teachingTitle'
     };
   },
@@ -57,11 +44,6 @@ export default {
     pageTitle() {
       const map = PAGE_TITLES.teaching || {};
       return map[this.selectedLocale] || map.en || 'The Teaching Staff';
-    }
-  },
-  methods: {
-    onSetLocale(loc) {
-      setLocale(loc);
     }
   }
 };
@@ -128,43 +110,5 @@ export default {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
-}
-
-.locale-switch {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.btn-locale {
-  background: #ffffff;
-  border: 2px solid #591434;
-  color: #591434;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-radius: 999px;
-  cursor: pointer;
-  line-height: 1;
-  transition: all 0.25s ease;
-}
-
-.btn-locale:hover, .btn-locale:focus {
-  background: #591434;
-  color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(89, 20, 52, 0.25);
-  outline: none;
-}
-
-.btn-locale.active {
-  background: linear-gradient(135deg, #591434 0%, #7a2448 100%);
-  color: #ffffff;
-  border-color: #591434;
-  box-shadow: 0 2px 6px rgba(89, 20, 52, 0.35);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .btn-locale {
-    transition: none;
-  }
 }
 </style>
