@@ -1,13 +1,32 @@
 <template>
-  <div class="teaching" role="main" aria-labelledby="teachingTitle">
+  <div class="teaching" role="main" :aria-labelledby="titleId">
     <div class="container my-5">
-      <h2 id="teachingTitle" class="page-title">The Teaching Staff</h2>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+        <h2 :id="titleId" class="page-title mb-0">{{ pageTitle }}</h2>
+        <div class="locale-switch" role="group" aria-label="Language selection">
+          <button
+            v-for="loc in locales"
+            :key="loc"
+            type="button"
+            class="btn-locale"
+            :class="{ active: loc === selectedLocale }"
+            @click="setLocale(loc)"
+          >
+            {{ loc === 'en' ? 'English' : 'Ελληνικά' }}
+          </button>
+        </div>
+      </div>
 
       <div class="info-section" aria-label="Teaching staff list">
         <ul class="staff-list" aria-describedby="staffNote">
-          <li v-for="(item, idx) in staff" :key="idx">
+          <li v-for="(item, idx) in staffList" :key="idx">
             <span class="role">{{ item.role }}:</span>
-            <span class="name">{{ item.name }}</span>
+            <span class="name" v-if="item.teachers.length === 1">{{ item.teachers[0] }}</span>
+            <span class="name" v-else>
+              <span v-for="(t, i) in item.teachers" :key="i">
+                {{ t }}<span v-if="i < item.teachers.length - 1">, </span>
+              </span>
+            </span>
           </li>
         </ul>
         <p id="staffNote" class="visually-hidden">Teaching staff by class and level.</p>
@@ -17,22 +36,42 @@
 </template>
 
 <script>
+import { STAFF, LOCALES } from '@/data/staff';
+
 export default {
   name: 'Teaching',
   data() {
     return {
-      staff: [
-        { role: 'Nursery / Pre-School', name: 'Christina Kalintzeou' },
-        { role: 'Year 1', name: 'Chara Orthodoxou' },
-        { role: 'Year 1+', name: 'Maria Karatzia' },
-        { role: 'Year 2/3', name: 'Mikaella Makri' },
-        { role: 'Year 4/5/6', name: 'Mikaella Makri' },
-        { role: 'GCSE 1/2', name: 'Chara Orthodoxou' },
-        { role: 'A level', name: 'Panayiota Serghi' },
-        { role: 'Adults Level 1', name: 'Roumpini – Danai Zakopoulou' },
-        { role: 'Adults Level 2', name: 'Roumpini -Danai Zakopoulou' }
-      ]
+      selectedLocale: 'en',
+      locales: LOCALES,
+      titleId: 'teachingTitle'
     };
+  },
+  computed: {
+    staffList() {
+      return STAFF[this.selectedLocale] || STAFF.en;
+    },
+    pageTitle() {
+      return this.selectedLocale === 'en' ? 'The Teaching Staff' : 'Διδακτικό Προσωπικό';
+    }
+  },
+  created() {
+    try {
+      const saved = localStorage.getItem('teachingLocale');
+      if (saved && this.locales.includes(saved)) {
+        this.selectedLocale = saved;
+      }
+    } catch (_) {
+      /* no-op for environments without localStorage */
+    }
+  },
+  methods: {
+    setLocale(loc) {
+      if (this.locales.includes(loc)) {
+        this.selectedLocale = loc;
+        try { localStorage.setItem('teachingLocale', loc); } catch (_) { /* ignore */ }
+      }
+    }
   }
 };
 </script>
@@ -47,7 +86,6 @@ export default {
   font-size: 28px;
   color: #591434;
   font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 1.5rem;
   font-weight: bold;
   border-bottom: 3px solid #d4a574;
   padding-bottom: 0.5rem;
@@ -55,6 +93,7 @@ export default {
 }
 
 .info-section {
+  margin-top: 1rem;
   margin-bottom: 2rem;
   background-color: #faf7f9;
   padding: 2rem;
@@ -98,5 +137,43 @@ export default {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
+}
+
+.locale-switch {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-locale {
+  background: #ffffff;
+  border: 2px solid #591434;
+  color: #591434;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.25s ease;
+}
+
+.btn-locale:hover, .btn-locale:focus {
+  background: #591434;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(89, 20, 52, 0.25);
+  outline: none;
+}
+
+.btn-locale.active {
+  background: linear-gradient(135deg, #591434 0%, #7a2448 100%);
+  color: #ffffff;
+  border-color: #591434;
+  box-shadow: 0 2px 6px rgba(89, 20, 52, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-locale {
+    transition: none;
+  }
 }
 </style>
