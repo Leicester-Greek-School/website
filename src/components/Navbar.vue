@@ -53,7 +53,7 @@
               <router-link class="nav-link" to="/policies">Policies</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/greek-for-adults">Greek for Adults</router-link>
+              <router-link class="nav-link" to="/announcements">Announcements</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/contact">Contact Us</router-link>

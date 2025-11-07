@@ -20,7 +20,7 @@
           <h6 class="footer-heading">For Students</h6>
           <ul class="footer-links">
             <li><router-link to="/register">Register</router-link></li>
-            <li><router-link to="/greek-for-adults">Greek for Adults</router-link></li>
+            <li><router-link to="/announcements">Announcements</router-link></li>
             <li><router-link to="/policies">Policies</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>
           </ul>
@@ -28,11 +28,11 @@
         <div class="col-md-3">
           <h6 class="footer-heading">Connect</h6>
           <p class="footer-text small">
-            Part of the Cyprus Educational Mission in the UK
+            Part of the Cyprus Educational Mission (KEA) in the UK
           </p>
           <p class="footer-text small">
             <strong>Saturday Classes:</strong><br>
-            11:00 - 15:30
+            09:30 - 18:00
           </p>
         </div>
       </div>
@@ -129,4 +129,3 @@ export default {
   font-size: 13px;
 }
 </style>
-

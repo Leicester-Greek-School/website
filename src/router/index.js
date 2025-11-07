@@ -6,7 +6,7 @@ import Teaching from '../views/Teaching.vue';
 import Committee from '../views/Committee.vue';
 import Register from '../views/Register.vue';
 import Policies from '../views/Policies.vue';
-import GreekForAdults from '../views/GreekForAdults.vue';
+import Announcements from '../views/Announcements.vue';
 
 const routes = [
   {
@@ -40,9 +40,13 @@ const routes = [
     component: Policies
   },
   {
+    path: '/announcements',
+    name: 'Announcements',
+    component: Announcements
+  },
+  {
     path: '/greek-for-adults',
-    name: 'GreekForAdults',
-    component: GreekForAdults
+    redirect: '/announcements'
   },
   {
     path: '/contact',
@@ -57,4 +61,3 @@ const router = createRouter({
 });
 
 export default router;
-
