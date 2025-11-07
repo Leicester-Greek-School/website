@@ -115,14 +115,6 @@ export default {
   margin-top: 1.5rem;
 }
 
-.info-box {
-  background-color: #faf7f9;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #d4b5c4;
-  height: 100%;
-}
-
 .text-justify {
   text-align: justify;
   margin-bottom: 1rem;
