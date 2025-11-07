@@ -25,6 +25,21 @@
               <router-link class="nav-link" to="/about">Information</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" to="/teaching">Teaching</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/committee">Committee</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/register">Register</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/policies">Policies</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/greek-for-adults">Greek for Adults</router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" to="/contact">Contact Us</router-link>
             </li>
           </ul>
