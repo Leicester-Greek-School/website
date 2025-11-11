@@ -86,8 +86,8 @@ export const TEACHING_GROUPS = [
     id: 'support',
     role_el: 'Γενική Υποστήριξη',
     role_en: 'General Support',
-    teacher: 'Λυδία-Ναταλία Μύρτα',
-    assistant: ''
+    teacher: '',
+    assistant: 'Λυδία-Ναταλία Μύρτα'
   }
 ];
 
