@@ -38,12 +38,11 @@ export default {
 </script>
 
 <style scoped>
-.announcements { background-color: #ffffff; min-height: 60vh; }
-.page-title { font-size: 28px; color: #591434; font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; border-bottom: 3px solid #d4a574; padding-bottom: 0.5rem; display: inline-block; }
+.announcements { background-color: var(--white); min-height: 60vh; }
+.page-title { font-size: 28px; color: var(--primary-color); font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; border-bottom: 3px solid var(--accent-gold); padding-bottom: 0.5rem; display: inline-block; }
 .announcement-list { list-style: none; margin: 2rem 0 0 0; padding: 0; }
-.announcement-item { background: #faf7f9; border: 1px solid #d4b5c4; border-left: 4px solid #591434; border-radius: 6px; padding: 1.25rem 1.25rem 1rem; margin-bottom: 1rem; box-shadow: 0 2px 6px rgba(89,20,52,0.08); }
+.announcement-item { background: var(--background-cream); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-color); border-radius: 6px; padding: 1.25rem 1.25rem 1rem; margin-bottom: 1rem; box-shadow: 0 2px 6px rgba(11,94,215,0.08); }
 .announcement-title { margin: 0 0 0.25rem 0; font-size: 20px; }
-.announcement-meta { font-size: 0.8rem; color: #5a4450; margin: 0 0 0.75rem 0; }
-.announcement-body { margin: 0; line-height: 1.6; color: #2d1a22; }
+.announcement-meta { font-size: 0.8rem; color: var(--text-medium); margin: 0 0 0.75rem 0; }
+.announcement-body { margin: 0; line-height: 1.6; color: var(--text-dark); }
 </style>
-

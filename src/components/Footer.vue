@@ -58,14 +58,14 @@ export default {
 
 <style scoped>
 .footer-main {
-  background: linear-gradient(135deg, #591434 0%, #3d0d23 100%);
-  color: #f5e6ed;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: var(--primary-light);
   margin-top: 3rem;
-  box-shadow: 0 -4px 12px rgba(89, 20, 52, 0.2);
+  box-shadow: 0 -4px 12px rgba(11, 94, 215, 0.2);
 }
 
 .footer-title {
-  color: #ffffff;
+  color: var(--white);
   font-size: 20px;
   font-family: Georgia, "Times New Roman", Times, serif;
   margin-bottom: 0.25rem;
@@ -73,14 +73,14 @@ export default {
 }
 
 .footer-subtitle {
-  color: #d4a574;
+  color: var(--accent-gold);
   font-size: 14px;
   font-style: italic;
   margin-bottom: 1rem;
 }
 
 .footer-heading {
-  color: #d4a574;
+  color: var(--accent-gold);
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -89,7 +89,7 @@ export default {
 }
 
 .footer-text {
-  color: #f5e6ed;
+  color: var(--primary-light);
   line-height: 1.6;
 }
 
@@ -104,7 +104,7 @@ export default {
 }
 
 .footer-links a {
-  color: #f5e6ed;
+  color: var(--primary-light);
   text-decoration: none;
   transition: all 0.2s ease;
   display: inline-block;
@@ -112,20 +112,20 @@ export default {
 
 .footer-links a:hover,
 .footer-links a:focus {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
   transform: translateX(5px);
-  outline: 1px solid rgba(255, 255, 255, 0.3);
+  outline: 1px solid rgba(255, 255, 255, 0.15);
   padding-left: 5px;
 }
 
 .footer-divider {
-  border-top: 1px solid rgba(245, 230, 237, 0.3);
+  border-top: 1px solid rgba(234, 244, 255, 0.3);
   margin: 2rem 0 1.5rem 0;
 }
 
 .footer-copyright {
-  color: #d4b5c4;
+  color: var(--border-color);
   font-size: 13px;
 }
 </style>

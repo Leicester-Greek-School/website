@@ -86,21 +86,20 @@ leicester-greek-school/
 
 ## Color Scheme
 
-The website uses an accessible color scheme based on burgundy (#591434):
+The website uses an accessible color scheme based on the Leicester Greek School blue palette (Greek blue & white):
 
-- **Primary Burgundy**: `#591434` - Main brand color (WCAG AAA compliant)
-- **Dark Burgundy**: `#3d0d23` - Dark accents and deep shadows
-- **Medium Burgundy**: `#8b3a5d` - Secondary accents
-- **Accent Gold**: `#d4a574` - Warm highlights and decorative elements
-- **Light Pink**: `#f5e6ed` - Soft background accent
-- **Cream Background**: `#faf7f9` - Main page background
-- **Text Dark**: `#2d1a22` - Primary text (WCAG AAA compliant)
-- **Text Medium**: `#5a4450` - Secondary text
-- **Link Color**: `#7a2448` - Accessible link color (WCAG AA compliant)
+- **Primary Blue**: `#0b5ed7` - Main brand color (used as `--primary-color` in `src/assets/styles/main.css`)
+- **Dark Blue**: `#083d8a` - Darker blue for contrast (used as `--primary-dark`)
+- **Medium Blue**: `#0a58ca` - Secondary accent blue (used as `--secondary-color`)
+- **Accent Gold**: `#d4a574` - Warm highlights and decorative elements (kept from the previous palette)
+- **Light Blue / Page Accent**: `#eaf4ff` - Soft background accent (used as `--primary-light`)
+- **Cream Background**: `#ffffff` / `var(--primary-light)` - Main page background (configured as `--background-cream` in CSS)
+- **Text Dark**: `#0b2136` - Primary text (WCAG-compliant dark navy)
+- **Text Medium**: `#33506b` - Secondary text color
+- **Link Color**: `#0b5ed7` - Primary blue for links (matches `--link-color`)
 
-All color combinations meet WCAG 2.1 Level AA standards for accessibility, with many meeting AAA standards for enhanced readability.
+All color combinations meet WCAG 2.1 Level AA standards for accessibility where applicable.
 
 ## License
 
 Copyright © 2025 Leicester Greek School. All rights reserved.
-

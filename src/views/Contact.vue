@@ -54,24 +54,24 @@ export default {
 
 <style scoped>
 .contact {
-  background-color: #ffffff;
+  background-color: var(--white);
   min-height: 70vh;
 }
 
 .page-title {
   font-size: 28px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin-bottom: 1.5rem;
   font-weight: bold;
-  border-bottom: 3px solid #d4a574;
+  border-bottom: 3px solid var(--accent-gold);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
 .section-title {
   font-size: 20px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 1rem 0 1rem 0;
   font-weight: 600;
@@ -79,7 +79,7 @@ export default {
 
 .info-title {
   font-size: 18px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin-bottom: 0.75rem;
   font-weight: bold;
@@ -89,23 +89,23 @@ export default {
   text-align: justify;
   margin-bottom: 1rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-dark);
 }
 
 .contact-info {
-  background-color: #faf7f9;
-  border: 2px solid #d4b5c4;
-  border-left: 4px solid #591434;
+  background-color: var(--background-cream);
+  border: 2px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
   padding: 1.5rem;
   margin-top: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(89, 20, 52, 0.1);
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-info:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(89, 20, 52, 0.15);
+  box-shadow: 0 6px 16px rgba(11, 94, 215, 0.12);
 }
 
 .contact-list li {
@@ -114,13 +114,13 @@ export default {
 }
 
 .contact-link {
-  color: #7a2448;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 .contact-link:hover,
 .contact-link:focus {
-  color: #591434;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 </style>

@@ -47,24 +47,24 @@
 
 <style scoped>
 .about {
-  background-color: #ffffff;
+  background-color: var(--white);
   min-height: 70vh;
 }
 
 .page-title {
   font-size: 28px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin-bottom: 1.5rem;
   font-weight: bold;
-  border-bottom: 3px solid #d4a574;
+  border-bottom: 3px solid var(--accent-gold);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
 .section-title {
   font-size: 20px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 2rem 0 1rem 0;
   font-weight: 600;
@@ -80,39 +80,39 @@
   transform: translateY(-50%);
   width: 4px;
   height: 100%;
-  background-color: #591434;
+  background-color: var(--primary-color);
 }
 
 .info-section {
   margin-bottom: 2rem;
-  background-color: #faf7f9;
+  background-color: var(--background-cream);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(89, 20, 52, 0.1);
-  border: 1px solid #d4b5c4;
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
+  border: 1px solid var(--border-color);
 }
 
 .text-justify {
   text-align: justify;
   margin-bottom: 1rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-dark);
 }
 
 .info-list {
   margin-left: 2rem;
   margin-bottom: 1.5rem;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 1.5rem;
   border-radius: 6px;
   list-style: none;
-  border: 1px solid #d4b5c4;
+  border: 1px solid var(--border-color);
 }
 
 .info-list li {
   margin-bottom: 0.75rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-dark);
   position: relative;
   padding-left: 1.8rem;
 }
@@ -121,23 +121,22 @@
   content: '●';
   position: absolute;
   left: 0;
-  color: #591434;
+  color: var(--primary-color);
   font-size: 1.2em;
 }
 
 .external-link {
-  color: #7a2448;
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px dotted #7a2448;
+  border-bottom: 1px dotted var(--secondary-color);
   transition: all 0.2s ease;
 }
 
 .external-link:hover,
 .external-link:focus {
-  color: #591434;
-  border-bottom: 2px solid #591434;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   text-decoration: none;
 }
 </style>
-

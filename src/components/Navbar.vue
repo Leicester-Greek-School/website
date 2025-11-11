@@ -91,9 +91,9 @@ export default {
 
 <style scoped>
 .top-header {
-  background: linear-gradient(135deg, #faf7f9 0%, #f5e6ed 100%);
-  border-top: 5px solid #591434;
-  box-shadow: 0 2px 4px rgba(89, 20, 52, 0.1);
+  background: linear-gradient(135deg, var(--background-cream) 0%, var(--primary-light) 100%);
+  border-top: 5px solid var(--primary-color);
+  box-shadow: 0 2px 4px rgba(11, 94, 215, 0.1);
 }
 
 .school-title {
@@ -101,24 +101,24 @@ export default {
   font-family: Georgia, "Times New Roman", Times, serif;
   line-height: 1.2;
   margin: 0;
-  color: #591434;
+  color: var(--primary-color);
 }
 
 .school-title a {
-  color: #591434;
+  color: var(--primary-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .school-title a:hover,
 .school-title a:focus {
-  color: #7a2448;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 .school-subtitle {
   font-size: 14px;
-  color: #5a4450;
+  color: var(--text-medium);
   font-style: italic;
   margin-top: 0.25rem;
 }
@@ -129,9 +129,9 @@ export default {
 }
 
 .btn-locale {
-  background: #ffffff;
-  border: 2px solid #591434;
-  color: #591434;
+  background: var(--white);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
   padding: 0.35rem 0.8rem;
   font-size: 0.8rem;
   font-weight: 600;
@@ -142,39 +142,39 @@ export default {
 }
 
 .btn-locale:hover, .btn-locale:focus {
-  background: #591434;
-  color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(89, 20, 52, 0.25);
+  background: var(--primary-color);
+  color: var(--white);
+  box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.25);
   outline: none;
 }
 
 .btn-locale.active {
-  background: linear-gradient(135deg, #591434 0%, #7a2448 100%);
-  color: #ffffff;
-  border-color: #591434;
-  box-shadow: 0 2px 6px rgba(89, 20, 52, 0.35);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white);
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 6px rgba(11, 94, 215, 0.35);
 }
 
 .navbar {
-  background: linear-gradient(to bottom, #f5e6ed 0%, #ede0e7 100%);
-  border-bottom: 2px solid #d4b5c4;
-  box-shadow: 0 2px 8px rgba(89, 20, 52, 0.08);
+  background: linear-gradient(to bottom, var(--primary-light) 0%, #f3f8ff 100%);
+  border-bottom: 2px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(11, 94, 215, 0.08);
 }
 
 .custom-toggler {
-  border-color: #8b3a5d;
+  border-color: var(--secondary-color);
 }
 
 .custom-toggler:focus {
-  box-shadow: 0 0 0 0.25rem rgba(89, 20, 52, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(11, 94, 215, 0.25);
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23591434' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230b5ed7' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .nav-link {
-  color: #2d1a22 !important;
+  color: var(--text-dark) !important;
   font-size: 14px;
   font-weight: 500;
   padding: 0.6rem 1.2rem !important;
@@ -185,8 +185,8 @@ export default {
 
 .nav-link:hover,
 .nav-link:focus {
-  color: #591434 !important;
-  background-color: rgba(89, 20, 52, 0.08);
+  color: var(--primary-color) !important;
+  background-color: rgba(11, 94, 215, 0.08);
 }
 
 .nav-link::after {
@@ -196,7 +196,7 @@ export default {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #591434;
+  background-color: var(--primary-color);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -207,8 +207,8 @@ export default {
 
 .router-link-active {
   font-weight: bold;
-  color: #591434 !important;
-  background-color: rgba(89, 20, 52, 0.1);
+  color: var(--primary-color) !important;
+  background-color: rgba(11, 94, 215, 0.1);
 }
 
 .router-link-active::after {

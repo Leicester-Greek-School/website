@@ -94,26 +94,26 @@ export default {
 
 <style scoped>
 .teaching {
-  background-color: #ffffff;
+  background-color: var(--white);
   min-height: 70vh;
 }
 
 .page-title {
   font-size: 28px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
-  border-bottom: 3px solid #d4a574;
+  border-bottom: 3px solid var(--accent-gold);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
 .section-title {
   font-size: 22px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
-  border-bottom: 2px solid #d4a574;
+  border-bottom: 2px solid var(--accent-gold);
   padding-bottom: 0.35rem;
   display: inline-block;
 }
@@ -121,30 +121,30 @@ export default {
 .info-section {
   margin-top: 1rem;
   margin-bottom: 2rem;
-  background-color: #faf7f9;
+  background-color: var(--background-cream);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(89, 20, 52, 0.1);
-  border: 1px solid #d4b5c4;
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
+  border: 1px solid var(--border-color);
 }
 
 .table {
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .table thead th {
-  background-color: #591434;
-  color: #ffffff;
+  background-color: var(--primary-color);
+  color: var(--white);
   font-weight: 600;
 }
 
 .table tbody tr {
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #f5e6ed;
+  background-color: var(--primary-light);
 }
 
 .group-role {
@@ -153,7 +153,7 @@ export default {
 
 .group-teacher,
 .group-assistant {
-  color: #2d1a22;
+  color: var(--text-dark);
 }
 
 /* Visually hidden utility for screen readers */
@@ -185,7 +185,7 @@ export default {
   }
 
   .group-role {
-    border-bottom: 1px solid #d4b5c4;
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 0.5rem;
   }
 

@@ -51,24 +51,24 @@
 
 <style scoped>
 .home {
-  background-color: #ffffff;
+  background-color: var(--white);
   min-height: 70vh;
 }
 
 .page-title {
   font-size: 28px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin-bottom: 1.5rem;
   font-weight: bold;
-  border-bottom: 3px solid #d4a574;
+  border-bottom: 3px solid var(--accent-gold);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
 .section-title {
   font-size: 20px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 1.5rem 0 1rem 0;
   font-weight: 600;
@@ -78,7 +78,7 @@
   text-align: justify;
   margin-bottom: 1.5rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-dark);
   font-size: 15px;
 }
 
@@ -86,23 +86,23 @@
   text-align: justify;
   margin-bottom: 1rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-dark);
 }
 
 .aims-list {
   margin-left: 2rem;
   margin-bottom: 1.5rem;
-  background-color: #faf7f9;
+  background-color: var(--background-cream);
   padding: 1.5rem;
-  border-left: 4px solid #591434;
+  border-left: 4px solid var(--primary-color);
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(89, 20, 52, 0.1);
+  box-shadow: 0 2px 8px rgba(11, 94, 215, 0.08);
 }
 
 .aims-list li {
   margin-bottom: 0.75rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-dark);
   position: relative;
   padding-left: 1.5rem;
 }
@@ -111,37 +111,37 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #591434;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
 .external-link {
-  color: #7a2448;
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px dotted #7a2448;
+  border-bottom: 1px dotted var(--secondary-color);
   transition: all 0.2s ease;
 }
 
 .external-link:hover,
 .external-link:focus {
-  color: #591434;
-  border-bottom: 2px solid #591434;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   text-decoration: none;
 }
 
 .internal-link {
-  color: #7a2448;
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px dotted #7a2448;
+  border-bottom: 1px dotted var(--secondary-color);
   transition: all 0.2s ease;
 }
 
 .internal-link:hover,
 .internal-link:focus {
-  color: #591434;
-  border-bottom: 2px solid #591434;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   text-decoration: none;
 }
 
@@ -149,14 +149,14 @@
   font-weight: bold;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
-  color: #591434;
+  color: var(--primary-color);
   font-size: 18px;
   text-align: center;
   padding: 1rem;
-  background-color: #faf7f9;
-  border: 2px solid #d4a574;
+  background-color: var(--background-cream);
+  border: 2px solid var(--accent-gold);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(89, 20, 52, 0.15);
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
 }
 
 .greek-text {
@@ -165,8 +165,7 @@
 
 hr {
   border: 0;
-  border-top: 2px solid #d4b5c4;
+  border-top: 2px solid var(--border-color);
   opacity: 0.5;
 }
 </style>
-

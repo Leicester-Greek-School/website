@@ -85,24 +85,24 @@
 
 <style scoped>
 .committee {
-  background-color: #ffffff;
+  background-color: var(--white);
   min-height: 70vh;
 }
 
 .page-title {
   font-size: 28px;
-  color: #591434;
+  color: var(--primary-dark);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin-bottom: 1.5rem;
   font-weight: bold;
-  border-bottom: 3px solid #d4a574;
+  border-bottom: 3px solid var(--accent-gold);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
 .section-title {
   font-size: 20px;
-  color: #591434;
+  color: var(--primary-dark);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 2rem 0 1rem 0;
   font-weight: 600;
@@ -118,12 +118,12 @@
   transform: translateY(-50%);
   width: 4px;
   height: 100%;
-  background-color: #591434;
+  background-color: var(--primary-color);
 }
 
 .subsection-title {
   font-size: 18px;
-  color: #591434;
+  color: var(--primary-dark);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 1.5rem 0 1rem 0;
   font-weight: 600;
@@ -131,18 +131,18 @@
 
 .info-section {
   margin-bottom: 2rem;
-  background-color: #faf7f9;
+  background-color: var(--background-cream);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(89, 20, 52, 0.1);
-  border: 1px solid #d4b5c4;
+  box-shadow: 0 4px 12px rgba(11,94,215,0.06);
+  border: 1px solid var(--border-color);
 }
 
 .committee-info {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 1.5rem;
   border-radius: 6px;
-  border: 1px solid #d4b5c4;
+  border: 1px solid var(--border-color);
   margin-top: 1.5rem;
 }
 
@@ -150,23 +150,23 @@
   text-align: justify;
   margin-bottom: 1rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-medium);
 }
 
 .info-list {
   margin-left: 2rem;
   margin-bottom: 1.5rem;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 1.5rem;
   border-radius: 6px;
   list-style: none;
-  border: 1px solid #d4b5c4;
+  border: 1px solid var(--border-color);
 }
 
 .info-list li {
   margin-bottom: 0.75rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-medium);
   position: relative;
   padding-left: 1.8rem;
 }
@@ -175,22 +175,22 @@
   content: '●';
   position: absolute;
   left: 0;
-  color: #591434;
+  color: var(--primary-color);
   font-size: 1.2em;
 }
 
 .internal-link {
-  color: #7a2448;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px dotted #7a2448;
+  border-bottom: 1px dotted var(--primary-color);
   transition: all 0.2s ease;
 }
 
 .internal-link:hover,
 .internal-link:focus {
-  color: #591434;
-  border-bottom: 2px solid #591434;
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--primary-dark);
   text-decoration: none;
 }
 
@@ -198,8 +198,8 @@
   list-style: none;
   margin: 1rem 0 2rem 0;
   padding: 0;
-  background-color: #ffffff;
-  border: 1px solid #d4b5c4;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
 }
 .members-list li {
@@ -211,10 +211,10 @@
   border-bottom: 1px solid #eee;
 }
 .members-list li:last-child { border-bottom: none; }
-.member-role { font-weight: 700; color: #591434; }
-.member-name { color: #2d1a22; }
-.member-email { margin-left: auto; color: #7a2448; text-decoration: none; font-size: 0.9rem; }
-.member-email:hover, .member-email:focus { color: #591434; text-decoration: underline; }
+.member-role { font-weight: 700; color: var(--primary-dark); }
+.member-name { color: var(--text-dark); }
+.member-email { margin-left: auto; color: var(--primary-color); text-decoration: none; font-size: 0.9rem; }
+.member-email:hover, .member-email:focus { color: var(--primary-dark); text-decoration: underline; }
 @media (max-width: 600px) {
   .member-email { width: 100%; margin-left: 0; }
 }

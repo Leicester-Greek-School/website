@@ -101,24 +101,24 @@
 
 <style scoped>
 .policies {
-  background-color: #ffffff;
+  background-color: var(--white);
   min-height: 70vh;
 }
 
 .page-title {
   font-size: 28px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin-bottom: 1.5rem;
   font-weight: bold;
-  border-bottom: 3px solid #d4a574;
+  border-bottom: 3px solid var(--accent-gold);
   padding-bottom: 0.5rem;
   display: inline-block;
 }
 
 .section-title {
   font-size: 20px;
-  color: #591434;
+  color: var(--primary-color);
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 0 0 1rem 0;
   font-weight: 600;
@@ -134,39 +134,39 @@
   transform: translateY(-50%);
   width: 4px;
   height: 100%;
-  background-color: #591434;
+  background-color: var(--primary-color);
 }
 
 .info-section {
   margin-bottom: 2rem;
-  background-color: #faf7f9;
+  background-color: var(--background-cream);
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(89, 20, 52, 0.1);
-  border: 1px solid #d4b5c4;
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
+  border: 1px solid var(--border-color);
 }
 
 .text-justify {
   text-align: justify;
   margin-bottom: 1rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-dark);
 }
 
 .policy-list {
   margin-left: 2rem;
   margin-bottom: 0;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 1.5rem;
   border-radius: 6px;
   list-style: none;
-  border: 1px solid #d4b5c4;
+  border: 1px solid var(--border-color);
 }
 
 .policy-list li {
   margin-bottom: 0.75rem;
   line-height: 1.8;
-  color: #2d1a22;
+  color: var(--text-dark);
   position: relative;
   padding-left: 1.8rem;
 }
@@ -175,7 +175,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #591434;
+  color: var(--primary-color);
   font-weight: bold;
   font-size: 1.1em;
 }
@@ -183,11 +183,11 @@
 .procedure-list {
   margin-left: 2rem;
   margin-bottom: 0;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 1.5rem;
   border-radius: 6px;
-  border: 1px solid #d4b5c4;
-  color: #2d1a22;
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
   line-height: 1.8;
 }
 
@@ -196,26 +196,25 @@
 }
 
 .contact-box {
-  background-color: #faf7f9;
-  border: 2px solid #d4a574;
+  background-color: var(--background-cream);
+  border: 2px solid var(--accent-gold);
   padding: 1.5rem;
   border-radius: 8px;
   margin-top: 2rem;
 }
 
 .internal-link {
-  color: #7a2448;
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px dotted #7a2448;
+  border-bottom: 1px dotted var(--secondary-color);
   transition: all 0.2s ease;
 }
 
 .internal-link:hover,
 .internal-link:focus {
-  color: #591434;
-  border-bottom: 2px solid #591434;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
   text-decoration: none;
 }
 </style>
-

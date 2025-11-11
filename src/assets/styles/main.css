@@ -1,17 +1,17 @@
 :root {
-  /* Leicester Greek School Color Palette - Accessible Burgundy Scheme */
-  --primary-color: #591434;        /* Deep burgundy - main brand color */
-  --primary-dark: #3d0d23;         /* Darker burgundy for contrast */
-  --primary-light: #f5e6ed;        /* Light pink/cream background */
-  --secondary-color: #8b3a5d;      /* Medium burgundy for accents */
-  --accent-gold: #d4a574;          /* Warm gold for highlights */
-  --background-cream: #faf7f9;     /* Very light pink-cream */
-  --text-dark: #2d1a22;            /* Very dark burgundy-brown for text */
-  --text-medium: #5a4450;          /* Medium burgundy-gray for secondary text */
-  --border-color: #d4b5c4;         /* Light burgundy for borders */
-  --link-color: #7a2448;           /* Accessible burgundy for links */
-  --link-hover: #591434;           /* Primary color for hover */
-  --success-green: #2d5a3d;        /* Accessible green */
+  /* Leicester Greek School Color Palette - Greek blue & white theme */
+  --primary-color: #0b5ed7;        /* Greek blue - main brand color */
+  --primary-dark: #083d8a;         /* Darker blue for contrast */
+  --primary-light: #eaf4ff;        /* Very light blue background */
+  --secondary-color: #0a58ca;      /* Medium blue for accents */
+  --accent-gold: #d4a574;          /* (kept) warm accent if needed */
+  --background-cream: var(--primary-light); /* kept name for compatibility */
+  --text-dark: #0b2136;            /* Very dark navy for text */
+  --text-medium: #33506b;          /* Medium blue-gray for secondary text */
+  --border-color: #cfe2ff;         /* Light blue for borders */
+  --link-color: var(--primary-color);           /* Primary blue for links */
+  --link-hover: var(--primary-dark);           /* Darker blue for hover */
+  --success-green: #2d5a3d;        /* Accessible green (unchanged) */
   --white: #ffffff;
 }
 
@@ -52,7 +52,7 @@ body {
   border-color: var(--primary-dark);
   color: var(--white);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(89, 20, 52, 0.3);
+  box-shadow: 0 4px 8px rgba(11, 94, 215, 0.28);
 }
 
 .btn-primary:active {
@@ -114,5 +114,3 @@ h1, h2, h3, h4, h5, h6 {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
-
-
