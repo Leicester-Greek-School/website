@@ -10,8 +10,8 @@
           classes. If your child is unable to attend, please notify the school in advance.
         </p>
         <ul class="policy-list">
-          <li>Classes run every Saturday from 11:00 to 15:30 for children</li>
-          <li>Adult classes run on Wednesday and Saturday</li>
+          <li>Classes run every Saturday from 09:30 to 18:00 for children</li>
+          <li>Adult classes run on Thursday and Saturday</li>
           <li>Please arrive on time to minimize disruption</li>
           <li>Notify the school of any extended absences</li>
         </ul>
