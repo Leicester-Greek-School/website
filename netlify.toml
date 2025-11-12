@@ -47,8 +47,4 @@
   for = "/*.svg"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-# Netlify redirects for Vue Router (SPA)
-# This ensures all routes are handled by index.html
-
-/*    /index.html   200
 
