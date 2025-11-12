@@ -13,13 +13,16 @@ export const TEACHING_GROUPS = [
     role_el: 'Νηπιαγωγείο / Προδημοτική',
     role_en: 'Nursery / Pre-Primary',
     teacher: 'Χριστίνα Καλιντζέου',
-    assistant: 'Θεοδώρα Καμάνα'
+    teacherImage: 'Christina_Kalintzeou.jpeg',
+    assistant: 'Θεοδώρα Καμάνα',
+    assistantImage: 'Theodora_Kamana.png'
   },
   {
     id: 'year1',
     role_el: 'Year 1',
     role_en: 'Year 1',
     teacher: 'Μαρία Συμεωνίδου',
+    teacherImage: 'Maria_Symeonidou.jpeg',
     assistant: ''
   },
   {
@@ -27,6 +30,7 @@ export const TEACHING_GROUPS = [
     role_el: 'Year 1+ (Διαφοροποιητική)',
     role_en: 'Year 1+ (Differentiation)',
     teacher: 'Μαρία Καρατζιά',
+    teacherImage: 'Maria_Karatzia.jpeg',
     assistant: ''
   },
   {
@@ -34,6 +38,7 @@ export const TEACHING_GROUPS = [
     role_el: 'Year 2',
     role_en: 'Year 2',
     teacher: 'Πανάγια Πιτσιλίδου',
+    teacherImage: 'Panagia_Pitsilidou.jpeg',
     assistant: ''
   },
   {
@@ -41,6 +46,7 @@ export const TEACHING_GROUPS = [
     role_el: 'Year 3–4 (Σύμπλεγμα)',
     role_en: 'Years 3–4 (Combined)',
     teacher: 'Θεοδώρα Καμάνα',
+    teacherImage: 'Theodora_Kamana.png',
     assistant: ''
   },
   {
@@ -48,6 +54,7 @@ export const TEACHING_GROUPS = [
     role_el: 'Year 5–6 (Σύμπλεγμα)',
     role_en: 'Years 5–6 (Combined)',
     teacher: 'Μαρία Καρατζιά',
+    teacherImage: 'Maria_Karatzia.jpeg',
     assistant: ''
   },
   {
@@ -55,6 +62,7 @@ export const TEACHING_GROUPS = [
     role_el: 'Pre-GCSE / GCSE',
     role_en: 'Pre-GCSE / GCSE',
     teacher: 'Ελευθερία Καπαραλίωτη',
+    teacherImage: 'Eleftheria_Kaparalioti.jpeg',
     assistant: ''
   },
   {

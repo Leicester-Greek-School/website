@@ -10,7 +10,13 @@
         <div class="row justify-content-center">
           <div class="col-md-4 col-lg-3">
             <div class="card teacher-card shadow-sm">
-              <div class="card-img-top teacher-photo-placeholder">
+              <img
+                v-if="headteacher.image"
+                :src="headteacher.image"
+                :alt="headteacher.name"
+                class="card-img-top teacher-photo"
+              />
+              <div v-else class="card-img-top teacher-photo-placeholder">
                 <div class="photo-icon">
                   <i class="bi bi-person-circle"></i>
                 </div>
@@ -38,7 +44,13 @@
             <div class="row g-3">
               <div class="col-md-6 col-lg-4" v-for="group in classroomTeachers" :key="group.id">
                 <div class="card teacher-card h-100 shadow-sm">
-                  <div class="card-img-top teacher-photo-placeholder">
+                  <img
+                    v-if="group.image"
+                    :src="group.image"
+                    :alt="group.teacher"
+                    class="card-img-top teacher-photo"
+                  />
+                  <div v-else class="card-img-top teacher-photo-placeholder">
                     <div class="photo-icon-small">
                       <i class="bi bi-person-circle"></i>
                     </div>
@@ -62,7 +74,13 @@
             <div class="row g-3">
               <div class="col-md-6 col-lg-12" v-for="assistant in assistantTeachers" :key="assistant.id">
                 <div class="card teacher-card h-100 shadow-sm">
-                  <div class="card-img-top teacher-photo-placeholder">
+                  <img
+                    v-if="assistant.image"
+                    :src="assistant.image"
+                    :alt="assistant.assistant"
+                    class="card-img-top teacher-photo"
+                  />
+                  <div v-else class="card-img-top teacher-photo-placeholder">
                     <div class="photo-icon-small">
                       <i class="bi bi-person-circle"></i>
                     </div>
@@ -118,6 +136,16 @@ export default {
       titleId: 'teachingTitle'
     };
   },
+  methods: {
+    getTeacherImage(imageName) {
+      if (!imageName) return null;
+      try {
+        return require(`@/assets/images/teachers/${imageName}`);
+      } catch (e) {
+        return null;
+      }
+    }
+  },
   computed: {
     selectedLocale() {
       return localeStore.locale;
@@ -130,7 +158,8 @@ export default {
       return {
         name: this.selectedLocale === 'el' ? 'Μαρία Συμεωνίδου' : 'Maria Symeonidou',
         title: this.selectedLocale === 'el' ? 'Διευθύντρια' : 'Headteacher (interim)',
-        role: this.selectedLocale === 'el' ? 'Διοίκηση & Συντονισμός' : 'Administration & Coordination'
+        role: this.selectedLocale === 'el' ? 'Διοίκηση & Συντονισμός' : 'Administration & Coordination',
+        image: this.getTeacherImage('Maria_Symeonidou.jpeg')
       };
     },
     classroomTeachers() {
@@ -139,7 +168,8 @@ export default {
         .map(g => ({
           id: g.id,
           role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
-          teacher: g.teacher
+          teacher: g.teacher,
+          image: this.getTeacherImage(g.teacherImage)
         }));
     },
     assistantTeachers() {
@@ -148,7 +178,8 @@ export default {
         .map(g => ({
           id: g.id + '_assistant',
           role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
-          assistant: g.assistant
+          assistant: g.assistant,
+          image: this.getTeacherImage(g.assistantImage)
         }))
         .concat(
           TEACHING_GROUPS
@@ -156,7 +187,8 @@ export default {
             .map(g => ({
               id: g.id,
               role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
-              assistant: g.assistant
+              assistant: g.assistant,
+              image: null
             }))
         );
     },
@@ -227,6 +259,15 @@ export default {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(11, 94, 215, 0.15) !important;
   border-color: var(--accent-gold);
+}
+
+/* Teacher Photo Styles */
+.teacher-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 2px solid var(--border-color);
 }
 
 /* Photo Placeholder Styles */
