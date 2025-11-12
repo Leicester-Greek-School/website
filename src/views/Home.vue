@@ -45,6 +45,32 @@
         την <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Κυπριακή Εκπαιδευτική Αποστολή (ΚΕΑ)</a>
         στο Ηνωμένο Βασίλειο.
       </p>
+
+      <hr class="my-5">
+
+      <h2 class="page-title">Our Sponsors</h2>
+      <p class="text-justify">
+        We would like to thank our sponsors for their generous support:
+      </p>
+
+      <div class="row mt-4 mb-5">
+        <div class="col-md-6 mb-4">
+          <div class="card sponsor-card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title sponsor-name">A.D</h5>
+              <p class="card-text sponsor-description">Painting, Decorating & Wood Floor</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card sponsor-card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title sponsor-name">Hellenic Supplies LTD</h5>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -167,5 +193,33 @@ hr {
   border: 0;
   border-top: 2px solid var(--border-color);
   opacity: 0.5;
+}
+
+.sponsor-card {
+  border: 2px solid var(--accent-gold);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
+}
+
+.sponsor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(11, 94, 215, 0.15);
+  border-color: var(--primary-color);
+}
+
+.sponsor-name {
+  color: var(--primary-color);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 0.75rem;
+}
+
+.sponsor-description {
+  color: var(--text-dark);
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: 1.6;
 }
 </style>
