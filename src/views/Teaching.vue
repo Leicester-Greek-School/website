@@ -1,51 +1,107 @@
 <template>
   <div class="teaching" role="main" :aria-labelledby="titleId">
     <div class="container my-5">
-      <div class="mb-3">
+      <div class="mb-4">
         <h2 :id="titleId" class="page-title mb-0">{{ pageTitle }}</h2>
       </div>
 
-      <!-- Replaced list with accessible bilingual table -->
-      <div class="info-section" aria-label="Teaching staff groups">
-        <table class="table table-sm align-middle" role="table">
-          <caption class="visually-hidden">{{ pageTitle }}</caption>
-          <thead>
-            <tr>
-              <th scope="col">{{ selectedLocale === 'el' ? 'Τάξη / Ομάδα' : 'Class / Group' }}</th>
-              <th scope="col">{{ selectedLocale === 'el' ? 'Δασκάλα' : 'Teacher' }}</th>
-              <th scope="col">{{ selectedLocale === 'el' ? 'Βοηθός' : 'Assistant' }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="group in groupsList" :key="group.id">
-              <th scope="row" class="group-role">{{ group.role }}</th>
-              <td class="group-teacher" :data-label="selectedLocale === 'el' ? 'Δασκάλα' : 'Teacher'">{{ group.teacher }}</td>
-              <td class="group-assistant" :data-label="selectedLocale === 'el' ? 'Βοηθός' : 'Assistant'">{{ group.assistant || '—' }}</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Headteacher Section -->
+      <div class="headteacher-section mb-5">
+        <div class="row justify-content-center">
+          <div class="col-md-4 col-lg-3">
+            <div class="card teacher-card shadow-sm">
+              <div class="card-img-top teacher-photo-placeholder">
+                <div class="photo-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title teacher-name">{{ headteacher.name }}</h5>
+                <p class="card-text teacher-title">{{ headteacher.title }}</p>
+                <p class="card-text teacher-role text-muted small">{{ headteacher.role }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Online classes section -->
-      <div class="mb-3 mt-5">
-        <h3 class="section-title mb-0">{{ onlineSectionTitle }}</h3>
-      </div>
-      <div class="info-section" :aria-label="selectedLocale === 'el' ? 'Δασκάλες – Online Τάξεις' : 'Teachers – Online Classes'">
-        <table class="table table-sm align-middle" role="table">
-          <caption class="visually-hidden">{{ onlineSectionTitle }}</caption>
-          <thead>
-            <tr>
-              <th scope="col">{{ selectedLocale === 'el' ? 'Τάξη / Ομάδα' : 'Class / Group' }}</th>
-              <th scope="col">{{ selectedLocale === 'el' ? 'Δασκάλα' : 'Teacher' }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="group in groupsOnlineList" :key="group.id">
-              <th scope="row" class="group-role">{{ group.role }}</th>
-              <td class="group-teacher" :data-label="selectedLocale === 'el' ? 'Δασκάλα' : 'Teacher'">{{ group.teacher }}</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Tree Structure: Classroom and Online Sections -->
+      <div class="teaching-structure">
+        <div class="row">
+          <!-- Classroom Section -->
+          <div class="col-lg-8 mb-4">
+            <div class="section-header mb-4">
+              <h3 class="section-title">
+                <i class="bi bi-building me-2"></i>{{ selectedLocale === 'el' ? 'Διδασκαλία στην Τάξη' : 'Classroom Teaching' }}
+              </h3>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6 col-lg-4" v-for="group in classroomTeachers" :key="group.id">
+                <div class="card teacher-card h-100 shadow-sm">
+                  <div class="card-img-top teacher-photo-placeholder">
+                    <div class="photo-icon-small">
+                      <i class="bi bi-person-circle"></i>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-title teacher-name">{{ group.teacher }}</h6>
+                    <p class="card-text teacher-role small mb-0">{{ group.role }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Assistant Teachers Section -->
+          <div class="col-lg-4 mb-4">
+            <div class="section-header mb-4">
+              <h3 class="section-title">
+                <i class="bi bi-people me-2"></i>{{ selectedLocale === 'el' ? 'Βοηθοί Δασκάλων' : 'Assistant Teachers' }}
+              </h3>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6 col-lg-12" v-for="assistant in assistantTeachers" :key="assistant.id">
+                <div class="card teacher-card h-100 shadow-sm">
+                  <div class="card-img-top teacher-photo-placeholder">
+                    <div class="photo-icon-small">
+                      <i class="bi bi-person-circle"></i>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-title teacher-name">{{ assistant.assistant }}</h6>
+                    <p class="card-text teacher-role small mb-0">{{ assistant.role }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Online Section -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="section-header mb-4">
+              <h3 class="section-title">
+                <i class="bi bi-laptop me-2"></i>{{ selectedLocale === 'el' ? 'Online Διδασκαλία' : 'Online Teaching' }}
+              </h3>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6 col-lg-3" v-for="group in groupsOnlineList" :key="group.id">
+                <div class="card teacher-card h-100 shadow-sm">
+                  <div class="card-img-top teacher-photo-placeholder">
+                    <div class="photo-icon-small">
+                      <i class="bi bi-person-circle"></i>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="card-title teacher-name">{{ group.teacher }}</h6>
+                    <p class="card-text teacher-role small mb-0">{{ group.role }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -70,16 +126,39 @@ export default {
       const map = PAGE_TITLES.teaching || {};
       return map[this.selectedLocale] || map.en || 'The Teaching Staff';
     },
-    groupsList() {
-      return TEACHING_GROUPS.map(g => ({
-        id: g.id,
-        role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
-        teacher: g.teacher,
-        assistant: g.assistant
-      }));
+    headteacher() {
+      return {
+        name: this.selectedLocale === 'el' ? 'Μαρία Συμεωνίδου' : 'Maria Symeonidou',
+        title: this.selectedLocale === 'el' ? 'Διευθύντρια' : 'Headteacher (interim)',
+        role: this.selectedLocale === 'el' ? 'Διοίκηση & Συντονισμός' : 'Administration & Coordination'
+      };
     },
-    onlineSectionTitle() {
-      return this.selectedLocale === 'el' ? 'Δασκάλες – Online Τάξεις' : 'Teachers – Online Classes';
+    classroomTeachers() {
+      return TEACHING_GROUPS
+        .filter(g => g.teacher && g.id !== 'support')
+        .map(g => ({
+          id: g.id,
+          role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
+          teacher: g.teacher
+        }));
+    },
+    assistantTeachers() {
+      return TEACHING_GROUPS
+        .filter(g => g.assistant)
+        .map(g => ({
+          id: g.id + '_assistant',
+          role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
+          assistant: g.assistant
+        }))
+        .concat(
+          TEACHING_GROUPS
+            .filter(g => g.id === 'support')
+            .map(g => ({
+              id: g.id,
+              role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
+              assistant: g.assistant
+            }))
+        );
     },
     groupsOnlineList() {
       return TEACHING_GROUPS_ONLINE.map(g => ({
@@ -118,82 +197,121 @@ export default {
   display: inline-block;
 }
 
-.info-section {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  background-color: var(--background-cream);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
-  border: 1px solid var(--border-color);
+/* Headteacher Section */
+.headteacher-section {
+  position: relative;
+  padding: 2rem 0;
 }
 
-.table {
-  width: 100%;
-  background-color: var(--white);
+.headteacher-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--accent-gold), transparent);
 }
 
-.table thead th {
-  background-color: var(--primary-color);
-  color: var(--white);
-  font-weight: 600;
-}
-
-.table tbody tr {
-  background-color: var(--white);
-}
-
-.table tbody tr:nth-child(even) {
-  background-color: var(--primary-light);
-}
-
-.group-role {
-  font-weight: 600;
-}
-
-.group-teacher,
-.group-assistant {
-  color: var(--text-dark);
-}
-
-/* Visually hidden utility for screen readers */
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
+/* Teacher Cards */
+.teacher-card {
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
   overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
+  background-color: var(--white);
 }
 
-@media (max-width: 640px) {
-  .table thead {
+.teacher-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(11, 94, 215, 0.15) !important;
+  border-color: var(--accent-gold);
+}
+
+/* Photo Placeholder Styles */
+.teacher-photo-placeholder {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--background-cream) 100%);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.photo-icon {
+  font-size: 80px;
+  color: var(--primary-color);
+  opacity: 0.3;
+}
+
+.photo-icon-small {
+  font-size: 60px;
+  color: var(--primary-color);
+  opacity: 0.3;
+}
+
+/* Card Content */
+.teacher-name {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.teacher-title {
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.teacher-role {
+  color: var(--text-dark);
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+/* Section Headers */
+.section-header {
+  position: relative;
+}
+
+/* Teaching Structure Layout */
+.teaching-structure {
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .headteacher-section::after {
     display: none;
   }
 
-  .table tbody tr {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 0.75rem 0.5rem;
+  .teacher-photo-placeholder {
+    height: 180px;
   }
 
-  .table tbody td,
-  .table tbody th {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.35rem 0.5rem;
+  .photo-icon {
+    font-size: 70px;
   }
 
-  .group-role {
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: 0.5rem;
+  .photo-icon-small {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .teacher-photo-placeholder {
+    height: 160px;
   }
 
-  .group-teacher::before,
-  .group-assistant::before {
-    content: attr(data-label);
-    font-weight: 600;
-    margin-right: 0.5rem;
+  .page-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 20px;
   }
 }
 </style>
