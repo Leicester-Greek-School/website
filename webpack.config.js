@@ -1,12 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
+    publicPath: '/',
     clean: true
   },
   module: {
@@ -34,6 +36,11 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: './index.html'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: '.htaccess', to: '.htaccess' }
+      ]
     })
   ],
   resolve: {
