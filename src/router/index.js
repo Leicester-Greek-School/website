@@ -7,6 +7,7 @@ import Committee from '../views/Committee.vue';
 import Register from '../views/Register.vue';
 import Policies from '../views/Policies.vue';
 import Announcements from '../views/Announcements.vue';
+import PrivacyPolicy from '../views/PrivacyPolicy.vue';
 
 const routes = [
   {
@@ -52,6 +53,11 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/privacy-policy',
+    name: 'PrivacyPolicy',
+    component: PrivacyPolicy
   }
 ];
 

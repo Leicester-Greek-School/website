@@ -39,6 +39,9 @@
       <hr class="footer-divider">
       <div class="row">
         <div class="col-12 text-center">
+          <p class="footer-copyright mb-2">
+            <router-link to="/privacy-policy" class="footer-policy-link">Privacy Policy</router-link>
+          </p>
           <p class="footer-copyright mb-0">&copy; {{ currentYear }} Leicester Greek School. All rights reserved.</p>
         </div>
       </div>
@@ -127,5 +130,20 @@ export default {
 .footer-copyright {
   color: var(--border-color);
   font-size: 13px;
+}
+
+.footer-policy-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.footer-policy-link:hover,
+.footer-policy-link:focus {
+  color: var(--white);
+  text-decoration: underline;
 }
 </style>
