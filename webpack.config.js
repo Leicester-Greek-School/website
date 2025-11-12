@@ -39,7 +39,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: '.htaccess', to: '.htaccess' }
+        { from: '.htaccess', to: '.htaccess', noErrorOnMissing: true },
+        { from: '_redirects', to: '_redirects', noErrorOnMissing: true }
       ]
     })
   ],

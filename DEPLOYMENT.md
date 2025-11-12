@@ -30,7 +30,50 @@ This will create a production build in the `dist/` folder with the `.htaccess` f
 
 ### Step 2: Deploy Based on Your Server Type
 
-#### Apache Server (Most Common)
+#### Netlify (Recommended)
+The project is fully configured for Netlify deployment with automatic routing support.
+
+**Option A: Deploy via Git (Recommended)**
+1. Push your code to GitHub, GitLab, or Bitbucket
+2. Log in to [Netlify](https://netlify.com)
+3. Click "New site from Git"
+4. Connect your repository
+5. Netlify will automatically detect the `netlify.toml` configuration
+6. Click "Deploy site"
+
+**Option B: Manual Deploy via Netlify CLI**
+```bash
+# Install Netlify CLI globally
+npm install -g netlify-cli
+
+# Build your project
+npm run build
+
+# Deploy (first time)
+netlify deploy --prod
+
+# Follow the prompts to create a new site or link to existing
+```
+
+**Option C: Drag and Drop**
+1. Run `npm run build` locally
+2. Go to [Netlify Drop](https://app.netlify.com/drop)
+3. Drag the `dist/` folder onto the page
+4. Your site will be deployed instantly
+
+**Configuration Files:**
+- `netlify.toml` - Build settings and redirect rules
+- `_redirects` - Backup redirect configuration (automatically copied to dist/)
+
+**What's Configured:**
+- ✅ Build command: `npm run build`
+- ✅ Publish directory: `dist`
+- ✅ SPA routing (all routes redirect to index.html)
+- ✅ Asset caching (1 year for JS, CSS, images)
+- ✅ Automatic HTTPS
+- ✅ CDN distribution
+
+#### Apache Server
 1. Upload all files from the `dist/` folder to your web server
 2. Ensure the `.htaccess` file is uploaded (it's already in the dist folder)
 3. Verify that Apache's `mod_rewrite` module is enabled
@@ -42,13 +85,7 @@ This will create a production build in the `dist/` folder with the `.htaccess` f
 3. Add the `try_files` directive to your server block
 4. Restart Nginx: `sudo systemctl restart nginx`
 
-#### Static Hosting (Netlify, Vercel, etc.)
-These platforms handle SPA routing automatically, but you may need to add a redirect rule:
-
-**For Netlify:** Create a `_redirects` file in the `dist/` folder:
-```
-/* /index.html 200
-```
+#### Other Static Hosting Providers
 
 **For Vercel:** Create a `vercel.json` in the root:
 ```json
@@ -56,6 +93,10 @@ These platforms handle SPA routing automatically, but you may need to add a redi
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
 ```
+
+**For GitHub Pages:** Add a `404.html` that's a copy of `index.html` in the dist folder.
+
+**For AWS S3 + CloudFront:** Configure error pages to redirect 404 errors to index.html.
 
 ## Testing
 After deployment, test by:

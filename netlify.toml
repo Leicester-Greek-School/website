@@ -1,0 +1,54 @@
+# Netlify configuration for Leicester Greek School
+
+[build]
+  # Build command
+  command = "npm run build"
+  # Directory that contains the build output
+  publish = "dist"
+
+# Redirect all requests to index.html for Vue Router to handle
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache static assets
+[[headers]]
+  for = "/bundle.*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.gif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+# Netlify redirects for Vue Router (SPA)
+# This ensures all routes are handled by index.html
+
+/*    /index.html   200
+
