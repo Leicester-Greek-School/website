@@ -33,18 +33,9 @@
         <router-link to="/about" class="internal-link">information page</router-link>.
       </p>
 
-      <p class="join-text">Join us to learn Modern Greek!!!</p>
-
-      <hr class="my-5">
-
-      <h2 class="page-title greek-text">Καλωσορίσατε στην ιστοσελίδα μας!!!</h2>
-
-      <p class="text-justify">
-        Το Ελληνικό Παροικιακό Σχολείο Αγίου Νικολάου και Ξενοφώντος στο Leicester ιδρύθηκε το 1980
-        από την Ελληνοκυπριακή κοινότητα. Το Αναλυτικό Πρόγραμμα του σχολείου είναι καθορισμένο από
-        την <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Κυπριακή Εκπαιδευτική Αποστολή (ΚΕΑ)</a>
-        στο Ηνωμένο Βασίλειο.
-      </p>
+      <router-link to="/register" class="join-text-link">
+        <p class="join-text">Join us to learn Modern Greek!!!</p>
+      </router-link>
 
       <hr class="my-5">
 
@@ -171,6 +162,20 @@
   text-decoration: none;
 }
 
+.join-text-link {
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.join-text-link:hover .join-text {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(11, 94, 215, 0.2);
+}
+
 .join-text {
   font-weight: bold;
   margin-top: 1.5rem;
@@ -183,6 +188,7 @@
   border: 2px solid var(--accent-gold);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
+  transition: all 0.3s ease;
 }
 
 .greek-text {
