@@ -17,14 +17,14 @@
         </div>
       </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light" aria-label="Main navigation">
+    <nav class="navbar navbar-expand-lg navbar-light main-navbar" aria-label="Main navigation">
       <div class="container">
         <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav me-auto">
             <li class="nav-item">
               <router-link class="nav-link" to="/" aria-current="page">Homepage</router-link>
             </li>
@@ -38,9 +38,6 @@
               <router-link class="nav-link" to="/committee">Committee</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/register">Register</router-link>
-            </li>
-            <li class="nav-item">
               <router-link class="nav-link" to="/policies">Policies</router-link>
             </li>
             <li class="nav-item">
@@ -50,6 +47,11 @@
               <router-link class="nav-link" to="/contact">Contact Us</router-link>
             </li>
           </ul>
+          <div class="navbar-cta ms-auto d-flex align-items-center gap-2">
+            <router-link to="/register" class="btn btn-primary btn-sm navbar-register-btn">
+              <span class="btn-icon">✓</span> Register Now
+            </router-link>
+          </div>
         </div>
       </div>
     </nav>
@@ -151,13 +153,57 @@ export default {
 
 .navbar {
   background: linear-gradient(to bottom, var(--primary-light) 0%, #f5f9ff 100%);
-  border-bottom: 3px solid var(--border-color);
+  border-bottom: 3px solid var(--primary-color);
   box-shadow: var(--shadow-md);
   padding: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-navbar {
+  background: linear-gradient(135deg, var(--white) 0%, var(--primary-light) 100%);
 }
 
 .navbar .container {
   padding: 0 1rem;
+}
+
+.navbar-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-register-btn {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border: 2px solid transparent;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.5rem !important;
+  border-radius: 8px;
+  letter-spacing: 0.4px;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+.navbar-register-btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: 1.1rem;
+  font-weight: 800;
 }
 
 .custom-toggler {
@@ -169,7 +215,7 @@ export default {
 .custom-toggler:hover,
 .custom-toggler:focus {
   border-color: var(--secondary-color);
-  box-shadow: 0 0 0 0.25rem rgba(11, 94, 215, 0.15);
+  box-shadow: 0 0 0 0.25rem rgba(89, 15, 50, 0.15);
 }
 
 .custom-toggler:focus-visible {
@@ -177,7 +223,7 @@ export default {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230b5ed7' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23590f32' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1.5rem;
@@ -231,7 +277,7 @@ export default {
 .router-link-active {
   font-weight: 700;
   color: var(--primary-color) !important;
-  background-color: rgba(11, 94, 215, 0.12);
+  background-color: rgba(89, 15, 50, 0.12);
 }
 
 .router-link-active::after {
@@ -258,11 +304,24 @@ export default {
     display: none;
   }
 
-.router-link-active {
-  background-color: rgba(89, 15, 50, 0.15) !important;
-  border-left: 4px solid var(--primary-color);
-  padding-left: calc(1.5rem - 4px) !important;
-}
+  .router-link-active {
+    background-color: rgba(89, 15, 50, 0.15) !important;
+    border-left: 4px solid var(--primary-color);
+    padding-left: calc(1.5rem - 4px) !important;
+  }
+
+  .navbar-cta {
+    width: 100%;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-color);
+    justify-content: flex-start;
+  }
+
+  .navbar-register-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 576px) {
@@ -277,6 +336,11 @@ export default {
 
   .school-subtitle {
     font-size: 0.8rem;
+  }
+
+  .navbar-register-btn {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.85rem;
   }
 }
 </style>

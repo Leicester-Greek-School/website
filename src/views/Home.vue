@@ -122,11 +122,14 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, var(--primary-light) 0%, #f0f8ff 50%, var(--primary-light) 100%);
+  background: linear-gradient(135deg, #590f32 0%, #753856 50%, #3d0a23 100%);
   position: relative;
   overflow: hidden;
-  padding: 3rem 0;
-  border-bottom: 3px solid var(--border-color);
+  padding: 5rem 0;
+  border-bottom: 5px solid var(--accent-gold);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .hero-section::before {
@@ -136,10 +139,10 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(11, 94, 215, 0.05) 1px, transparent 1px);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
-  animation: driftPattern 20s linear infinite;
+  animation: driftPattern 25s linear infinite;
 }
 
 @keyframes driftPattern {
@@ -157,7 +160,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, rgba(11, 94, 215, 0.02) 0%, transparent 50%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(89, 15, 50, 0.3) 100%);
   pointer-events: none;
 }
 
@@ -182,31 +185,34 @@
 }
 
 .hero-title {
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: clamp(2.5rem, 7vw, 4rem);
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: var(--primary-color);
+  color: var(--white);
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.75rem);
   color: var(--accent-gold);
   font-weight: 600;
   font-style: italic;
   margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-description {
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-  color: var(--text-dark);
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  letter-spacing: 0.3px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--white);
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  letter-spacing: 0.4px;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta-buttons {
@@ -376,9 +382,10 @@
 
 /* Sponsors Section */
 .sponsor-intro {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-medium);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
 }
 
 .sponsor-card {
@@ -387,6 +394,11 @@
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, var(--white) 0%, var(--primary-light) 100%);
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .sponsor-card::before {
@@ -395,14 +407,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 5px;
   background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-gold));
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .sponsor-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--primary-color);
   box-shadow: var(--shadow-lg);
 }
@@ -412,26 +424,37 @@
 }
 
 .sponsor-icon {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .sponsor-name {
   color: var(--primary-color);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 0.75rem;
   letter-spacing: 0.3px;
 }
 
 .sponsor-description {
   color: var(--text-medium);
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-bottom: 0;
   line-height: 1.6;
   letter-spacing: 0.2px;
+  font-weight: 500;
 }
 
 /* Responsive */

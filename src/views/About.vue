@@ -1,5 +1,17 @@
 <template>
   <div class="about">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-section">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <ol class="breadcrumb-list">
+            <li><router-link to="/">Home</router-link></li>
+            <li class="active" aria-current="page">Information</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
     <div class="container my-5">
       <h2 class="page-title">Information</h2>
 
@@ -48,6 +60,62 @@
 <style scoped>
 .about {
   background-color: var(--white);
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-section {
+  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(212, 165, 116, 0.05) 100%);
+  border-bottom: 2px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb-list li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: '›';
+  margin-left: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.breadcrumb-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+  border-bottom: 2px solid transparent;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--link-hover);
+  border-bottom: 2px solid var(--link-hover);
+}
+
+.breadcrumb-list li.active {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .page-title {
@@ -163,6 +231,16 @@
 }
 
 @media (max-width: 768px) {
+  .breadcrumb-section {
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb-list {
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+
   .info-section {
     padding: 1.5rem;
   }
@@ -177,6 +255,15 @@
 }
 
 @media (max-width: 576px) {
+  .breadcrumb-section {
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb-list {
+    font-size: 0.85rem;
+  }
+
   .page-title {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;

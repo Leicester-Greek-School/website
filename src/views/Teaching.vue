@@ -1,5 +1,17 @@
 <template>
   <div class="teaching" role="main" :aria-labelledby="titleId">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-section">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <ol class="breadcrumb-list">
+            <li><router-link to="/">Home</router-link></li>
+            <li class="active" aria-current="page">{{ selectedLocale === 'el' ? 'Διδασκαλία' : 'Teaching' }}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
     <div class="container my-5">
       <div class="mb-4">
         <h2 :id="titleId" class="page-title mb-0">{{ pageTitle }}</h2>
@@ -206,6 +218,62 @@ export default {
 <style scoped>
 .teaching {
   background-color: var(--white);
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-section {
+  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(212, 165, 116, 0.05) 100%);
+  border-bottom: 2px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb-list li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: '›';
+  margin-left: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.breadcrumb-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+  border-bottom: 2px solid transparent;
+}
+
+.breadcrumb-list a:hover {
+  color: var(--link-hover);
+  border-bottom: 2px solid var(--link-hover);
+}
+
+.breadcrumb-list li.active {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .page-title {
