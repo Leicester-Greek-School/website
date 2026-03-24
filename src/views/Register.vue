@@ -1,23 +1,47 @@
 <template>
   <div class="register">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-section">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <ol class="breadcrumb-list">
+            <li><router-link to="/">Home</router-link></li>
+            <li class="active" aria-current="page">Register</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
     <div class="container my-5">
-      <h2 class="page-title">Register Your Child</h2>
+      <h2 class="page-title">Register for Greek Classes in Leicester</h2>
 
       <div class="info-section mb-4">
         <h3 class="section-title">Enrollment Information</h3>
         <p class="text-justify">
           We welcome new students throughout the year. Leicester Greek School accepts children from age 4
-          to our Nursery class. We also offer classes for older children and teenagers, including GCSE
-          Greek preparation.
+          to our Nursery class, and we offer classes for older children and teenagers including GCSE
+          Greek preparation. We also offer <strong>Greek language classes for adults</strong> on
+          <router-link to="/greek-for-adults" class="internal-link">Wednesday evenings and Saturday mornings</router-link>
+          — open to complete beginners and all levels.
         </p>
 
         <div class="highlight-box">
-          <h4 class="subsection-title">Age Groups</h4>
+          <h4 class="subsection-title">Children — Age Groups</h4>
           <ul class="info-list">
-            <li>Nursery - From age 4</li>
-            <li>Primary Classes - Ages 5-11</li>
-            <li>Secondary Classes - Ages 11-16</li>
-            <li>GCSE Preparation - Ages 14-16</li>
+            <li>Nursery — From age 4</li>
+            <li>Primary Classes — Ages 5–11</li>
+            <li>Secondary Classes — Ages 11–16</li>
+            <li>GCSE Preparation — Ages 14–16</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box mt-3">
+          <h4 class="subsection-title">Adults — All Levels Welcome</h4>
+          <ul class="info-list">
+            <li>Complete beginners — no prior knowledge needed</li>
+            <li>Intermediate learners — build on existing Greek</li>
+            <li>Heritage speakers — formalise and improve your Greek</li>
+            <li>Wednesday evenings &amp; Saturday mornings in Leicester</li>
           </ul>
         </div>
       </div>
@@ -61,14 +85,78 @@
 </template>
 
 <script>
+import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
+
 export default {
-  name: 'Register'
+  name: 'Register',
+  mounted() {
+    injectJsonLd('breadcrumb-register', breadcrumbSchema([
+      { name: 'Home', url: 'https://leicestergreekschool.com/' },
+      { name: 'Register', url: 'https://leicestergreekschool.com/register' }
+    ]));
+  },
+  beforeUnmount() {
+    removeJsonLd('breadcrumb-register');
+  }
 };
 </script>
 
 <style scoped>
 .register {
   background-color: var(--white);
+}
+
+/* Breadcrumb */
+.breadcrumb-section {
+  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(212, 165, 116, 0.05) 100%);
+  border-bottom: 2px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-bottom: 0;
+}
+
+.breadcrumb-nav { display: flex; align-items: center; }
+
+.breadcrumb-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: '›';
+  margin-left: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.breadcrumb-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.breadcrumb-list a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+.breadcrumb-list li.active { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
+
+.internal-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: var(--transition-smooth);
+}
+
+.internal-link:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
 }
 
 .page-title {

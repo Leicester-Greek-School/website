@@ -50,6 +50,18 @@ module.exports = {
           to: '[name][ext]',
           noErrorOnMissing: true,
           force: true
+        },
+        {
+          from: 'robots.txt',
+          to: '[name][ext]',
+          noErrorOnMissing: true,
+          force: true
+        },
+        {
+          from: 'sitemap.xml',
+          to: '[name][ext]',
+          noErrorOnMissing: true,
+          force: true
         }
       ]
     })

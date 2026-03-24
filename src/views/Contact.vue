@@ -95,8 +95,19 @@
 </template>
 
 <script>
+import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
+
 export default {
-  name: 'Contact'
+  name: 'Contact',
+  mounted() {
+    injectJsonLd('breadcrumb-contact', breadcrumbSchema([
+      { name: 'Home', url: 'https://leicestergreekschool.com/' },
+      { name: 'Contact Us', url: 'https://leicestergreekschool.com/contact' }
+    ]));
+  },
+  beforeUnmount() {
+    removeJsonLd('breadcrumb-contact');
+  }
 };
 </script>
 

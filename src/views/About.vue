@@ -19,43 +19,64 @@
         <h3 class="section-title">About Leicester Greek School</h3>
         <p class="text-justify">
           Leicester Greek School (Saint Nicholas and Xenophon) has been serving the local Greek and
-          Cypriot community since the 1980s. We provide high-quality Greek language education and
-          promote Greek culture and traditions.
+          Cypriot community since the 1980s. Located at <strong>2A Sawday Street, Leicester, LE2 7JW</strong>,
+          we provide high-quality Greek language education and promote Greek culture and traditions to
+          families across <strong>Leicester, Leicestershire and the East Midlands</strong>.
         </p>
 
         <h3 class="section-title">Opening Hours</h3>
         <p class="text-justify">
-          Lessons for children take place every Saturday, from 11:00 until 15:30.
+          Lessons for children take place every <strong>Saturday, from 11:00 until 15:30</strong>.
         </p>
         <p class="text-justify">
-          Lessons for adults run twice a week, on Wednesday and Saturday.
+          Lessons for adults run twice a week, on <strong>Wednesday</strong> and <strong>Saturday</strong>.
+          Find out more on our <router-link to="/greek-for-adults" class="internal-link">Greek for Adults</router-link> page.
         </p>
 
         <h3 class="section-title">What We Offer</h3>
         <ul class="info-list">
-          <li>Modern Greek language lessons for all ages</li>
-          <li>GCSE Greek preparation</li>
+          <li>Modern Greek language lessons for children and adults of all levels</li>
+          <li>GCSE Greek preparation for students in Leicester and Leicestershire</li>
           <li>Greek and Cypriot traditional dance classes</li>
           <li>Greek music and cultural activities</li>
           <li>Nursery classes for children from age 4</li>
+          <li>Online learning options through the Cyprus Educational Mission (KEA)</li>
         </ul>
 
         <h3 class="section-title">Our Teaching Staff</h3>
         <p class="text-justify">
           The teaching staff consists of Greek native speakers with University degrees in education,
           many years of teaching experience and enthusiasm for what they do. All our teachers are
-          highly qualified and dedicated to preserving Greek language and culture.
+          highly qualified and dedicated to preserving Greek language and culture in Leicester.
         </p>
 
         <h3 class="section-title">Curriculum</h3>
         <p class="text-justify">
           The curriculum followed by our school is provided by the
-          <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a>.
+          <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a> —
+          the same accredited programme used in Greek schools across the United Kingdom.
         </p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
+
+export default {
+  name: 'About',
+  mounted() {
+    injectJsonLd('breadcrumb-about', breadcrumbSchema([
+      { name: 'Home', url: 'https://leicestergreekschool.com/' },
+      { name: 'Information', url: 'https://leicestergreekschool.com/about' }
+    ]));
+  },
+  beforeUnmount() {
+    removeJsonLd('breadcrumb-about');
+  }
+};
+</script>
 
 <style scoped>
 .about {

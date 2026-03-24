@@ -140,9 +140,19 @@
 <script>
 import { PAGE_TITLES, TEACHING_GROUPS, TEACHING_GROUPS_ONLINE } from '@/data/staff';
 import { localeStore } from '@/stores/locale';
+import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
 
 export default {
   name: 'Teaching',
+  mounted() {
+    injectJsonLd('breadcrumb-teaching', breadcrumbSchema([
+      { name: 'Home', url: 'https://leicestergreekschool.com/' },
+      { name: 'Teaching Staff', url: 'https://leicestergreekschool.com/teaching' }
+    ]));
+  },
+  beforeUnmount() {
+    removeJsonLd('breadcrumb-teaching');
+  },
   data() {
     return {
       titleId: 'teachingTitle'

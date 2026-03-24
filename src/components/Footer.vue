@@ -20,6 +20,7 @@
           <h6 class="footer-heading">For Students</h6>
           <ul class="footer-links">
             <li><router-link to="/register">Register</router-link></li>
+            <li><router-link to="/greek-for-adults">Greek for Adults</router-link></li>
             <li><router-link to="/announcements">Announcements</router-link></li>
             <li><router-link to="/policies">Policies</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>
@@ -32,8 +33,29 @@
           </p>
           <p class="footer-text small">
             <strong>Saturday Classes:</strong><br>
-            09:30 - 18:00
+            11:00 – 15:30
           </p>
+          <p class="footer-text small">
+            <strong>Adult Classes:</strong><br>
+            Wednesday &amp; Saturday
+          </p>
+          <a href="https://www.facebook.com/Leicester.Greek" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Leicester Greek School on Facebook">
+            <span class="footer-social-icon">👍</span> Facebook
+          </a>
+        </div>
+      </div>
+
+      <!-- NAP Block for local SEO -->
+      <div class="row mt-3 mb-2">
+        <div class="col-12">
+          <address class="footer-nap">
+            <strong>Leicester Greek School</strong> (Saint Nicholas and Xenophon) —
+            <span itemprop="streetAddress">2A Sawday Street</span>,
+            <span itemprop="addressLocality">Leicester</span>,
+            <span itemprop="postalCode">LE2 7JW</span> —
+            <a href="tel:+447784957591" class="footer-nap-link" itemprop="telephone">07784 957591</a> —
+            <a href="mailto:headteacher@leicestergreekschool.com" class="footer-nap-link" itemprop="email">headteacher@leicestergreekschool.com</a>
+          </address>
         </div>
       </div>
       <hr class="footer-divider">
@@ -227,5 +249,48 @@ export default {
   .footer-text {
     font-size: 0.9rem;
   }
+}
+
+/* NAP block */
+.footer-nap {
+  font-style: normal;
+  font-size: 0.8rem;
+  color: rgba(234, 244, 255, 0.7);
+  text-align: center;
+  line-height: 1.8;
+}
+
+.footer-nap-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.footer-nap-link:hover {
+  color: var(--white);
+}
+
+/* Social link */
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  transition: var(--transition-smooth);
+  border-bottom: 1px solid transparent;
+}
+
+.footer-social-link:hover {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+.footer-social-icon {
+  font-size: 1rem;
 }
 </style>

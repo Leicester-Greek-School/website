@@ -10,7 +10,7 @@
               <h1 class="hero-title">Welcome to Leicester Greek School</h1>
               <p class="hero-subtitle">Saint Nicholas and Xenophon</p>
               <p class="hero-description">
-                Celebrating Greek language and culture in Leicester since the 1980s. A vibrant community school dedicated to preserving our heritage and inspiring the next generation.
+                Celebrating Greek language and culture in Leicester and Leicestershire since the 1980s. A vibrant community school teaching Modern Greek, dance and music — welcoming children from age 4 and adults of all levels.
               </p>
               <div class="hero-cta-buttons">
                 <router-link to="/register" class="btn btn-primary btn-lg">
@@ -35,7 +35,7 @@
 
             <p class="lead-text">
               Saint Nicholas and Xenophon Greek School is located in Leicester and was established in the 1980's
-              by the Greek and Cypriot Community. Our curriculum is provided by the
+              by the Greek and Cypriot Community. Serving families across <strong>Leicester, Leicestershire and the East Midlands</strong>, our curriculum is provided by the
               <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a>.
             </p>
 
@@ -45,7 +45,7 @@
               <div class="aims-list">
                 <div class="aim-item">
                   <span class="aim-icon">🗣️</span>
-                  <span>Modern Greek language</span>
+                  <span>Modern Greek language — children &amp; adults</span>
                 </div>
                 <div class="aim-item">
                   <span class="aim-icon">🎵</span>
@@ -59,19 +59,24 @@
             </div>
 
             <p class="text-justify">
-              Our school organises various events of national and educational significance aimed at cultivating national consciousness and strengthening our community identity. Our teaching staff consists of native Greek speakers with university degrees in education, extensive teaching experience, and a genuine passion for education.
+              Our school organises various events of national and educational significance aimed at cultivating national consciousness and strengthening our community identity in Leicester. Our teaching staff consists of native Greek speakers with university degrees in education, extensive teaching experience, and a genuine passion for education.
             </p>
 
             <p class="text-justify">
-              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages.
+              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages, including <strong>GCSE Greek preparation</strong> and <strong><router-link to="/greek-for-adults" class="internal-link">Greek classes for adults</router-link></strong> on Wednesday evenings and Saturday mornings.
             </p>
 
             <div class="call-to-action-box">
               <h4 class="cta-title">Ready to Join?</h4>
-              <p class="cta-text">For more information about our programmes, opening days, hours, and fees, please check our information page.</p>
-              <router-link to="/about" class="btn btn-secondary btn-sm">
-                <span>View Details</span>
-              </router-link>
+              <p class="cta-text">For more information about our programmes in Leicester — opening days, hours, fees and how to enrol children or adults — please check our information page.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <router-link to="/about" class="btn btn-secondary btn-sm">
+                  <span>School Information</span>
+                </router-link>
+                <router-link to="/greek-for-adults" class="btn btn-secondary btn-sm">
+                  <span>Greek for Adults</span>
+                </router-link>
+              </div>
             </div>
           </div>
         </div>

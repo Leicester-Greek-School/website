@@ -1,7 +1,19 @@
 <template>
   <div class="announcements" role="main" aria-labelledby="announcementsTitle">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-section">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <ol class="breadcrumb-list">
+            <li><router-link to="/">Home</router-link></li>
+            <li class="active" aria-current="page">Announcements</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
     <div class="container my-5">
-      <h2 id="announcementsTitle" class="page-title">Announcements</h2>
+      <h2 id="announcementsTitle" class="page-title">News &amp; Announcements</h2>
       <p class="lead" v-if="announcements.length === 0">No announcements at this time. Please check back soon.</p>
       <ul v-else class="announcement-list" aria-label="Latest announcements">
         <li v-for="(a, i) in announcements" :key="i" class="announcement-item">
@@ -19,15 +31,25 @@
 </template>
 
 <script>
+import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
+
 export default {
   name: 'Announcements',
+  mounted() {
+    injectJsonLd('breadcrumb-announcements', breadcrumbSchema([
+      { name: 'Home', url: 'https://leicestergreekschool.com/' },
+      { name: 'Announcements', url: 'https://leicestergreekschool.com/announcements' }
+    ]));
+  },
+  beforeUnmount() {
+    removeJsonLd('breadcrumb-announcements');
+  },
   data() {
     return {
       announcements: [
-        // Example placeholder item; replace with real data or fetch from API later
         {
           title: 'Welcome Back to the New Term',
-            body: 'Classes resume this Saturday. We look forward to seeing all students and welcoming new families.',
+          body: 'Classes resume this Saturday. We look forward to seeing all students and welcoming new families.',
           dateISO: '2025-09-06',
           dateDisplay: '6 Sep 2025'
         }
@@ -41,6 +63,46 @@ export default {
 .announcements {
   background-color: var(--white);
 }
+
+/* Breadcrumb */
+.breadcrumb-section {
+  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(212, 165, 116, 0.05) 100%);
+  border-bottom: 2px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-bottom: 0;
+}
+
+.breadcrumb-nav { display: flex; align-items: center; }
+
+.breadcrumb-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: '›';
+  margin-left: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.breadcrumb-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.breadcrumb-list a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+.breadcrumb-list li.active { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
 
 .page-title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
