@@ -1,24 +1,24 @@
 :root {
-  /* Leicester Greek School Color Palette - Greek blue & white theme */
-  --primary-color: #0b5ed7;        /* Greek blue - main brand color */
-  --primary-dark: #083d8a;         /* Darker blue for contrast */
-  --primary-darker: #051f3d;       /* Very dark blue for deep contrast */
-  --primary-light: #eaf4ff;        /* Very light blue background */
-  --secondary-color: #0a58ca;      /* Medium blue for accents */
+  /* Leicester Greek School Color Palette - Inspired by LSG Logo (Purple & White theme) */
+  --primary-color: #590f32;        /* Deep purple/maroon from logo - main brand color */
+  --primary-dark: #3d0a23;         /* Darker purple for contrast */
+  --primary-darker: #2a0617;       /* Very dark purple for deep contrast */
+  --primary-light: #f4e8f0;        /* Very light purple/mauve background */
+  --secondary-color: #753856;      /* Medium purple for accents from logo */
   --accent-gold: #d4a574;          /* Warm accent for highlights */
   --accent-gold-dark: #b8944a;     /* Darker gold for hover states */
   --background-cream: var(--primary-light); /* kept name for compatibility */
-  --text-dark: #0b2136;            /* Very dark navy for text */
-  --text-medium: #33506b;          /* Medium blue-gray for secondary text */
-  --text-light: #6c757d;           /* Light gray for muted text */
-  --border-color: #cfe2ff;         /* Light blue for borders */
-  --link-color: var(--primary-color);           /* Primary blue for links */
-  --link-hover: var(--primary-dark);           /* Darker blue for hover */
+  --text-dark: #2a0617;            /* Very dark purple for text */
+  --text-medium: #5a3d4d;          /* Medium purple-gray for secondary text */
+  --text-light: #8a6d7d;           /* Light purple-gray for muted text */
+  --border-color: #e8d6e3;         /* Light purple for borders */
+  --link-color: var(--primary-color);           /* Primary purple for links */
+  --link-hover: var(--primary-dark);           /* Darker purple for hover */
   --success-green: #2d5a3d;        /* Accessible green */
-  --shadow-sm: 0 2px 4px rgba(11, 94, 215, 0.1);
-  --shadow-md: 0 4px 12px rgba(11, 94, 215, 0.15);
-  --shadow-lg: 0 8px 24px rgba(11, 94, 215, 0.2);
-  --shadow-xl: 0 12px 32px rgba(11, 94, 215, 0.25);
+  --shadow-sm: 0 2px 4px rgba(89, 15, 50, 0.1);
+  --shadow-md: 0 4px 12px rgba(89, 15, 50, 0.15);
+  --shadow-lg: 0 8px 24px rgba(89, 15, 50, 0.2);
+  --shadow-xl: 0 12px 32px rgba(89, 15, 50, 0.25);
   --white: #ffffff;
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

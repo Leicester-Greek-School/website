@@ -2,8 +2,11 @@
   <div>
     <div class="top-header border-top-primary">
       <div class="container py-3">
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-          <div>
+        <div class="d-flex justify-content-start align-items-center flex-wrap gap-3">
+          <div class="logo-container">
+            <img src="@/assets/images/lgs-logo.jpg" alt="Leicester Greek School Logo" class="school-logo" />
+          </div>
+          <div class="school-info">
             <h1 class="school-title mb-0">
               <router-link to="/" class="text-decoration-none" aria-label="Leicester Greek School - Home">
                 Leicester Greek School
@@ -83,6 +86,33 @@ export default {
   border-top: 5px solid var(--primary-color);
   box-shadow: var(--shadow-md);
   padding: 1rem 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.school-logo {
+  width: 80px;
+  height: auto;
+  max-height: 80px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.school-logo:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.school-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .school-title {
@@ -178,7 +208,7 @@ export default {
 .nav-link:hover,
 .nav-link:focus {
   color: var(--primary-color) !important;
-  background-color: rgba(11, 94, 215, 0.1);
+  background-color: rgba(89, 15, 50, 0.1);
 }
 
 .nav-link::after {
@@ -228,29 +258,25 @@ export default {
     display: none;
   }
 
-  .router-link-active {
-    background-color: rgba(11, 94, 215, 0.15) !important;
-    border-left: 4px solid var(--primary-color);
-    padding-left: calc(1.5rem - 4px) !important;
-  }
+.router-link-active {
+  background-color: rgba(89, 15, 50, 0.15) !important;
+  border-left: 4px solid var(--primary-color);
+  padding-left: calc(1.5rem - 4px) !important;
+}
 }
 
 @media (max-width: 576px) {
+  .school-logo {
+    width: 60px;
+    max-height: 60px;
+  }
+
   .school-title {
     font-size: 1.5rem;
   }
 
   .school-subtitle {
     font-size: 0.8rem;
-  }
-
-  .locale-switch {
-    gap: 0.5rem;
-  }
-
-  .btn-locale {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
   }
 }
 </style>
