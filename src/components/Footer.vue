@@ -61,39 +61,68 @@ export default {
 
 <style scoped>
 .footer-main {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-darker) 0%, var(--primary-color) 50%, var(--primary-dark) 100%);
   color: var(--primary-light);
-  margin-top: 3rem;
-  box-shadow: 0 -4px 12px rgba(11, 94, 215, 0.2);
+  margin-top: 4rem;
+  box-shadow: var(--shadow-xl) inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  padding: 3rem 0;
+}
+
+.footer-main::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  pointer-events: none;
 }
 
 .footer-title {
   color: var(--white);
-  font-size: 20px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 0.25rem;
-  font-weight: bold;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .footer-subtitle {
   color: var(--accent-gold);
-  font-size: 14px;
+  font-size: 0.9rem;
   font-style: italic;
   margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .footer-heading {
   color: var(--accent-gold);
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-heading::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1.2rem;
+  background: var(--accent-gold);
+  border-radius: 1.5px;
 }
 
 .footer-text {
   color: var(--primary-light);
-  line-height: 1.6;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
 }
 
 .footer-links {
@@ -103,47 +132,100 @@ export default {
 }
 
 .footer-links li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer-links a {
   color: var(--primary-light);
   text-decoration: none;
-  transition: all 0.2s ease;
-  display: inline-block;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-links a::before {
+  content: '→';
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: var(--transition-smooth);
 }
 
 .footer-links a:hover,
 .footer-links a:focus {
   color: var(--white);
-  text-decoration: none;
-  transform: translateX(5px);
-  outline: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid var(--white);
   padding-left: 5px;
 }
 
+.footer-links a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .footer-divider {
-  border-top: 1px solid rgba(234, 244, 255, 0.3);
-  margin: 2rem 0 1.5rem 0;
+  border-top: 1px solid rgba(234, 244, 255, 0.25);
+  margin: 2.5rem 0 2rem 0;
 }
 
 .footer-copyright {
-  color: var(--border-color);
-  font-size: 13px;
+  color: rgba(234, 244, 255, 0.85);
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
 }
 
 .footer-policy-link {
   color: var(--accent-gold);
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+  transition: var(--transition-smooth);
+  padding: 0.25rem 0.75rem;
   border-radius: 4px;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
 }
 
 .footer-policy-link:hover,
 .footer-policy-link:focus {
   color: var(--white);
-  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid var(--white);
+}
+
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 2rem 1rem;
+  }
+
+  .footer-heading {
+    margin-top: 1.5rem;
+  }
+
+  .footer-heading::before {
+    display: none;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-title {
+    font-size: 1.25rem;
+  }
+
+  .footer-heading {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
 }
 </style>

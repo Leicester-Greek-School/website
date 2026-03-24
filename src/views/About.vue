@@ -48,28 +48,29 @@
 <style scoped>
 .about {
   background-color: var(--white);
-  min-height: 70vh;
 }
 
 .page-title {
-  font-size: 28px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
   border-bottom: 3px solid var(--accent-gold);
-  padding-bottom: 0.5rem;
   display: inline-block;
+  letter-spacing: -0.5px;
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 2rem 0 1rem 0;
-  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 2rem 0 1.25rem 0;
+  font-weight: 700;
   position: relative;
-  padding-left: 1rem;
+  padding-left: 1.25rem;
+  letter-spacing: 0.3px;
 }
 
 .section-title::before {
@@ -78,65 +79,116 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 4px;
-  height: 100%;
-  background-color: var(--primary-color);
+  width: 5px;
+  height: 1.5rem;
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2.5px;
 }
 
 .info-section {
-  margin-bottom: 2rem;
-  background-color: var(--background-cream);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
-  border: 1px solid var(--border-color);
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, var(--primary-light) 0%, #f8fbff 100%);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border-color);
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .text-justify {
   text-align: justify;
-  margin-bottom: 1rem;
-  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
   color: var(--text-dark);
+  font-size: 1rem;
+  letter-spacing: 0.2px;
 }
 
 .info-list {
-  margin-left: 2rem;
-  margin-bottom: 1.5rem;
-  background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 6px;
+  margin-left: 0;
+  margin-bottom: 2rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
   list-style: none;
-  border: 1px solid var(--border-color);
+  border-left: 5px solid var(--accent-gold);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 1rem;
 }
 
 .info-list li {
-  margin-bottom: 0.75rem;
   line-height: 1.8;
   color: var(--text-dark);
   position: relative;
-  padding-left: 1.8rem;
+  padding-left: 2.25rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
 }
 
 .info-list li::before {
-  content: '●';
+  content: '✓';
   position: absolute;
   left: 0;
   color: var(--primary-color);
-  font-size: 1.2em;
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .external-link {
   color: var(--secondary-color);
   text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px dotted var(--secondary-color);
-  transition: all 0.2s ease;
+  font-weight: 700;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: var(--transition-smooth);
 }
 
 .external-link:hover,
 .external-link:focus {
   color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-  text-decoration: none;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .info-section {
+    padding: 1.5rem;
+  }
+
+  .info-list {
+    padding: 1.5rem;
+  }
+
+  .section-title::before {
+    height: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 1rem 0;
+  }
+
+  .info-list li {
+    font-size: 0.95rem;
+  }
 }
 </style>

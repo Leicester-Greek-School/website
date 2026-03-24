@@ -102,28 +102,29 @@
 <style scoped>
 .policies {
   background-color: var(--white);
-  min-height: 70vh;
 }
 
 .page-title {
-  font-size: 28px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
   border-bottom: 3px solid var(--accent-gold);
-  padding-bottom: 0.5rem;
   display: inline-block;
+  letter-spacing: -0.5px;
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 0 0 1rem 0;
-  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
   position: relative;
-  padding-left: 1rem;
+  padding-left: 1.25rem;
+  letter-spacing: 0.3px;
 }
 
 .section-title::before {
@@ -132,43 +133,63 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 4px;
-  height: 100%;
-  background-color: var(--primary-color);
+  width: 5px;
+  height: 1.5rem;
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2.5px;
 }
 
 .info-section {
-  margin-bottom: 2rem;
-  background-color: var(--background-cream);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
-  border: 1px solid var(--border-color);
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, var(--primary-light) 0%, #f8fbff 100%);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border-color);
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .text-justify {
   text-align: justify;
-  margin-bottom: 1rem;
-  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
   color: var(--text-dark);
+  font-size: 1rem;
+  letter-spacing: 0.2px;
 }
 
 .policy-list {
-  margin-left: 2rem;
+  margin-left: 0;
   margin-bottom: 0;
   background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 6px;
+  padding: 2rem;
+  border-radius: 10px;
   list-style: none;
-  border: 1px solid var(--border-color);
+  border-left: 5px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 1rem;
 }
 
 .policy-list li {
-  margin-bottom: 0.75rem;
   line-height: 1.8;
   color: var(--text-dark);
   position: relative;
-  padding-left: 1.8rem;
+  padding-left: 2rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
 }
 
 .policy-list li::before {
@@ -176,45 +197,110 @@
   position: absolute;
   left: 0;
   color: var(--primary-color);
-  font-weight: bold;
-  font-size: 1.1em;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .procedure-list {
-  margin-left: 2rem;
+  margin-left: 0;
   margin-bottom: 0;
   background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 5px solid var(--secondary-color);
+  box-shadow: var(--shadow-sm);
   color: var(--text-dark);
   line-height: 1.8;
+  counter-reset: step;
+  list-style: none;
 }
 
 .procedure-list li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  padding-left: 2.5rem;
+  position: relative;
+  counter-increment: step;
+}
+
+.procedure-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .contact-box {
-  background-color: var(--background-cream);
-  border: 2px solid var(--accent-gold);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 2rem;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: var(--white);
+  border: none;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-box p {
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
 .internal-link {
-  color: var(--secondary-color);
+  color: var(--accent-gold);
   text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px dotted var(--secondary-color);
-  transition: all 0.2s ease;
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-gold);
+  transition: var(--transition-smooth);
 }
 
 .internal-link:hover,
 .internal-link:focus {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-  text-decoration: none;
+  color: var(--white);
+  border-bottom: 3px solid var(--white);
+}
+
+@media (max-width: 768px) {
+  .info-section {
+    padding: 1.5rem;
+  }
+
+  .policy-list,
+  .procedure-list {
+    padding: 1.5rem;
+  }
+
+  .contact-box {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .policy-list li,
+  .procedure-list li {
+    font-size: 0.95rem;
+  }
+
+  .procedure-list li::before {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.8rem;
+  }
 }
 </style>

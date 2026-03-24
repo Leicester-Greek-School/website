@@ -69,124 +69,223 @@ export default {
 <style scoped>
 .register {
   background-color: var(--white);
-  min-height: 70vh;
 }
 
 .page-title {
-  font-size: 28px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
   border-bottom: 3px solid var(--accent-gold);
-  padding-bottom: 0.5rem;
   display: inline-block;
+  letter-spacing: -0.5px;
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 1.5rem 0 1rem 0;
-  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 2rem 0 1.25rem 0;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
 .subsection-title {
-  font-size: 18px;
+  font-size: 1.25rem;
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 1rem 0 0.75rem 0;
-  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 1.5rem 0 1rem 0;
+  font-weight: 700;
 }
 
 .info-section {
-  background-color: var(--background-cream);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
-  border: 1px solid var(--border-color);
+  margin-bottom: 2.5rem;
+  background: linear-gradient(135deg, var(--primary-light) 0%, #f8fbff 100%);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border-color);
+  animation: slideInUp 0.8s ease-out;
 }
 
-.highlight-box {
-  background-color: var(--white);
-  padding: 1.5rem;
-  border-radius: 6px;
-  border-left: 4px solid var(--primary-color);
-  margin-top: 1.5rem;
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .text-justify {
   text-align: justify;
-  margin-bottom: 1rem;
-  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
   color: var(--text-dark);
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+.highlight-box {
+  background: var(--white);
+  border-left: 5px solid var(--accent-gold);
+  padding: 1.75rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
 }
 
 .info-list {
-  margin-left: 1.5rem;
-  margin-bottom: 0;
-  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 1.5rem;
+  padding: 0;
   list-style: none;
+  display: grid;
+  gap: 1rem;
 }
 
 .info-list li {
-  margin-bottom: 0.75rem;
-  line-height: 1.8;
-  color: var(--text-dark);
+  padding-left: 2rem;
   position: relative;
-  padding-left: 1.8rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.8;
 }
 
 .info-list li::before {
-  content: '●';
+  content: '→';
   position: absolute;
   left: 0;
   color: var(--primary-color);
-  font-size: 1.2em;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .registration-steps {
-  margin-left: 1.5rem;
-  color: var(--text-dark);
-  line-height: 1.8;
+  counter-reset: step-counter;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
 }
 
 .registration-steps li {
-  margin-bottom: 0.75rem;
+  counter-increment: step-counter;
+  margin-bottom: 1.5rem;
+  padding-left: 3rem;
+  position: relative;
+  color: var(--text-dark);
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.registration-steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .registration-online {
-  background-color: var(--background-cream);
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
-  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-top: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.registration-online .section-title {
+  color: var(--white);
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.registration-online .text-justify {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.registration-online .small {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+}
+
+.registration-online a {
+  color: var(--accent-gold);
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+.registration-online a:hover {
+  color: var(--white);
+  border-bottom-color: var(--white);
 }
 
 .custom-btn {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  border: none;
-  color: var(--white);
-  padding: 0.75rem 2.5rem;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(11, 94, 215, 0.3);
+  background-color: var(--white);
+  color: var(--primary-color);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  transition: var(--transition-smooth);
 }
 
 .custom-btn:hover {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  background-color: var(--accent-gold);
+  color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(11, 94, 215, 0.4);
+  box-shadow: var(--shadow-lg);
 }
 
-.custom-btn:active {
-  transform: translateY(0);
+@media (max-width: 768px) {
+  .info-section {
+    padding: 1.5rem;
+  }
+
+  .highlight-box {
+    padding: 1.25rem;
+  }
+
+  .registration-online {
+    padding: 1.5rem;
+  }
 }
 
-.custom-btn:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 3px;
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .registration-steps li {
+    padding-left: 2.5rem;
+  }
+
+  .registration-steps li::before {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.9rem;
+  }
 }
 </style>
+

@@ -55,72 +55,146 @@ export default {
 <style scoped>
 .contact {
   background-color: var(--white);
-  min-height: 70vh;
 }
 
 .page-title {
-  font-size: 28px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
   border-bottom: 3px solid var(--accent-gold);
-  padding-bottom: 0.5rem;
   display: inline-block;
+  letter-spacing: -0.5px;
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 1rem 0 1rem 0;
-  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 1.5rem 0 1.25rem 0;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
 .info-title {
-  font-size: 18px;
+  font-size: 1.25rem;
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 0.75rem;
-  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
 .text-justify {
   text-align: justify;
-  margin-bottom: 1rem;
-  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.9;
   color: var(--text-dark);
+  font-size: 1rem;
+  letter-spacing: 0.2px;
 }
 
 .contact-info {
-  background-color: var(--background-cream);
+  background: linear-gradient(135deg, var(--primary-light) 0%, #f8fbff 100%);
   border: 2px solid var(--border-color);
-  border-left: 4px solid var(--primary-color);
-  padding: 1.5rem;
+  border-left: 5px solid var(--primary-color);
+  padding: 2rem;
   margin-top: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  animation: slideInUp 0.8s ease-out 0.2s both;
 }
 
-.contact-info:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(11, 94, 215, 0.12);
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+address {
+  font-style: normal;
+  color: var(--text-dark);
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.contact-list {
+  padding: 0;
+  margin: 0;
 }
 
 .contact-list li {
-  margin-bottom: 0.6rem;
-  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  padding: 0;
+  color: var(--text-dark);
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.contact-list li strong {
+  display: block;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .contact-link {
   color: var(--secondary-color);
   text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: var(--transition-smooth);
+  display: inline-block;
 }
 
 .contact-link:hover,
 .contact-link:focus {
   color: var(--primary-color);
-  text-decoration: underline;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+address .d-block {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 1.5rem;
+  }
+
+  .contact-list li {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .contact-info {
+    padding: 1.25rem;
+  }
+
+  address {
+    font-size: 0.95rem;
+  }
+
+  .contact-list li {
+    font-size: 0.95rem;
+  }
 }
 </style>

@@ -1,63 +1,118 @@
 <template>
   <div class="home">
-    <section class="container my-5">
-      <h2 class="page-title">Welcome to our website!!!</h2>
-
-      <p class="lead-text">
-        Saint Nicholas and Xenophon Greek School is located in Leicester and was founded in the 1980's
-        by the Greek and Cypriot Community. The curriculum followed by our school is provided by the
-        <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a>.
-      </p>
-
-      <h3 class="section-title">The aim of the school is to teach:</h3>
-
-      <ul class="aims-list">
-        <li>the Modern Greek language,</li>
-        <li>a variety of Greek and Cypriot music and dancing,</li>
-        <li>the history of Greece and Cyprus as well as their culture.</li>
-      </ul>
-
-      <p class="text-justify">
-        Various events of national and educational content are being organised by the school and are
-        directed towards the cultivation of national consciousness and the strengthening of the
-        expatriates' identity. The teaching staff consists of Greek native speakers with University
-        degrees in education, many years of teaching experience and enthusiasm for what they do.
-      </p>
-
-      <p class="text-justify">
-        We accept children from the age of 4 to our Nursery.
-      </p>
-
-      <p class="text-justify">
-        For more information on opening days and hours as well as prices, please check our
-        <router-link to="/about" class="internal-link">information page</router-link>.
-      </p>
-
-      <router-link to="/register" class="join-text-link">
-        <p class="join-text">Join us to learn Modern Greek!!!</p>
-      </router-link>
-
-      <hr class="my-5">
-
-      <h2 class="page-title">Our Sponsors</h2>
-      <p class="text-justify">
-        We would like to thank our sponsors for their generous support:
-      </p>
-
-      <div class="row mt-4 mb-5">
-        <div class="col-md-6 mb-4">
-          <div class="card sponsor-card h-100">
-            <div class="card-body text-center">
-              <h5 class="card-title sponsor-name">A.D</h5>
-              <p class="card-text sponsor-description">Painting, Decorating & Wood Floor</p>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="row align-items-center py-5">
+          <div class="col-lg-7">
+            <div class="hero-text-wrapper">
+              <h1 class="hero-title">Welcome to Leicester Greek School</h1>
+              <p class="hero-subtitle">Saint Nicholas and Xenophon</p>
+              <p class="hero-description">
+                Celebrating Greek language and culture in Leicester since the 1980s. A vibrant community school dedicated to preserving our heritage and inspiring the next generation.
+              </p>
+              <div class="hero-cta-buttons">
+                <router-link to="/register" class="btn btn-primary btn-lg">
+                  <span>Register Now</span>
+                </router-link>
+                <router-link to="/about" class="btn btn-outline-primary btn-lg">
+                  <span>Learn More</span>
+                </router-link>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="hero-graphic">
+              <div class="decorative-shape-1"></div>
+              <div class="decorative-shape-2"></div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="col-md-6 mb-4">
-          <div class="card sponsor-card h-100">
-            <div class="card-body text-center">
-              <h5 class="card-title sponsor-name">Hellenic Supplies LTD</h5>
+    <!-- Main Content -->
+    <section class="container my-5 py-3">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="welcome-card">
+            <h2 class="page-title">About Us</h2>
+
+            <p class="lead-text">
+              Saint Nicholas and Xenophon Greek School is located in Leicester and was established in the 1980's
+              by the Greek and Cypriot Community. Our curriculum is provided by the
+              <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a>.
+            </p>
+
+            <h3 class="section-title">What We Teach</h3>
+
+            <div class="aims-list-wrapper">
+              <div class="aims-list">
+                <div class="aim-item">
+                  <span class="aim-icon">🗣️</span>
+                  <span>Modern Greek language</span>
+                </div>
+                <div class="aim-item">
+                  <span class="aim-icon">🎵</span>
+                  <span>Greek and Cypriot music and dancing</span>
+                </div>
+                <div class="aim-item">
+                  <span class="aim-icon">📚</span>
+                  <span>History of Greece and Cyprus, and their culture</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-justify">
+              Our school organises various events of national and educational significance aimed at cultivating national consciousness and strengthening our community identity. Our teaching staff consists of native Greek speakers with university degrees in education, extensive teaching experience, and a genuine passion for education.
+            </p>
+
+            <p class="text-justify">
+              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages.
+            </p>
+
+            <div class="call-to-action-box">
+              <h4 class="cta-title">Ready to Join?</h4>
+              <p class="cta-text">For more information about our programmes, opening days, hours, and fees, please check our information page.</p>
+              <router-link to="/about" class="btn btn-secondary btn-sm">
+                <span>View Details</span>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="accent my-5">
+
+    <!-- Sponsors Section -->
+    <section class="container my-5 py-3">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="page-title mb-4">Our Sponsors</h2>
+          <p class="text-justify sponsor-intro">
+            We would like to extend our heartfelt gratitude to our sponsors for their generous support and commitment to our community:
+          </p>
+
+          <div class="row mt-4 mb-5 g-4">
+            <div class="col-md-6">
+              <div class="card sponsor-card h-100 shadow-md">
+                <div class="card-body text-center">
+                  <div class="sponsor-icon">🏢</div>
+                  <h5 class="card-title sponsor-name">A.D</h5>
+                  <p class="card-text sponsor-description">Painting, Decorating & Wood Floor</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card sponsor-card h-100 shadow-md">
+                <div class="card-body text-center">
+                  <div class="sponsor-icon">🏪</div>
+                  <h5 class="card-title sponsor-name">Hellenic Supplies LTD</h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -69,163 +124,416 @@
 <style scoped>
 .home {
   background-color: var(--white);
-  min-height: 70vh;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-light) 0%, #f0f8ff 50%, var(--primary-light) 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+  border-bottom: 3px solid var(--border-color);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(11, 94, 215, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  animation: driftPattern 20s linear infinite;
+}
+
+@keyframes driftPattern {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(11, 94, 215, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text-wrapper {
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--primary-color);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--accent-gold);
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  letter-spacing: 0.3px;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero-cta-buttons .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.hero-graphic {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorative-shape-1,
+.decorative-shape-2 {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.decorative-shape-1 {
+  width: 250px;
+  height: 250px;
+  animation-delay: 0s;
+}
+
+.decorative-shape-2 {
+  width: 180px;
+  height: 180px;
+  border-color: var(--secondary-color);
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Main Content */
+.welcome-card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 3rem;
+  animation: slideInUp 0.8s ease-out 0.2s both;
 }
 
 .page-title {
-  font-size: 28px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
   border-bottom: 3px solid var(--accent-gold);
-  padding-bottom: 0.5rem;
   display: inline-block;
+  letter-spacing: -0.5px;
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin: 1.5rem 0 1rem 0;
-  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 2rem 0 1.5rem 0;
+  font-weight: 700;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 1.5rem;
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
 }
 
 .lead-text {
-  text-align: justify;
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.9;
   color: var(--text-dark);
-  font-size: 15px;
+  margin-bottom: 2rem;
+  letter-spacing: 0.3px;
 }
 
 .text-justify {
   text-align: justify;
-  margin-bottom: 1rem;
-  line-height: 1.8;
-  color: var(--text-dark);
+  line-height: 1.9;
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+/* Aims List */
+.aims-list-wrapper {
+  background: linear-gradient(135deg, var(--primary-light) 0%, #f5f9ff 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-left: 5px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
 }
 
 .aims-list {
-  margin-left: 2rem;
-  margin-bottom: 1.5rem;
-  background-color: var(--background-cream);
-  padding: 1.5rem;
-  border-left: 4px solid var(--primary-color);
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(11, 94, 215, 0.08);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.aims-list li {
-  margin-bottom: 0.75rem;
-  line-height: 1.8;
+.aim-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
   color: var(--text-dark);
-  position: relative;
-  padding-left: 1.5rem;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.2px;
 }
 
-.aims-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-weight: bold;
+.aim-icon {
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
 }
 
+/* External Link */
 .external-link {
   color: var(--secondary-color);
   text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px dotted var(--secondary-color);
-  transition: all 0.2s ease;
+  font-weight: 700;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: var(--transition-smooth);
 }
 
 .external-link:hover,
 .external-link:focus {
   color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-  text-decoration: none;
+  border-bottom: 3px solid var(--primary-color);
 }
 
-.internal-link {
-  color: var(--secondary-color);
-  text-decoration: none;
-  font-weight: 600;
-  border-bottom: 1px dotted var(--secondary-color);
-  transition: all 0.2s ease;
-}
-
-.internal-link:hover,
-.internal-link:focus {
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-  text-decoration: none;
-}
-
-.join-text-link {
-  text-decoration: none;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-.join-text-link:hover .join-text {
-  background-color: var(--primary-color);
+/* Call to Action Box */
+.call-to-action-box {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: var(--white);
-  border-color: var(--primary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(11, 94, 215, 0.2);
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin: 3rem 0;
+  box-shadow: var(--shadow-lg);
+  animation: slideInUp 0.8s ease-out 0.4s both;
 }
 
-.join-text {
-  font-weight: bold;
-  margin-top: 1.5rem;
+.cta-title {
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.cta-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.2px;
+}
+
+.call-to-action-box .btn {
+  background-color: var(--white);
   color: var(--primary-color);
-  font-size: 18px;
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--background-cream);
-  border: 2px solid var(--accent-gold);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
-  transition: all 0.3s ease;
+  font-weight: 700;
+  padding: 0.7rem 1.8rem;
 }
 
-.greek-text {
-  font-style: normal;
+.call-to-action-box .btn:hover {
+  background-color: var(--accent-gold);
+  color: var(--white);
 }
 
-hr {
-  border: 0;
-  border-top: 2px solid var(--border-color);
-  opacity: 0.5;
+/* Sponsors Section */
+.sponsor-intro {
+  font-size: 1rem;
+  color: var(--text-medium);
+  margin-bottom: 2rem;
 }
 
 .sponsor-card {
-  border: 2px solid var(--accent-gold);
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.08);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.sponsor-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .sponsor-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(11, 94, 215, 0.15);
+  transform: translateY(-6px);
   border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+}
+
+.sponsor-card:hover::before {
+  opacity: 1;
+}
+
+.sponsor-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
 
 .sponsor-name {
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: bold;
-  font-size: 22px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  font-size: 1.5rem;
   margin-bottom: 0.75rem;
+  letter-spacing: 0.3px;
 }
 
 .sponsor-description {
-  color: var(--text-dark);
-  font-size: 16px;
+  color: var(--text-medium);
+  font-size: 1rem;
   margin-bottom: 0;
   line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .welcome-card {
+    padding: 1.5rem;
+  }
+
+  .aims-list {
+    grid-template-columns: 1fr;
+  }
+
+  .call-to-action-box {
+    padding: 1.5rem;
+  }
+
+  .hero-cta-buttons {
+    flex-direction: column;
+  }
+
+  .hero-cta-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .welcome-card {
+    padding: 1.25rem;
+  }
+
+  .page-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title::before {
+    width: 3px;
+    height: 1.2rem;
+  }
+
+  .aims-list-wrapper {
+    padding: 1rem;
+  }
 }
 </style>

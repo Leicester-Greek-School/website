@@ -206,33 +206,48 @@ export default {
 <style scoped>
 .teaching {
   background-color: var(--white);
-  min-height: 70vh;
 }
 
 .page-title {
-  font-size: 28px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  padding-bottom: 1rem;
   border-bottom: 3px solid var(--accent-gold);
-  padding-bottom: 0.5rem;
   display: inline-block;
+  letter-spacing: -0.5px;
 }
 
 .section-title {
-  font-size: 22px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: var(--primary-color);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: bold;
-  border-bottom: 2px solid var(--accent-gold);
-  padding-bottom: 0.35rem;
-  display: inline-block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  border-bottom: 3px solid var(--accent-gold);
+  padding-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.3px;
 }
 
 /* Headteacher Section */
 .headteacher-section {
   position: relative;
-  padding: 2rem 0;
+  padding: 3rem 0;
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .headteacher-section::after {
@@ -241,86 +256,148 @@ export default {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 2px;
-  height: 40px;
+  width: 3px;
+  height: 50px;
   background: linear-gradient(to bottom, var(--accent-gold), transparent);
+  border-radius: 2px;
 }
 
 /* Teacher Cards */
 .teacher-card {
   border: 2px solid var(--border-color);
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: var(--transition-smooth);
   overflow: hidden;
   background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.teacher-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-gold));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .teacher-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(11, 94, 215, 0.15) !important;
-  border-color: var(--accent-gold);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.teacher-card:hover::before {
+  opacity: 1;
 }
 
 /* Teacher Photo Styles */
 .teacher-photo {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   object-position: center;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 3px solid var(--border-color);
+  transition: transform 0.4s ease;
+}
+
+.teacher-card:hover .teacher-photo {
+  transform: scale(1.05);
 }
 
 /* Photo Placeholder Styles */
 .teacher-photo-placeholder {
-  background: linear-gradient(135deg, var(--primary-light) 0%, var(--background-cream) 100%);
-  height: 200px;
+  background: linear-gradient(135deg, var(--primary-light) 0%, #f5f9ff 100%);
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 3px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.teacher-photo-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(11, 94, 215, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: driftPattern 15s linear infinite;
+}
+
+@keyframes driftPattern {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(30px, 30px);
+  }
 }
 
 .photo-icon {
   font-size: 80px;
   color: var(--primary-color);
-  opacity: 0.3;
+  opacity: 0.15;
+  position: relative;
+  z-index: 1;
 }
 
 .photo-icon-small {
   font-size: 60px;
   color: var(--primary-color);
-  opacity: 0.3;
+  opacity: 0.15;
+  position: relative;
+  z-index: 1;
 }
 
 /* Card Content */
+.card-body {
+  padding: 1.5rem;
+}
+
 .teacher-name {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
 }
 
 .teacher-title {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent-gold);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   font-size: 0.95rem;
+  letter-spacing: 0.2px;
 }
 
 .teacher-role {
-  color: var(--text-dark);
-  font-size: 0.85rem;
+  color: var(--text-medium);
+  font-size: 0.9rem;
   margin-bottom: 0;
+  letter-spacing: 0.1px;
 }
 
 /* Section Headers */
 .section-header {
   position: relative;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
 }
 
 /* Teaching Structure Layout */
 .teaching-structure {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 /* Responsive adjustments */
@@ -333,12 +410,20 @@ export default {
     height: 180px;
   }
 
+  .teacher-photo {
+    height: 180px;
+  }
+
   .photo-icon {
     font-size: 70px;
   }
 
   .photo-icon-small {
     font-size: 50px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
   }
 }
 
@@ -347,12 +432,42 @@ export default {
     height: 160px;
   }
 
+  .teacher-photo {
+    height: 160px;
+  }
+
   .page-title {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .section-title {
-    font-size: 20px;
+    font-size: 1.2rem;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+
+  .teacher-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .teacher-photo {
+    height: 140px;
+  }
+
+  .teacher-photo-placeholder {
+    height: 140px;
+  }
+
+  .photo-icon {
+    font-size: 50px;
+  }
+
+  .photo-icon-small {
+    font-size: 40px;
   }
 }
 </style>

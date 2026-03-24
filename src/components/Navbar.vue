@@ -93,126 +93,170 @@ export default {
 .top-header {
   background: linear-gradient(135deg, var(--background-cream) 0%, var(--primary-light) 100%);
   border-top: 5px solid var(--primary-color);
-  box-shadow: 0 2px 4px rgba(11, 94, 215, 0.1);
+  box-shadow: var(--shadow-md);
+  padding: 1rem 0;
 }
 
 .school-title {
-  font-size: 32px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 1.2;
   margin: 0;
   color: var(--primary-color);
+  font-weight: 700;
 }
 
 .school-title a {
   color: var(--primary-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  border-bottom: none;
+  transition: var(--transition-smooth);
+  display: inline-block;
 }
 
 .school-title a:hover,
 .school-title a:focus {
   color: var(--secondary-color);
   text-decoration: none;
+  transform: translateX(2px);
 }
 
 .school-subtitle {
-  font-size: 14px;
-  color: var(--text-medium);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: var(--accent-gold);
   font-style: italic;
+  font-weight: 500;
   margin-top: 0.25rem;
+  letter-spacing: 0.5px;
 }
 
 .locale-switch {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .btn-locale {
   background: var(--white);
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
-  padding: 0.35rem 0.8rem;
+  padding: 0.5rem 1rem;
   font-size: 0.8rem;
-  font-weight: 600;
-  border-radius: 999px;
+  font-weight: 700;
+  border-radius: 25px;
   cursor: pointer;
   line-height: 1;
-  transition: all 0.25s ease;
+  transition: var(--transition-smooth);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-locale:hover, .btn-locale:focus {
   background: var(--primary-color);
   color: var(--white);
-  box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.25);
+  box-shadow: var(--shadow-md);
   outline: none;
+  transform: translateY(-2px);
 }
 
 .btn-locale.active {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: var(--white);
-  border-color: var(--primary-color);
-  box-shadow: 0 2px 6px rgba(11, 94, 215, 0.35);
+  border-color: transparent;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 .navbar {
-  background: linear-gradient(to bottom, var(--primary-light) 0%, #f3f8ff 100%);
-  border-bottom: 2px solid var(--border-color);
-  box-shadow: 0 2px 8px rgba(11, 94, 215, 0.08);
+  background: linear-gradient(to bottom, var(--primary-light) 0%, #f5f9ff 100%);
+  border-bottom: 3px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  padding: 0 !important;
+}
+
+.navbar .container {
+  padding: 0 1rem;
 }
 
 .custom-toggler {
-  border-color: var(--secondary-color);
+  border-color: var(--primary-color);
+  padding: 0.6rem 0.8rem;
+  transition: var(--transition-smooth);
 }
 
+.custom-toggler:hover,
 .custom-toggler:focus {
-  box-shadow: 0 0 0 0.25rem rgba(11, 94, 215, 0.25);
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.25rem rgba(11, 94, 215, 0.15);
+}
+
+.custom-toggler:focus-visible {
+  outline-offset: 0;
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230b5ed7' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%230b5ed7' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.navbar-nav {
+  padding: 0.5rem 0;
+  gap: 0.25rem;
+}
+
+.nav-item {
+  position: relative;
 }
 
 .nav-link {
   color: var(--text-dark) !important;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 0.6rem 1.2rem !important;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 6px;
+  transition: var(--transition-smooth);
   position: relative;
+  letter-spacing: 0.3px;
 }
 
 .nav-link:hover,
 .nav-link:focus {
   color: var(--primary-color) !important;
-  background-color: rgba(11, 94, 215, 0.08);
+  background-color: rgba(11, 94, 215, 0.1);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 4px;
   left: 50%;
   width: 0;
-  height: 2px;
-  background-color: var(--primary-color);
-  transition: all 0.3s ease;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
+  border-radius: 1.5px;
 }
 
 .nav-link:hover::after {
-  width: 80%;
+  width: 70%;
 }
 
 .router-link-active {
-  font-weight: bold;
+  font-weight: 700;
   color: var(--primary-color) !important;
-  background-color: rgba(11, 94, 215, 0.1);
+  background-color: rgba(11, 94, 215, 0.12);
 }
 
 .router-link-active::after {
-  width: 80%;
+  width: 70%;
+  background: var(--primary-color);
 }
 
 @media (max-width: 991px) {
@@ -221,7 +265,42 @@ export default {
   }
 
   .nav-link {
+    padding: 0.75rem 1.5rem !important;
     margin: 0.25rem 0;
+    border-radius: 8px;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .router-link-active::after {
+    display: none;
+  }
+
+  .router-link-active {
+    background-color: rgba(11, 94, 215, 0.15) !important;
+    border-left: 4px solid var(--primary-color);
+    padding-left: calc(1.5rem - 4px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .school-title {
+    font-size: 1.5rem;
+  }
+
+  .school-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .locale-switch {
+    gap: 0.5rem;
+  }
+
+  .btn-locale {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
   }
 }
 </style>
