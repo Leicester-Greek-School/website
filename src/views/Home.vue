@@ -4,8 +4,8 @@
     <section class="hero-section">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <div class="row align-items-center py-5">
-          <div class="col-lg-7">
+        <div class="row justify-content-center py-5">
+          <div class="col-lg-8 col-xl-7">
             <div class="hero-text-wrapper">
               <h1 class="hero-title">Welcome to Leicester Greek School</h1>
               <p class="hero-subtitle">Saint Nicholas and Xenophon</p>
@@ -20,12 +20,6 @@
                   <span>Learn More</span>
                 </router-link>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-5 d-none d-lg-block">
-            <div class="hero-graphic">
-              <div class="decorative-shape-1"></div>
-              <div class="decorative-shape-2"></div>
             </div>
           </div>
         </div>
@@ -229,44 +223,6 @@
   transition: var(--transition-smooth);
 }
 
-.hero-graphic {
-  position: relative;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.decorative-shape-1,
-.decorative-shape-2 {
-  position: absolute;
-  border-radius: 50%;
-  border: 3px solid var(--primary-color);
-  opacity: 0.1;
-  animation: float 6s ease-in-out infinite;
-}
-
-.decorative-shape-1 {
-  width: 250px;
-  height: 250px;
-  animation-delay: 0s;
-}
-
-.decorative-shape-2 {
-  width: 180px;
-  height: 180px;
-  border-color: var(--secondary-color);
-  animation-delay: 1s;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
 
 /* Main Content */
 .welcome-card {
