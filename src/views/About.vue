@@ -30,7 +30,6 @@
         </p>
         <p class="text-justify">
           Lessons for adults run twice a week, on <strong>Wednesday</strong> and <strong>Saturday</strong>.
-          Find out more on our <router-link to="/greek-for-adults" class="internal-link">Greek for Adults</router-link> page.
         </p>
 
         <h3 class="section-title">What We Offer</h3>

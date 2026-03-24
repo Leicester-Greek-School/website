@@ -8,7 +8,6 @@ import Register from '../views/Register.vue';
 import Policies from '../views/Policies.vue';
 import Announcements from '../views/Announcements.vue';
 import PrivacyPolicy from '../views/PrivacyPolicy.vue';
-import GreekForAdults from '../views/GreekForAdults.vue';
 
 const BASE_TITLE = 'Leicester Greek School';
 
@@ -74,15 +73,6 @@ const routes = [
     meta: {
       title: 'News & Announcements | Leicester Greek School',
       description: 'Latest news and announcements from Leicester Greek School. Term dates, events, cultural activities and school updates for the Greek and Cypriot community in Leicester.'
-    }
-  },
-  {
-    path: '/greek-for-adults',
-    name: 'GreekForAdults',
-    component: GreekForAdults,
-    meta: {
-      title: 'Greek Lessons for Adults in Leicester & Leicestershire | Leicester Greek School',
-      description: 'Learn Modern Greek as an adult in Leicester. Leicester Greek School offers beginner and intermediate Greek language classes on Wednesday evenings and Saturday mornings. Open to all levels across Leicester, Leicestershire and the East Midlands.'
     }
   },
   {

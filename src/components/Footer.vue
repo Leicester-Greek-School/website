@@ -20,7 +20,6 @@
           <h6 class="footer-heading">For Students</h6>
           <ul class="footer-links">
             <li><router-link to="/register">Register</router-link></li>
-            <li><router-link to="/greek-for-adults">Greek for Adults</router-link></li>
             <li><router-link to="/announcements">Announcements</router-link></li>
             <li><router-link to="/policies">Policies</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>

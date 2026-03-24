@@ -20,8 +20,8 @@
         <p class="text-justify">
           We welcome new students throughout the year. Leicester Greek School accepts children from age 4
           to our Nursery class, and we offer classes for older children and teenagers including GCSE
-          Greek preparation. We also offer <strong>Greek language classes for adults</strong> on
-          <router-link to="/greek-for-adults" class="internal-link">Wednesday evenings and Saturday mornings</router-link>
+          We also offer <strong>Greek language classes for adults</strong> on
+          <strong>Wednesday evenings and Saturday mornings</strong>
           — open to complete beginners and all levels.
         </p>
 
