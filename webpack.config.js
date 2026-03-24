@@ -62,6 +62,30 @@ module.exports = {
           to: '[name][ext]',
           noErrorOnMissing: true,
           force: true
+        },
+        {
+          from: 'favicon.ico',
+          to: '[name][ext]',
+          noErrorOnMissing: true,
+          force: true
+        },
+        {
+          from: 'favicons',
+          to: 'favicons',
+          noErrorOnMissing: true
+        },
+        {
+          from: 'site.webmanifest',
+          to: '[name][ext]',
+          noErrorOnMissing: true,
+          force: true
+        },
+        {
+          // Copy logo to dist root so /lgs-logo.jpg resolves for og:image
+          from: 'src/assets/images/lgs-logo.jpg',
+          to: 'lgs-logo.jpg',
+          noErrorOnMissing: true,
+          force: true
         }
       ]
     })
