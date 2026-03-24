@@ -11,18 +11,6 @@
             </h1>
             <p class="school-subtitle mb-0">Saint Nicholas and Xenophon</p>
           </div>
-          <div class="locale-switch" role="group" aria-label="Language selection">
-            <button
-              v-for="loc in locales"
-              :key="loc"
-              type="button"
-              class="btn-locale"
-              :class="{ active: loc === selectedLocale }"
-              @click="onSetLocale(loc)"
-            >
-              {{ loc === 'en' ? 'English' : 'Ελληνικά' }}
-            </button>
-          </div>
         </div>
       </div>
     </div>
@@ -130,44 +118,6 @@ export default {
   letter-spacing: 0.5px;
 }
 
-.locale-switch {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.btn-locale {
-  background: var(--white);
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  border-radius: 25px;
-  cursor: pointer;
-  line-height: 1;
-  transition: var(--transition-smooth);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-locale:hover, .btn-locale:focus {
-  background: var(--primary-color);
-  color: var(--white);
-  box-shadow: var(--shadow-md);
-  outline: none;
-  transform: translateY(-2px);
-}
-
-.btn-locale.active {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  color: var(--white);
-  border-color: transparent;
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
-}
 
 .navbar {
   background: linear-gradient(to bottom, var(--primary-light) 0%, #f5f9ff 100%);
