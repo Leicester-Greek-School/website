@@ -46,8 +46,8 @@
                   <h4 class="contact-card-title">Hours</h4>
                 </div>
                 <div class="contact-card-body">
-                  <p class="mb-2"><strong>Saturday Classes:</strong><br>09:30 - 18:00</p>
-                  <p class="mb-0"><strong>Wednesday:</strong><br>Adult Classes</p>
+                  <p class="mb-2"><strong>Saturday Classes:</strong><br>09:30 - 17:00</p>
+                  <p class="mb-0"><strong>Thursday:</strong><br>Adult Classes</p>
                 </div>
               </div>
             </div>
