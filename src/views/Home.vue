@@ -44,15 +44,15 @@
             <div class="aims-list-wrapper">
               <div class="aims-list">
                 <div class="aim-item">
-                  <span class="aim-icon">🗣️</span>
+                  <span class="aim-icon"><i class="bi bi-chat-square-text-fill"></i></span>
                   <span>Modern Greek language — children &amp; adults</span>
                 </div>
                 <div class="aim-item">
-                  <span class="aim-icon">🎵</span>
+                  <span class="aim-icon"><i class="bi bi-music-note-beamed"></i></span>
                   <span>Greek and Cypriot music and dancing</span>
                 </div>
                 <div class="aim-item">
-                  <span class="aim-icon">📚</span>
+                  <span class="aim-icon"><i class="bi bi-book-fill"></i></span>
                   <span>History of Greece and Cyprus, and their culture</span>
                 </div>
               </div>
@@ -95,7 +95,7 @@
             <div class="col-md-6">
               <div class="card sponsor-card h-100 shadow-md">
                 <div class="card-body text-center">
-                  <div class="sponsor-icon">🏢</div>
+                  <div class="sponsor-icon"><i class="bi bi-building-fill"></i></div>
                   <h5 class="card-title sponsor-name">A.D</h5>
                   <p class="card-text sponsor-description">Painting, Decorating & Wood Floor</p>
                 </div>
@@ -105,7 +105,7 @@
             <div class="col-md-6">
               <div class="card sponsor-card h-100 shadow-md">
                 <div class="card-body text-center">
-                  <div class="sponsor-icon">🏪</div>
+                  <div class="sponsor-icon"><i class="bi bi-shop"></i></div>
                   <h5 class="card-title sponsor-name">Hellenic Supplies LTD</h5>
                 </div>
               </div>
@@ -323,11 +323,17 @@
 }
 
 .aim-icon {
-  font-size: 1.75rem;
+  font-size: 1.4rem;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 50px;
+  min-height: 50px;
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
 }
 
 /* External Link */
@@ -426,7 +432,8 @@
 }
 
 .sponsor-icon {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  color: var(--accent-gold-dark);
   margin-bottom: 1rem;
   display: inline-block;
   animation: float 3s ease-in-out infinite;

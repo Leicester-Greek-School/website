@@ -39,7 +39,7 @@
             Wednesday &amp; Saturday
           </p>
           <a href="https://www.facebook.com/Leicester.Greek" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Leicester Greek School on Facebook">
-            <span class="footer-social-icon">👍</span> Facebook
+            <span class="footer-social-icon"><i class="bi bi-facebook"></i></span> Facebook
           </a>
         </div>
       </div>
@@ -290,6 +290,7 @@ export default {
 }
 
 .footer-social-icon {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: var(--accent-gold);
 }
 </style>

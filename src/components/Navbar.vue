@@ -49,7 +49,7 @@
           </ul>
           <div class="navbar-cta ms-auto d-flex align-items-center gap-2">
             <router-link to="/register" class="btn btn-primary btn-sm navbar-register-btn">
-              <span class="btn-icon">✓</span> Register Now
+              <span class="btn-icon"><i class="bi bi-check-lg"></i></span> Register Now
             </router-link>
           </div>
         </div>
