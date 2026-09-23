@@ -45,14 +45,14 @@
           <table class="staff-table">
             <thead>
               <tr>
-                <th scope="col">{{ labels.classColumn }}</th>
                 <th scope="col">{{ labels.teacherColumn }}</th>
+                <th scope="col">{{ labels.classColumn }}</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="group in classroomTeachers" :key="group.id">
-                <td>{{ group.role }}</td>
                 <td>{{ group.teacher }}</td>
+                <td>{{ group.role }}</td>
               </tr>
             </tbody>
           </table>
@@ -63,14 +63,14 @@
           <table class="staff-table">
             <thead>
               <tr>
-                <th scope="col">{{ labels.classColumn }}</th>
                 <th scope="col">{{ labels.assistantColumn }}</th>
+                <th scope="col">{{ labels.classColumn }}</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="assistant in assistantTeachers" :key="assistant.id">
-                <td>{{ assistant.role }}</td>
                 <td>{{ assistant.assistant }}</td>
+                <td>{{ assistant.role }}</td>
               </tr>
             </tbody>
           </table>
@@ -81,14 +81,14 @@
           <table class="staff-table">
             <thead>
               <tr>
-                <th scope="col">{{ labels.classColumn }}</th>
                 <th scope="col">{{ labels.teacherColumn }}</th>
+                <th scope="col">{{ labels.classColumn }}</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="group in groupsOnlineList" :key="group.id">
-                <td>{{ group.role }}</td>
                 <td>{{ group.teacher }}</td>
+                <td>{{ group.role }}</td>
               </tr>
             </tbody>
           </table>

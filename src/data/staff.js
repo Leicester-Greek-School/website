@@ -19,7 +19,7 @@ export const TEACHING_GROUPS = [
   {
     id: 'year_a',
     role_el: 'Α΄ Τάξη',
-    role_en: 'Year A',
+    role_en: 'Year 1, 5 and 6',
     teacher: 'Μαρία Συμεωνίδου',
     teacherImage: 'Maria_Symeonidou.jpeg',
     assistant: ''
@@ -27,7 +27,7 @@ export const TEACHING_GROUPS = [
   {
     id: 'year_a_plus',
     role_el: 'Α΄+ Τάξη',
-    role_en: 'Year A+',
+    role_en: 'Year 1+',
     teacher: 'Παναγία Πιτσιλλίδου',
     teacherImage: 'Panagia_Pitsillidou.jpeg',
     assistant: ''
@@ -35,7 +35,7 @@ export const TEACHING_GROUPS = [
   {
     id: 'year_b',
     role_el: 'Β΄ Τάξη',
-    role_en: 'Year B',
+    role_en: 'Year 2, Year 3',
     teacher: 'Θεοδώρα Καμανά',
     teacherImage: 'Theodora_Kamana.png',
     assistant: ''
@@ -43,15 +43,15 @@ export const TEACHING_GROUPS = [
   {
     id: 'adult_class_1',
     role_el: 'Ενήλικες - Τάξη 1 (Onsite)',
-    role_en: 'Adult Class 1 (Onsite)',
-    teacher: 'Πατέρας Γεώργιος',
+    role_en: 'Adult class Level 1 (Onsite)',
+    teacher: 'Πατέρας Γεώργιος Αθανασόπουλος',
     teacherImage: '',
     assistant: ''
   },
   {
     id: 'adult_class_2',
     role_el: 'Ενήλικες - Τάξη 2 (Onsite)',
-    role_en: 'Adult Class 2 (Onsite)',
+    role_en: 'Adult class Level 2 (Onsite)',
     teacher: 'Ελευθερία Καπαραλιώτη',
     teacherImage: 'Eleftheria_Kaparalioti.jpeg',
     assistant: ''
@@ -99,7 +99,7 @@ export const TEACHING_GROUPS_ONLINE = [
   {
     id: 'adult_class_3_online',
     role_el: 'Ενήλικες - Τάξη 3',
-    role_en: 'Adult Class 3',
+    role_en: 'Adult class Level 3',
     teacher: 'Ρουμπίνη Ζακοπούλου'
   }
 ];
