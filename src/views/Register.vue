@@ -43,7 +43,7 @@
               <li>Complete beginners — no prior knowledge needed</li>
               <li>Intermediate learners — build on existing Greek</li>
               <li>Heritage speakers — formalise and improve your Greek</li>
-              <li>Wednesday evenings &amp; Saturday mornings in Leicester</li>
+              <li>Thursday evenings</li>
             </ul>
           </div>
         </div>
