@@ -114,6 +114,48 @@
         </div>
       </div>
     </section>
+
+    <hr class="accent my-5">
+
+    <!-- Fundraising Section -->
+    <section class="container my-5 py-3">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="page-title mb-4">Help Us Fundraise</h2>
+          <p class="text-justify sponsor-intro">
+            Our school relies on the generosity of our community to keep running. You can help us raise funds at no extra cost to yourself by donating directly or shopping through easyfundraising:
+          </p>
+
+          <div class="row mt-4 mb-5 g-4">
+            <div class="col-md-6">
+              <div class="card sponsor-card h-100 shadow-md">
+                <div class="card-body text-center">
+                  <div class="sponsor-icon"><i class="bi bi-heart-fill"></i></div>
+                  <h5 class="card-title sponsor-name">GoFundMe</h5>
+                  <p class="card-text sponsor-description">Support the Greek School of Leicester with a donation.</p>
+                  <a href="https://www.gofundme.com/f/help-the-greek-school-of-leicester" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm mt-2">
+                    <span>Donate Now</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card sponsor-card h-100 shadow-md">
+                <div class="card-body text-center">
+                  <div class="sponsor-icon"><i class="bi bi-bag-heart-fill"></i></div>
+                  <h5 class="card-title sponsor-name">easyfundraising</h5>
+                  <p class="card-text sponsor-description">Raise free donations for our school every time you shop online.</p>
+                  <a href="https://www.easyfundraising.org.uk/causes/greekschoolofleicesterstnicholasandxenophon" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm mt-2">
+                    <span>Shop &amp; Raise Funds</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
