@@ -21,28 +21,30 @@
           We welcome new students throughout the year. Leicester Greek School accepts children from age 4
           to our Nursery class, and we offer classes for older children and teenagers including GCSE
           We also offer <strong>Greek language classes for adults</strong> on
-          <strong>Wednesday evenings and Saturday mornings</strong>
+          <strong>Thursday evenings and Saturday mornings</strong>
           — open to complete beginners and all levels.
         </p>
 
-        <div class="highlight-box">
-          <h4 class="subsection-title">Children — Age Groups</h4>
-          <ul class="info-list">
-            <li>Nursery — From age 4</li>
-            <li>Primary Classes — Ages 5–11</li>
-            <li>Secondary Classes — Ages 11–16</li>
-            <li>GCSE Preparation — Ages 14–16</li>
-          </ul>
-        </div>
+        <div class="highlight-box-row">
+          <div class="highlight-box">
+            <h4 class="subsection-title">Children — Age Groups</h4>
+            <ul class="info-list">
+              <li>Nursery — From age 4</li>
+              <li>Primary Classes — Ages 5–11</li>
+              <li>Secondary Classes — Ages 11–16</li>
+              <li>GCSE Preparation — Ages 14–16</li>
+            </ul>
+          </div>
 
-        <div class="highlight-box mt-3">
-          <h4 class="subsection-title">Adults — All Levels Welcome</h4>
-          <ul class="info-list">
-            <li>Complete beginners — no prior knowledge needed</li>
-            <li>Intermediate learners — build on existing Greek</li>
-            <li>Heritage speakers — formalise and improve your Greek</li>
-            <li>Wednesday evenings &amp; Saturday mornings in Leicester</li>
-          </ul>
+          <div class="highlight-box">
+            <h4 class="subsection-title">Adults — All Levels Welcome</h4>
+            <ul class="info-list">
+              <li>Complete beginners — no prior knowledge needed</li>
+              <li>Intermediate learners — build on existing Greek</li>
+              <li>Heritage speakers — formalise and improve your Greek</li>
+              <li>Wednesday evenings &amp; Saturday mornings in Leicester</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -218,12 +220,19 @@ export default {
   letter-spacing: 0.2px;
 }
 
+.highlight-box-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
 .highlight-box {
   background: var(--white);
   border-left: 5px solid var(--accent-gold);
   padding: 1.75rem;
   border-radius: 8px;
-  margin: 1.5rem 0;
+  margin: 0;
   box-shadow: var(--shadow-sm);
 }
 
@@ -345,6 +354,11 @@ export default {
 @media (max-width: 768px) {
   .info-section {
     padding: 1.5rem;
+  }
+
+  .highlight-box-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .highlight-box {
