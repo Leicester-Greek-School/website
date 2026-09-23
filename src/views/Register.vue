@@ -59,7 +59,7 @@
       </div>
 
       <div class="registration-online mt-4">
-        <h3 class="section-title">2025–26 Φόρμα εγγραφής / Registration form</h3>
+        <h3 class="section-title">2026–27 Φόρμα εγγραφής / Registration form</h3>
         <p class="text-justify">
           (Το όριο εγγραφής στο Νηπιαγωγείο έχει καθοριστεί στα 4 έτη, συμπληρωμένα πριν την έναρξη της σχολικής χρονιάς. /
           Τhe lower age limit for admissions to our Nursery class is set at 4 years old, that is children can start from
