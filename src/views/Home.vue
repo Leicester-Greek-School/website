@@ -66,15 +66,6 @@
               We welcome children from the age of 4 in our Nursery class and offer programmes for all ages, including <strong>GCSE Greek preparation</strong> and <strong>Greek classes for adults</strong> on Wednesday evenings and Saturday mornings.
             </p>
 
-            <div class="call-to-action-box">
-              <h4 class="cta-title">Ready to Join?</h4>
-              <p class="cta-text">For more information about our programmes in Leicester — opening days, hours, fees and how to enrol children or adults — please check our information page.</p>
-              <div class="d-flex flex-wrap gap-2">
-                <router-link to="/about" class="btn btn-secondary btn-sm">
-                  <span>School Information</span>
-                </router-link>
-              </div>
-            </div>
           </div>
         </div>
       </div>
