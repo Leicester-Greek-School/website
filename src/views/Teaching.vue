@@ -202,17 +202,7 @@ export default {
           role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
           assistant: g.assistant,
           image: this.getTeacherImage(g.assistantImage)
-        }))
-        .concat(
-          TEACHING_GROUPS
-            .filter(g => g.id === 'support')
-            .map(g => ({
-              id: g.id,
-              role: this.selectedLocale === 'el' ? g.role_el : g.role_en,
-              assistant: g.assistant,
-              image: null
-            }))
-        );
+        }));
     },
     groupsOnlineList() {
       return TEACHING_GROUPS_ONLINE.map(g => ({
