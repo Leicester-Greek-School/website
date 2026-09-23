@@ -36,7 +36,7 @@
           </p>
           <p class="footer-text small">
             <strong>Adult Classes:</strong><br>
-            Wednesday &amp; Saturday
+            Thursday
           </p>
           <a href="https://www.facebook.com/Leicester.Greek" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Leicester Greek School on Facebook">
             <span class="footer-social-icon"><i class="bi bi-facebook"></i></span> Facebook
