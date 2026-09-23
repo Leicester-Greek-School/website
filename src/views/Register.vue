@@ -54,7 +54,7 @@
           <li>Complete the Google Registration Form (link below)</li>
           <li>We will contact you to confirm enrollment</li>
           <li>Attend an introductory session</li>
-          <li>Begin classes on the next scheduled Saturday</li>
+          <li>Get admission to the appropriate class</li>
         </ol>
       </div>
 
