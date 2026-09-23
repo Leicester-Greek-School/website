@@ -10,58 +10,49 @@ export const PAGE_TITLES = {
 export const TEACHING_GROUPS = [
   {
     id: 'nursery',
-    role_el: 'Νηπιαγωγείο / Προδημοτική',
-    role_en: 'Nursery / Pre-Primary',
+    role_el: 'Νηπιαγωγείο',
+    role_en: 'Nursery',
     teacher: 'Χριστίνα Καλιντζέου',
     teacherImage: 'Christina_Kalintzeou.jpeg',
-    assistant: 'Θεοδώρα Καμάνα',
-    assistantImage: 'Theodora_Kamana.png'
+    assistant: ''
   },
   {
-    id: 'year1',
-    role_el: 'Year 1',
-    role_en: 'Year 1',
+    id: 'year_a',
+    role_el: 'Α΄ Τάξη',
+    role_en: 'Year A',
     teacher: 'Μαρία Συμεωνίδου',
     teacherImage: 'Maria_Symeonidou.jpeg',
     assistant: ''
   },
   {
-    id: 'year1plus',
-    role_el: 'Year 1+ (Διαφοροποιητική)',
-    role_en: 'Year 1+ (Differentiation)',
-    teacher: 'Μαρία Καρατζιά',
-    teacherImage: 'Maria_Karatzia.jpeg',
+    id: 'year_a_plus',
+    role_el: 'Α΄+ Τάξη',
+    role_en: 'Year A+',
+    teacher: 'Παναγία Πιτσιλλίδου',
+    teacherImage: 'Panagia_Pitsillidou.jpeg',
     assistant: ''
   },
   {
-    id: 'year2',
-    role_el: 'Year 2',
-    role_en: 'Year 2',
-    teacher: 'Πανάγια Πιτσιλίδου',
-    teacherImage: 'Panagia_Pitsilidou.jpeg',
-    assistant: ''
-  },
-  {
-    id: 'year3_4',
-    role_el: 'Year 3–4 (Σύμπλεγμα)',
-    role_en: 'Years 3–4 (Combined)',
-    teacher: 'Θεοδώρα Καμάνα',
+    id: 'year_b',
+    role_el: 'Β΄ Τάξη',
+    role_en: 'Year B',
+    teacher: 'Θεοδώρα Καμανά',
     teacherImage: 'Theodora_Kamana.png',
     assistant: ''
   },
   {
-    id: 'year5_6',
-    role_el: 'Year 5–6 (Σύμπλεγμα)',
-    role_en: 'Years 5–6 (Combined)',
-    teacher: 'Μαρία Καρατζιά',
-    teacherImage: 'Maria_Karatzia.jpeg',
+    id: 'adult_class_1',
+    role_el: 'Ενήλικες - Τάξη 1 (Onsite)',
+    role_en: 'Adult Class 1 (Onsite)',
+    teacher: 'Πατέρας Γεώργιος',
+    teacherImage: '',
     assistant: ''
   },
   {
-    id: 'gcse',
-    role_el: 'Pre-GCSE / GCSE',
-    role_en: 'Pre-GCSE / GCSE',
-    teacher: 'Ελευθερία Καπαραλίωτη',
+    id: 'adult_class_2',
+    role_el: 'Ενήλικες - Τάξη 2 (Onsite)',
+    role_en: 'Adult Class 2 (Onsite)',
+    teacher: 'Ελευθερία Καπαραλιώτη',
     teacherImage: 'Eleftheria_Kaparalioti.jpeg',
     assistant: ''
   },
@@ -76,39 +67,27 @@ export const TEACHING_GROUPS = [
 
 export const TEACHING_GROUPS_ONLINE = [
   {
-    id: 'year1_2_online',
-    role_el: 'Year 1–2 Online',
-    role_en: 'Year 1–2 Online',
-    teacher: 'ΚΕΑ'
+    id: 'year4_online',
+    role_el: 'Year 4 (Online)',
+    role_en: 'Year 4 (Online)',
+    teacher: 'Ιωάννης Φωτιάδης (ΚΕΑ)'
   },
   {
-    id: 'year3_online',
-    role_el: 'Year 3 Online',
-    role_en: 'Year 3 Online',
+    id: 'complex_class_online',
+    role_el: 'Complex Class (Online)',
+    role_en: 'Complex Class (Online)',
     teacher: 'Ιωάννα Κουμή (ΚΕΑ)'
   },
   {
-    id: 'gcse_online',
-    role_el: 'GCSE Online',
-    role_en: 'GCSE Online',
-    teacher: 'ΚΕΑ'
+    id: 'gcse2_online',
+    role_el: 'GCSE II (Online)',
+    role_en: 'GCSE II (Online)',
+    teacher: 'Έλενα Χαραλάμπους (ΚΕΑ)'
   },
   {
-    id: 'alevels_online',
-    role_el: 'A Levels',
-    role_en: 'A Levels',
-    teacher: 'Παναγιώτα Μάγγου'
-  },
-  {
-    id: 'adults_level1_online',
-    role_el: 'Adults Level 1',
-    role_en: 'Adults Level 1',
-    teacher: 'Ελευθερία Καπαραλίωτη'
-  },
-  {
-    id: 'adults_level2_online',
-    role_el: 'Adults Level 2',
-    role_en: 'Adults Level 2',
+    id: 'adult_class_3_online',
+    role_el: 'Ενήλικες - Τάξη 3 (Online)',
+    role_en: 'Adult Class 3 (Online)',
     teacher: 'Ρουμπίνη Ζακοπούλου'
   }
 ];

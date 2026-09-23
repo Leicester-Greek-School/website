@@ -178,8 +178,8 @@ export default {
     },
     headteacher() {
       return {
-        name: this.selectedLocale === 'el' ? 'Μαρία Συμεωνίδου' : 'Maria Symeonidou',
-        title: this.selectedLocale === 'el' ? 'Διευθύντρια' : 'Headteacher (interim)',
+        name: this.selectedLocale === 'el' ? 'Μαρία Συμεωνίδου' : 'Μαρία Συμεωνίδου',
+        title: this.selectedLocale === 'el' ? 'Διευθύντρια' : 'Headteacher',
         role: this.selectedLocale === 'el' ? 'Διοίκηση & Συντονισμός' : 'Administration & Coordination',
         image: this.getTeacherImage('Maria_Symeonidou.jpeg')
       };
