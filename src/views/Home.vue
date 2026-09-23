@@ -49,7 +49,7 @@
                 </div>
                 <div class="aim-item">
                   <span class="aim-icon"><i class="bi bi-music-note-beamed"></i></span>
-                  <span>Greek and Cypriot music and dancing</span>
+                  <span>Greek and Cypriot music</span>
                 </div>
                 <div class="aim-item">
                   <span class="aim-icon"><i class="bi bi-book-fill"></i></span>
