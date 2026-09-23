@@ -26,17 +26,21 @@
 
         <h3 class="section-title">Opening Hours</h3>
         <p class="text-justify">
-          Lessons for children take place every <strong>Saturday, from 09:30 until 17:00</strong>.
+          Our <strong>in-person Greek classes for children and teenagers</strong> take place every
+          <strong>Saturday, from 09:30 until 17:00</strong> in Leicester.
         </p>
         <p class="text-justify">
-          Lessons for adults run on <strong>Thursday</strong>.
+          <strong>Adult classes</strong> run on <strong>Thursday</strong>, and
+          <strong>online Greek lessons for children and adults</strong> are also available.
         </p>
 
         <h3 class="section-title">What We Offer</h3>
         <ul class="info-list">
-          <li>Modern Greek language lessons for children and adults of all levels</li>
-          <li>GCSE Greek preparation for students in Leicester and Leicestershire</li>
-          <li>Greek music and cultural activities</li>
+          <li>In-person Modern Greek language classes in Leicester for children from age 4 and teenagers</li>
+          <li>GCSE and A Level Greek preparation for students in Leicester and Leicestershire</li>
+          <li>Online Greek lessons for children and adults</li>
+          <li>Adult Greek classes for all levels</li>
+          <li>Greek songs and cultural activities</li>
           <li>Nursery classes for children from age 4</li>
           <li>Online learning options through the Cyprus Educational Mission (KEA)</li>
         </ul>

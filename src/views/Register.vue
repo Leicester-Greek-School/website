@@ -19,10 +19,9 @@
         <h3 class="section-title">Enrollment Information</h3>
         <p class="text-justify">
           We welcome new students throughout the year. Leicester Greek School accepts children from age 4
-          to our Nursery class, and we offer classes for older children and teenagers including GCSE and A-level.
-          We also offer <strong>Greek language classes for adults</strong> on
-          <strong>Thursday evenings</strong>
-          — open to complete beginners and all levels.
+          to our Nursery class, and we offer <strong>in-person classes in Leicester for older children and teenagers</strong>
+          including GCSE and A-level. We also offer <strong>Greek language classes for adults</strong> on
+          <strong>Thursday evenings</strong> and <strong>online private Greek lessons for children and adults</strong>.
         </p>
 
         <h4 class="subsection-title">Age Groups &amp; Tuition Fees for the 2026–2027 Academic Year</h4>
@@ -68,7 +67,7 @@
               </tr>
               <tr>
                 <td>Online Private Lessons</td>
-                <td>All ages</td>
+                <td>Children &amp; adults</td>
                 <td>£925</td>
               </tr>
             </tbody>
@@ -77,7 +76,7 @@
 
         <p class="text-justify small-note">
           Adult classes welcome complete beginners, intermediate learners and heritage speakers alike, on
-          <strong>Thursday evenings</strong>.
+          <strong>Thursday evenings</strong>. Online private lessons are available for <strong>children and adults</strong>.
         </p>
 
         <h4 class="subsection-title">Discounts for Families with Multiple Children Enrolled</h4>
@@ -451,4 +450,3 @@ export default {
   }
 }
 </style>
-

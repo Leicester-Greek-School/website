@@ -10,7 +10,7 @@
               <h1 class="hero-title">Welcome to Leicester Greek School</h1>
               <p class="hero-subtitle">Saint Nicholas and Xenophon</p>
               <p class="hero-description">
-                Celebrating Greek language and culture in Leicester and Leicestershire since the 1980s. A vibrant community school teaching Modern Greek, dance and music — welcoming children from age 4 and adults of all levels.
+                Leicester Greek School provides <strong>in-person Greek lessons in Leicester for children and teenagers</strong> and <strong>online Greek lessons for children and adults</strong>, alongside Modern Greek, songs, dance and cultural learning.
               </p>
               <div class="hero-cta-buttons">
                 <router-link to="/register" class="btn btn-primary btn-lg">
@@ -39,17 +39,21 @@
               <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a>.
             </p>
 
+            <p class="text-justify">
+              Our core offer is <strong>Saturday in-person teaching in Leicester for children from age 4 through to teenagers studying Pre-GCSE, GCSE and A Level Greek</strong>. We also provide <strong>online Greek lessons for children and adults</strong>, making Leicester Greek School a flexible option for local families and remote learners.
+            </p>
+
             <h3 class="section-title">What We Teach</h3>
 
             <div class="aims-list-wrapper">
               <div class="aims-list">
                 <div class="aim-item">
                   <span class="aim-icon"><i class="bi bi-chat-square-text-fill"></i></span>
-                  <span>Modern Greek language — children &amp; adults</span>
+                  <span>Modern Greek language — in person for children and teenagers, online for children and adults</span>
                 </div>
                 <div class="aim-item">
                   <span class="aim-icon"><i class="bi bi-music-note-beamed"></i></span>
-                  <span>Greek and Cypriot music</span>
+                  <span>Greek and Cypriot songs</span>
                 </div>
                 <div class="aim-item">
                   <span class="aim-icon"><i class="bi bi-book-fill"></i></span>
@@ -63,7 +67,7 @@
             </p>
 
             <p class="text-justify">
-              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages, including <strong>GCSE Greek preparation</strong> and <strong>Greek classes for adults</strong> on Thursday evenings.
+              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages, including <strong>GCSE Greek preparation</strong>, <strong>Greek classes for adults</strong> on Thursday evenings, and <strong>online private Greek lessons for children and adults</strong>.
             </p>
 
           </div>

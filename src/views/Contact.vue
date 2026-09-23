@@ -20,7 +20,8 @@
           <h3 class="section-title">Get in Touch</h3>
           <p class="text-justify">
             If you would like more information about Leicester Greek School, please use the contact
-            details below. We welcome enquiries from parents, students and the wider community.
+            details below. We welcome enquiries about <strong>in-person Greek classes in Leicester for children and teenagers</strong>,
+            <strong>adult lessons</strong>, and <strong>online Greek lessons for children and adults</strong>.
           </p>
 
           <div class="row g-4 mt-1">
