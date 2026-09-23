@@ -283,6 +283,11 @@ export default {
   background-color: rgba(89, 15, 50, 0.12);
 }
 
+.navbar-register-btn.router-link-active {
+  color: #fff !important;
+  background-color: transparent;
+}
+
 .router-link-active::after {
   width: 70%;
   background: var(--primary-color);
