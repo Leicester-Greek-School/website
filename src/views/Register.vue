@@ -33,6 +33,7 @@
               <li>Primary Classes — Ages 5–11</li>
               <li>Secondary Classes — Ages 11–16</li>
               <li>GCSE Preparation — Ages 14–16</li>
+              <li>A-level Preparation — Ages 16–18</li>
             </ul>
           </div>
 
