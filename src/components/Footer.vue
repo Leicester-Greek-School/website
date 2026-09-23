@@ -22,6 +22,7 @@
             <li><router-link to="/register">Register</router-link></li>
             <li><router-link to="/announcements">Announcements</router-link></li>
             <li><router-link to="/policies">Policies</router-link></li>
+            <li><router-link to="/support-us">Support Us</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>
           </ul>
         </div>

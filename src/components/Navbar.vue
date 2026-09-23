@@ -44,6 +44,9 @@
               <router-link class="nav-link" to="/announcements">Announcements</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" to="/support-us">Support Us</router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" to="/contact">Contact Us</router-link>
             </li>
           </ul>

@@ -8,6 +8,7 @@ import Register from '../views/Register.vue';
 import Policies from '../views/Policies.vue';
 import Announcements from '../views/Announcements.vue';
 import PrivacyPolicy from '../views/PrivacyPolicy.vue';
+import SupportUs from '../views/SupportUs.vue';
 
 const BASE_TITLE = 'Leicester Greek School';
 
@@ -73,6 +74,15 @@ const routes = [
     meta: {
       title: 'News & Announcements | Leicester Greek School',
       description: 'Latest news and announcements from Leicester Greek School. Term dates, events, cultural activities and school updates for the Greek and Cypriot community in Leicester.'
+    }
+  },
+  {
+    path: '/support-us',
+    name: 'SupportUs',
+    component: SupportUs,
+    meta: {
+      title: 'Support Us | Leicester Greek School',
+      description: 'Support Leicester Greek School through fundraising and sponsorship — donate via GoFundMe, raise funds with easyfundraising, or become a sponsor of our community school.'
     }
   },
   {
