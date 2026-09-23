@@ -32,7 +32,7 @@
           </p>
           <p class="footer-text small">
             <strong>Saturday Classes:</strong><br>
-            11:00 – 15:30
+            09:30 - 17:00
           </p>
           <p class="footer-text small">
             <strong>Adult Classes:</strong><br>
