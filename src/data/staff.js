@@ -70,13 +70,13 @@ export const TEACHING_GROUPS_ONLINE = [
     id: 'year4_online',
     role_el: 'Year 4 ',
     role_en: 'Year 4 ',
-    teacher: 'Ιωάννης Φωτιάδης (ΚΕΑ)'
+    teacher: '(ΚΕΑ)'
   },
   {
     id: 'complex_class_online',
     role_el: 'Complex Class ',
     role_en: 'Complex Class ',
-    teacher: 'Ιωάννα Κουμή (ΚΕΑ)'
+    teacher: '(ΚΕΑ)'
   },
   {
     id: 'pre_gcse_online',
@@ -88,13 +88,13 @@ export const TEACHING_GROUPS_ONLINE = [
     id: 'gcse2_online',
     role_el: 'GCSE II ',
     role_en: 'GCSE II ',
-    teacher: 'Eleni Vranga'
+    teacher: '(ΚΕΑ)'
   },
   {
     id: 'a_levels_online',
     role_el: 'A-levels ',
     role_en: 'A-levels ',
-    teacher: 'Panagiota Sergi'
+    teacher: '(KEA)'
   },
   {
     id: 'adult_class_3_online',
