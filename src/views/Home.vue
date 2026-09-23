@@ -63,7 +63,7 @@
             </p>
 
             <p class="text-justify">
-              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages, including <strong>GCSE Greek preparation</strong> and <strong>Greek classes for adults</strong> on Wednesday evenings and Saturday mornings.
+              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages, including <strong>GCSE Greek preparation</strong> and <strong>Greek classes for adults</strong> on Thursday evenings.
             </p>
 
           </div>
