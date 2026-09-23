@@ -2,7 +2,7 @@ export const LOCALES = ['en', 'el'];
 
 export const PAGE_TITLES = {
   teaching: {
-    en: 'The Teaching Staff',
+    en: 'The Teaching Staff (2026-2027)',
     el: 'Διδακτικό Προσωπικό'
   }
 };

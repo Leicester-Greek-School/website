@@ -174,7 +174,7 @@ export default {
     },
     pageTitle() {
       const map = PAGE_TITLES.teaching || {};
-      return map[this.selectedLocale] || map.en || 'The Teaching Staff';
+      return map[this.selectedLocale] || map.en || 'The Teaching Staff (2026-2027)';
     },
     headteacher() {
       return {
