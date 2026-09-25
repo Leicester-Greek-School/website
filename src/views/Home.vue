@@ -26,7 +26,7 @@
     </section>
 
     <!-- Main Content -->
-    <section class="container my-5 py-3">
+    <section id="information" class="container my-5 py-3">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="welcome-card">
@@ -169,16 +169,6 @@
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.hero-description {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: var(--white);
-  line-height: 1.9;
-  margin-bottom: 2.5rem;
-  max-width: 650px;
-  letter-spacing: 0.4px;
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 .hero-cta-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -194,16 +184,7 @@
 }
 
 
-/* Information Section */
-.info-section {
-  background: linear-gradient(135deg, var(--primary-light) 0%, #f8fbff 100%);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
-  border: 2px solid var(--border-color);
-  animation: slideInUp 0.8s ease-out;
-}
-
+/* Information List */
 .info-list {
   margin-left: 0;
   margin-bottom: 2rem;
@@ -403,10 +384,6 @@
     padding: 1.5rem;
   }
 
-  .info-section {
-    padding: 1.5rem;
-  }
-
   .info-list {
     padding: 1.5rem;
   }
@@ -438,15 +415,7 @@
     font-size: 0.95rem;
   }
 
-  .hero-description {
-    font-size: 0.95rem;
-  }
-
   .welcome-card {
-    padding: 1.25rem;
-  }
-
-  .info-section {
     padding: 1.25rem;
   }
 
