@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import About from '../views/About.vue';
 import Contact from '../views/Contact.vue';
 import Teaching from '../views/Teaching.vue';
 import Committee from '../views/Committee.vue';
@@ -21,15 +20,6 @@ const routes = [
       title: 'Greek School in Leicester | In-Person Greek Classes for Children & Teens',
       description: 'Leicester Greek School offers in-person Greek classes in Leicester for children and teenagers, plus online Greek lessons for children and adults. Modern Greek, GCSE Greek, A Level support, songs and culture.',
       keywords: 'Greek school Leicester, Greek classes Leicester, Greek lessons for children Leicester, Greek lessons for teenagers Leicester, online Greek lessons children, online Greek lessons adults, GCSE Greek Leicester'
-    }
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About,
-    meta: {
-      title: 'About Leicester Greek School | Children, Teen & Online Greek Lessons',
-      description: 'Learn about Leicester Greek School, our Saturday in-person teaching for children and teenagers in Leicester, and our online Greek lessons for children and adults.'
     }
   },
   {
@@ -108,7 +98,16 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return { el: to.hash, behavior: 'smooth' };
+    }
+    return { top: 0 };
+  }
 });
 
 // Update document title and meta description on every navigation

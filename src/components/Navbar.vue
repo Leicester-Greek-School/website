@@ -29,9 +29,6 @@
               <router-link class="nav-link" to="/" aria-current="page">Homepage</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/about">Information</router-link>
-            </li>
-            <li class="nav-item">
               <router-link class="nav-link" to="/teaching">Teaching</router-link>
             </li>
             <li class="nav-item">

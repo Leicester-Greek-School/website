@@ -32,9 +32,8 @@ This file is provided for AI assistants and large language models (LLMs) to accu
 
 ## Pages
 
-- [Home](https://leicestergreekschool.com/): Overview of the school, with emphasis on in-person children and teen teaching in Leicester and online lessons for children and adults.
+- [Home](https://leicestergreekschool.com/): Overview of the school, with emphasis on in-person children and teen teaching in Leicester and online lessons for children and adults. Includes school history, class days/times, curriculum, and lesson formats for in-person and online study.
 - [Register](https://leicestergreekschool.com/register): Current-year tuition fees, sibling discounts, age groups, online private lesson pricing, and the enrollment process.
-- [About](https://leicestergreekschool.com/about): School history, class days/times, curriculum, and lesson formats for in-person and online study.
 - [Teaching Staff](https://leicestergreekschool.com/teaching): List of teachers, the classes/year groups they lead, and their qualifications.
 - [Committee](https://leicestergreekschool.com/committee): Names and roles of the volunteer committee that runs the school.
 - [Announcements](https://leicestergreekschool.com/announcements): Term dates, news and event updates.

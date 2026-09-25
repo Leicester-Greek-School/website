@@ -11,7 +11,6 @@
           <h6 class="footer-heading">About</h6>
           <ul class="footer-links">
             <li><router-link to="/">Homepage</router-link></li>
-            <li><router-link to="/about">Information</router-link></li>
             <li><router-link to="/teaching">Teaching Staff</router-link></li>
             <li><router-link to="/committee">Committee</router-link></li>
           </ul>
