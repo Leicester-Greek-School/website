@@ -29,9 +29,6 @@
               <router-link class="nav-link" to="/" aria-current="page">Homepage</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/about">Information</router-link>
-            </li>
-            <li class="nav-item">
               <router-link class="nav-link" to="/teaching">Teaching</router-link>
             </li>
             <li class="nav-item">
@@ -44,12 +41,15 @@
               <router-link class="nav-link" to="/announcements">Announcements</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" to="/support-us">Support Us</router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" to="/contact">Contact Us</router-link>
             </li>
           </ul>
           <div class="navbar-cta ms-auto d-flex align-items-center gap-2">
             <router-link to="/register" class="btn btn-primary btn-sm navbar-register-btn">
-              <span class="btn-icon">✓</span> Register Now
+              <span class="btn-icon"><i class="bi bi-check-lg"></i></span> Register Now
             </router-link>
           </div>
         </div>
@@ -278,6 +278,11 @@ export default {
   font-weight: 700;
   color: var(--primary-color) !important;
   background-color: rgba(89, 15, 50, 0.12);
+}
+
+.navbar-register-btn.router-link-active {
+  color: #fff !important;
+  background-color: transparent;
 }
 
 .router-link-active::after {

@@ -20,14 +20,15 @@
           <h3 class="section-title">Get in Touch</h3>
           <p class="text-justify">
             If you would like more information about Leicester Greek School, please use the contact
-            details below. We welcome enquiries from parents, students and the wider community.
+            details below. We welcome enquiries about <strong>in-person Greek classes in Leicester for children and teenagers</strong>,
+            <strong>adult lessons</strong>, and <strong>online Greek lessons for children and adults</strong>.
           </p>
 
           <div class="row g-4 mt-1">
             <div class="col-md-6">
               <div class="contact-card">
                 <div class="contact-card-header">
-                  <span class="contact-icon">📍</span>
+                  <span class="contact-icon"><i class="bi bi-geo-alt-fill"></i></span>
                   <h4 class="contact-card-title">Address</h4>
                 </div>
                 <address class="contact-card-body">
@@ -42,12 +43,12 @@
             <div class="col-md-6">
               <div class="contact-card">
                 <div class="contact-card-header">
-                  <span class="contact-icon">⏰</span>
+                  <span class="contact-icon"><i class="bi bi-clock-fill"></i></span>
                   <h4 class="contact-card-title">Hours</h4>
                 </div>
                 <div class="contact-card-body">
-                  <p class="mb-2"><strong>Saturday Classes:</strong><br>09:30 - 18:00</p>
-                  <p class="mb-0"><strong>Wednesday:</strong><br>Adult Classes</p>
+                  <p class="mb-2"><strong>Saturday Classes:</strong><br>09:30 - 17:00</p>
+                  <p class="mb-0"><strong>Thursday:</strong><br>Adult Classes</p>
                 </div>
               </div>
             </div>
@@ -57,21 +58,21 @@
             <h4 id="schoolInfoHeading" class="info-title">Direct Contacts</h4>
             <ul class="list-unstyled contact-list" aria-label="Direct contacts">
               <li class="contact-item">
-                <span class="contact-method-icon">✉️</span>
+                <span class="contact-method-icon"><i class="bi bi-envelope-fill"></i></span>
                 <div class="contact-method-content">
                   <strong>Email:</strong>
                   <a href="mailto:headteacher@leicestergreekschool.com" class="contact-link">headteacher@leicestergreekschool.com</a>
                 </div>
               </li>
               <li class="contact-item">
-                <span class="contact-method-icon">📞</span>
+                <span class="contact-method-icon"><i class="bi bi-telephone-fill"></i></span>
                 <div class="contact-method-content">
                   <strong>Telephone:</strong>
                   <a href="tel:+447784957591" class="contact-link" aria-label="Telephone number">07784 957591</a>
                 </div>
               </li>
               <li class="contact-item">
-                <span class="contact-method-icon">👍</span>
+                <span class="contact-method-icon"><i class="bi bi-facebook"></i></span>
                 <div class="contact-method-content">
                   <strong>Facebook:</strong>
                   <a href="https://www.facebook.com/Leicester.Greek" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Facebook page Leicester Greek School">
@@ -84,7 +85,7 @@
 
           <div class="response-time-box">
             <p class="mb-0">
-              <strong>⏱️ Response Time:</strong><br>
+              <strong><i class="bi bi-hourglass-split me-1"></i> Response Time:</strong><br>
               We aim to respond to all enquiries within 2 working days.
             </p>
           </div>
@@ -227,8 +228,15 @@ export default {
 }
 
 .contact-icon {
-  font-size: 2rem;
-  display: inline-block;
+  font-size: 1.6rem;
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 48px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 10px;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -311,7 +319,8 @@ export default {
 }
 
 .contact-method-icon {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;

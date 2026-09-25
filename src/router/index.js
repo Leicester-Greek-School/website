@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import About from '../views/About.vue';
 import Contact from '../views/Contact.vue';
 import Teaching from '../views/Teaching.vue';
 import Committee from '../views/Committee.vue';
@@ -8,6 +7,7 @@ import Register from '../views/Register.vue';
 import Policies from '../views/Policies.vue';
 import Announcements from '../views/Announcements.vue';
 import PrivacyPolicy from '../views/PrivacyPolicy.vue';
+import SupportUs from '../views/SupportUs.vue';
 
 const BASE_TITLE = 'Leicester Greek School';
 
@@ -17,17 +17,9 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'Leicester Greek School - Greek Language Classes in Leicester & Leicestershire',
-      description: 'Leicester Greek School (Saint Nicholas and Xenophon) offers Modern Greek language classes for children from age 4 and adults in Leicester and Leicestershire. GCSE Greek, dance, music and culture.'
-    }
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About,
-    meta: {
-      title: 'About Us & School Information | Leicester Greek School',
-      description: 'Learn about Leicester Greek School — our history, opening hours, curriculum, teaching staff and what we offer for children and adults in Leicester and Leicestershire.'
+      title: 'Greek School in Leicester | In-Person Greek Classes for Children & Teens',
+      description: 'Leicester Greek School offers in-person Greek classes in Leicester for children and teenagers, plus online Greek lessons for children and adults. Modern Greek, GCSE Greek, A Level support, songs and culture.',
+      keywords: 'Greek school Leicester, Greek classes Leicester, Greek lessons for children Leicester, Greek lessons for teenagers Leicester, online Greek lessons children, online Greek lessons adults, GCSE Greek Leicester'
     }
   },
   {
@@ -35,8 +27,8 @@ const routes = [
     name: 'Teaching',
     component: Teaching,
     meta: {
-      title: 'Teaching Staff | Leicester Greek School',
-      description: 'Meet the qualified native Greek-speaking teaching staff at Leicester Greek School. Our teachers hold university degrees in education and are passionate about the Greek language and culture.'
+      title: 'Teaching Staff | Greek Teachers in Leicester & Online',
+      description: 'Meet the qualified native Greek-speaking teachers behind Leicester Greek School’s in-person classes for children and teenagers and online Greek lessons for children and adults.'
     }
   },
   {
@@ -53,8 +45,8 @@ const routes = [
     name: 'Register',
     component: Register,
     meta: {
-      title: 'Register for Greek Classes in Leicester | Leicester Greek School',
-      description: 'Register your child or yourself for Greek language classes at Leicester Greek School. We accept children from age 4 and adults of all levels. Saturday and midweek classes available.'
+      title: 'Register for Greek Classes in Leicester & Online | Leicester Greek School',
+      description: 'Register for in-person Greek classes in Leicester for children and teenagers, adult Greek classes, or online Greek lessons for children and adults at Leicester Greek School.'
     }
   },
   {
@@ -76,12 +68,21 @@ const routes = [
     }
   },
   {
+    path: '/support-us',
+    name: 'SupportUs',
+    component: SupportUs,
+    meta: {
+      title: 'Support Us | Leicester Greek School',
+      description: 'Support Leicester Greek School through fundraising and sponsorship — donate via GoFundMe, raise funds with easyfundraising, or become a sponsor of our community school.'
+    }
+  },
+  {
     path: '/contact',
     name: 'Contact',
     component: Contact,
     meta: {
-      title: 'Contact Us | Leicester Greek School',
-      description: 'Get in touch with Leicester Greek School. Address: 2A Sawday Street, Leicester, LE2 7JW. Phone: 07784 957591. Email: headteacher@leicestergreekschool.com.'
+      title: 'Contact Leicester Greek School | Admissions for In-Person & Online Lessons',
+      description: 'Contact Leicester Greek School about in-person Greek classes in Leicester for children and teenagers, adult classes, and online Greek lessons for children and adults.'
     }
   },
   {
@@ -97,7 +98,16 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return { el: to.hash, behavior: 'smooth' };
+    }
+    return { top: 0 };
+  }
 });
 
 // Update document title and meta description on every navigation
@@ -105,10 +115,20 @@ router.afterEach((to) => {
   const title = to.meta?.title || BASE_TITLE;
   document.title = title;
 
+  const titleEl = document.querySelector('meta[name="title"]');
+  if (titleEl) {
+    titleEl.setAttribute('content', title);
+  }
+
   // Update meta description
   const descriptionEl = document.querySelector('meta[name="description"]');
   if (descriptionEl && to.meta?.description) {
     descriptionEl.setAttribute('content', to.meta.description);
+  }
+
+  const keywordsEl = document.querySelector('meta[name="keywords"]');
+  if (keywordsEl && to.meta?.keywords) {
+    keywordsEl.setAttribute('content', to.meta.keywords);
   }
 
   // Update og:title
@@ -118,6 +138,14 @@ router.afterEach((to) => {
   // Update og:description
   const ogDesc = document.querySelector('meta[property="og:description"]');
   if (ogDesc && to.meta?.description) ogDesc.setAttribute('content', to.meta.description);
+
+  // Update twitter:title
+  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twitterTitle) twitterTitle.setAttribute('content', title);
+
+  // Update twitter:description
+  const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+  if (twitterDesc && to.meta?.description) twitterDesc.setAttribute('content', to.meta.description);
 
   // Update og:url
   const ogUrl = document.querySelector('meta[property="og:url"]');

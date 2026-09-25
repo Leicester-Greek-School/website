@@ -30,19 +30,8 @@
           maintain communication with parents and the wider community.
         </p>
 
-        <div class="committee-info">
-          <h4 class="subsection-title">Committee Structure</h4>
-          <ul class="info-list">
-            <li>Chairperson - Leads the committee and oversees school operations</li>
-            <li>Vice Chairperson - Supports the chairperson and deputizes when needed</li>
-            <li>Secretary - Manages communications and documentation</li>
-            <li>Treasurer - Handles financial matters and budgeting</li>
-            <li>Committee Members - Support various aspects of school management</li>
-          </ul>
-        </div>
-
         <!-- Added detailed committee members list -->
-        <h3 class="section-title" id="committeeMembersHeading">Current Committee</h3>
+        <h3 class="section-title" id="committeeMembersHeading">Current Committee (2025-2027)</h3>
         <ul class="members-list" aria-labelledby="committeeMembersHeading">
           <li>
             <span class="member-role">Chair:</span>

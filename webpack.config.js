@@ -64,6 +64,12 @@ module.exports = {
           force: true
         },
         {
+          from: 'llms.txt',
+          to: '[name][ext]',
+          noErrorOnMissing: true,
+          force: true
+        },
+        {
           from: 'favicon.ico',
           to: '[name][ext]',
           noErrorOnMissing: true,

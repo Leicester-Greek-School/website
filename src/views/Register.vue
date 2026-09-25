@@ -19,31 +19,71 @@
         <h3 class="section-title">Enrollment Information</h3>
         <p class="text-justify">
           We welcome new students throughout the year. Leicester Greek School accepts children from age 4
-          to our Nursery class, and we offer classes for older children and teenagers including GCSE
-          We also offer <strong>Greek language classes for adults</strong> on
-          <strong>Wednesday evenings and Saturday mornings</strong>
-          — open to complete beginners and all levels.
+          to our Nursery class, and we offer <strong>in-person classes in Leicester for older children and teenagers</strong>
+          including GCSE and A-level. We also offer <strong>Greek language classes for adults</strong> on
+          <strong>Thursday evenings</strong> and <strong>online private Greek lessons for children and adults</strong>.
         </p>
 
-        <div class="highlight-box">
-          <h4 class="subsection-title">Children — Age Groups</h4>
-          <ul class="info-list">
-            <li>Nursery — From age 4</li>
-            <li>Primary Classes — Ages 5–11</li>
-            <li>Secondary Classes — Ages 11–16</li>
-            <li>GCSE Preparation — Ages 14–16</li>
-          </ul>
+        <h4 class="subsection-title">Age Groups &amp; Tuition Fees for the 2026–2027 Academic Year</h4>
+        <div class="table-responsive">
+          <table class="fees-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Age Group</th>
+                <th>Fee per Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nursery &amp; Reception</td>
+                <td>From age 4</td>
+                <td>£380</td>
+              </tr>
+              <tr>
+                <td>Primary School (Years 1–6)</td>
+                <td>Ages 5–11</td>
+                <td>£380</td>
+              </tr>
+              <tr>
+                <td>Pre-GCSE</td>
+                <td>Ages 11–14</td>
+                <td>£400</td>
+              </tr>
+              <tr>
+                <td>GCSE 1 &amp; GCSE 2</td>
+                <td>Ages 14–16</td>
+                <td>£400</td>
+              </tr>
+              <tr>
+                <td>A Level</td>
+                <td>Ages 16–18</td>
+                <td>£480</td>
+              </tr>
+              <tr>
+                <td>Adult Classes</td>
+                <td>All levels welcome</td>
+                <td>£430</td>
+              </tr>
+              <tr>
+                <td>Online Private Lessons</td>
+                <td>Children &amp; adults</td>
+                <td>£925</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="highlight-box mt-3">
-          <h4 class="subsection-title">Adults — All Levels Welcome</h4>
-          <ul class="info-list">
-            <li>Complete beginners — no prior knowledge needed</li>
-            <li>Intermediate learners — build on existing Greek</li>
-            <li>Heritage speakers — formalise and improve your Greek</li>
-            <li>Wednesday evenings &amp; Saturday mornings in Leicester</li>
-          </ul>
-        </div>
+        <p class="text-justify small-note">
+          Adult classes welcome complete beginners, intermediate learners and heritage speakers alike, on
+          <strong>Thursday evenings</strong>. Online private lessons are available for <strong>children and adults</strong>.
+        </p>
+
+        <h4 class="subsection-title">Discounts for Families with Multiple Children Enrolled</h4>
+        <ul class="info-list">
+          <li>Families with 2 children enrolled — £110 discount per year</li>
+          <li>Families with 3 children enrolled — £120 discount per year</li>
+        </ul>
       </div>
 
       <div class="info-section mt-4">
@@ -52,12 +92,12 @@
           <li>Complete the Google Registration Form (link below)</li>
           <li>We will contact you to confirm enrollment</li>
           <li>Attend an introductory session</li>
-          <li>Begin classes on the next scheduled Saturday</li>
+          <li>Get admission to the appropriate class</li>
         </ol>
       </div>
 
       <div class="registration-online mt-4">
-        <h3 class="section-title">2025–26 Φόρμα εγγραφής / Registration form</h3>
+        <h3 class="section-title">2026–27 Φόρμα εγγραφής / Registration form</h3>
         <p class="text-justify">
           (Το όριο εγγραφής στο Νηπιαγωγείο έχει καθοριστεί στα 4 έτη, συμπληρωμένα πριν την έναρξη της σχολικής χρονιάς. /
           Τhe lower age limit for admissions to our Nursery class is set at 4 years old, that is children can start from
@@ -218,13 +258,10 @@ export default {
   letter-spacing: 0.2px;
 }
 
-.highlight-box {
-  background: var(--white);
-  border-left: 5px solid var(--accent-gold);
-  padding: 1.75rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-  box-shadow: var(--shadow-sm);
+.small-note {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-top: -0.5rem;
 }
 
 .info-list {
@@ -252,6 +289,47 @@ export default {
   color: var(--primary-color);
   font-weight: 700;
   font-size: 1.2rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.fees-table th,
+.fees-table td {
+  padding: 0.9rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fees-table th {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.fees-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.fees-table tbody tr:nth-child(even) {
+  background-color: var(--primary-light);
+}
+
+.fees-table td:last-child {
+  font-weight: 700;
+  color: var(--primary-color);
 }
 
 .registration-steps {
@@ -347,10 +425,6 @@ export default {
     padding: 1.5rem;
   }
 
-  .highlight-box {
-    padding: 1.25rem;
-  }
-
   .registration-online {
     padding: 1.5rem;
   }
@@ -376,4 +450,3 @@ export default {
   }
 }
 </style>
-
