@@ -1,3 +1,5 @@
+<script setup>
+</script>
 <template>
   <div class="home">
     <!-- Hero Section -->
@@ -26,60 +28,6 @@
       </div>
     </section>
 
-    <!-- Information -->
-    <section id="information" class="container my-5 py-3">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="info-section">
-            <h2 class="page-title">Information</h2>
-
-            <h3 class="section-title">About Leicester Greek School</h3>
-            <p class="text-justify">
-              Leicester Greek School (Saint Nicholas and Xenophon) has been serving the local Greek and
-              Cypriot community since the 1980s. Located at <strong>2A Sawday Street, Leicester, LE2 7JW</strong>,
-              we provide high-quality Greek language education and promote Greek culture and traditions to
-              families across <strong>Leicester, Leicestershire and the East Midlands</strong>.
-            </p>
-
-            <h3 class="section-title">Opening Hours</h3>
-            <p class="text-justify">
-              Our <strong>in-person Greek classes for children and teenagers</strong> take place every
-              <strong>Saturday, from 09:30 until 17:00</strong> in Leicester.
-            </p>
-            <p class="text-justify">
-              <strong>Adult classes</strong> run on <strong>Thursday</strong>, and
-              <strong>online Greek lessons for children and adults</strong> are also available.
-            </p>
-
-            <h3 class="section-title">What We Offer</h3>
-            <ul class="info-list">
-              <li>In-person Modern Greek language classes in Leicester for children from age 4 and teenagers</li>
-              <li>GCSE and A Level Greek preparation for students in Leicester and Leicestershire</li>
-              <li>Online Greek lessons for children and adults</li>
-              <li>Adult Greek classes for all levels</li>
-              <li>Greek songs and cultural activities</li>
-              <li>Nursery classes for children from age 4</li>
-              <li>Online learning options through the Cyprus Educational Mission (KEA)</li>
-            </ul>
-
-            <h3 class="section-title">Our Teaching Staff</h3>
-            <p class="text-justify">
-              The teaching staff consists of Greek native speakers with University degrees in education,
-              many years of teaching experience and enthusiasm for what they do. All our teachers are
-              highly qualified and dedicated to preserving Greek language and culture in Leicester.
-            </p>
-
-            <h3 class="section-title">Curriculum</h3>
-            <p class="text-justify">
-              The curriculum followed by our school is provided by the
-              <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a> —
-              the same accredited programme used in Greek schools across the United Kingdom.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Main Content -->
     <section class="container my-5 py-3">
       <div class="row">
@@ -93,9 +41,12 @@
               <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a>.
             </p>
 
-            <p class="text-justify">
-              Our core offer is <strong>Saturday in-person teaching in Leicester for children from age 4 through to teenagers studying Pre-GCSE, GCSE and A Level Greek</strong>. We also provide <strong>online Greek lessons for children and adults</strong>, making Leicester Greek School a flexible option for local families and remote learners.
-            </p>
+            <h3 class="section-title">What We Offer</h3>
+            <ul class="info-list">
+              <li>In-person and online Modern Greek language classes for children from age 4 and teenagers</li>
+              <li>GCSE and A Level Greek preparation for students in Leicester and Leicestershire</li>
+              <li>Examiners for GCSE exams in Modern Greek language</li>
+            </ul>
 
             <h3 class="section-title">What We Teach</h3>
 
