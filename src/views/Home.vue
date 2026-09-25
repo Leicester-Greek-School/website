@@ -11,9 +11,6 @@
             <div class="hero-text-wrapper">
               <h1 class="hero-title">Welcome to Leicester Greek School</h1>
               <p class="hero-subtitle">Saint Nicholas and Xenophon</p>
-              <p class="hero-description">
-                Leicester Greek School provides <strong>in-person Greek lessons in Leicester for children and teenagers</strong> and <strong>online Greek lessons for children and adults</strong>, alongside Modern Greek, songs and cultural learning.
-              </p>
               <div class="hero-cta-buttons">
                 <router-link to="/register" class="btn btn-primary btn-lg">
                   <span>Register Now</span>
