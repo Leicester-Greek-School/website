@@ -51,7 +51,7 @@
           <li>
             <span class="member-role">Building Accountability:</span>
             <span class="member-name">Esmeralda Toskaj</span>
-            <a href="mailto:building@leicestergreekschool.com" class="member-email" aria-label="Email Secretary">building@leicestergreekschool.com</a>
+            <a href="mailto:building@leicestergreekschool.com" class="member-email" aria-label="Email Building Accountability">building@leicestergreekschool.com</a>
           </li>
           <li>
             <span class="member-role">Treasurer:</span>
@@ -371,4 +371,3 @@ export default {
   }
 }
 </style>
-

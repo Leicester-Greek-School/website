@@ -36,8 +36,8 @@ const routes = [
     name: 'Committee',
     component: Committee,
     meta: {
-      title: 'School Committee | Leicester Greek School',
-      description: 'The volunteer committee at Leicester Greek School who manage the school and support the Greek and Cypriot community in Leicester and Leicestershire.'
+      title: 'School Committee 2026-2027 | Leicester Greek School',
+      description: 'Meet Leicester Greek School’s 2026-2027 volunteer committee, chaired by George Anastasakis, supporting the school and Greek and Cypriot community.'
     }
   },
   {
