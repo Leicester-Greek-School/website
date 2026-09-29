@@ -54,7 +54,8 @@
             <span itemprop="addressLocality">Leicester</span>,
             <span itemprop="postalCode">LE2 7JW</span> —
             <a href="tel:+447784957591" class="footer-nap-link" itemprop="telephone">07784 957591</a> —
-            <a href="mailto:headteacher@leicestergreekschool.com" class="footer-nap-link" itemprop="email">headteacher@leicestergreekschool.com</a>
+            Headteacher: <a href="mailto:headteacher@leicestergreekschool.com" class="footer-nap-link" itemprop="email">headteacher@leicestergreekschool.com</a><br>
+            Leicester Greek School Committee: <a href="mailto:officers@leicestergreekschool.com" class="footer-nap-link">officers@leicestergreekschool.com</a>
           </address>
         </div>
       </div>

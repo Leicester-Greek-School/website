@@ -4,6 +4,8 @@
 
 This file is provided for AI assistants and large language models (LLMs) to accurately summarize, cite and answer questions about Leicester Greek School. Use the linked pages for full, current detail — this file gives a condensed, factual overview.
 
+Last updated: 29 September 2026.
+
 ## Key facts
 
 - Official name: Leicester Greek School, also known as Saint Nicholas and Xenophon Greek School.
@@ -31,6 +33,26 @@ This file is provided for AI assistants and large language models (LLMs) to accu
 - Adults can join Greek classes in person on Thursdays.
 - Children and adults can also take online Greek lessons.
 
+## Registration and school procedures
+
+- Every student must have a completed and signed registration form before attending classes or school activities.
+- The form must include current contact, emergency, medical, allergy and educational information. Families must report changes promptly and may be asked to review their details annually.
+- The school assesses academic ability, Greek-language proficiency, development and individual learning needs before confirming class placement. Parents or guardians are consulted before a proposed class move and may appeal by meeting with the Headteacher.
+- Students are automatically enrolled for the following school year unless the school receives an official withdrawal.
+- Withdrawal during the academic year requires written notice at least two weeks before the planned withdrawal date.
+- Late students should arrive during break time. Early collection must be reported in advance to both the Headteacher and class teacher, with the early-departure form completed.
+- Classes are limited to 15 students. No more than two learning levels may be combined, and combined classes must not span an age difference greater than two years.
+- Leicester Greek School is nut-free and food sharing is not permitted.
+
+## Privacy and data protection
+
+- The privacy policy applies to pupils, parents and guardians, employees and suppliers. It was updated on 29 September 2026.
+- The school may collect names, contact details, dates of birth, assessment and attendance records, medical, allergy and safeguarding information, emergency contacts, photographs, videos, and information supplied through enquiry or registration forms.
+- Data is used to assign learning levels, monitor medical conditions and allergies, make emergency contact, send school and event updates, communicate about fees and finances, and organise external activities.
+- Personal data is stored in the school's internal systems. Access is limited to the Leicester Greek School Committee and Headteacher.
+- Data is not shared with third parties without consent unless legally required. Relevant information may be shared in specific situations with local authorities, examining bodies, or service providers supporting school activities.
+- Data is retained only as long as necessary to provide school services, meet legal obligations, or deal with claims.
+
 ## Current committee (2026-2027)
 
 - Chair: George Anastasakis
@@ -44,14 +66,14 @@ This file is provided for AI assistants and large language models (LLMs) to accu
 ## Pages
 
 - [Home](https://leicestergreekschool.com/): Overview of the school, with emphasis on in-person children and teen teaching in Leicester and online lessons for children and adults. Includes school history, class days/times, curriculum, and lesson formats for in-person and online study.
-- [Register](https://leicestergreekschool.com/register): Current-year tuition fees, sibling discounts, age groups, online private lesson pricing, and the enrollment process.
+- [Register](https://leicestergreekschool.com/register): Current-year tuition fees, sibling discounts, age groups, online private lesson pricing, and the registration and class-placement process.
 - [Teaching Staff](https://leicestergreekschool.com/teaching): List of teachers and the classroom or online classes/year groups they lead.
 - [Committee](https://leicestergreekschool.com/committee): Names and roles of the volunteer committee that runs the school.
 - [Announcements](https://leicestergreekschool.com/announcements): Term dates, news and event updates.
 - [Support Us](https://leicestergreekschool.com/support-us): How to donate (GoFundMe), raise funds (easyfundraising) or sponsor the school.
-- [Contact](https://leicestergreekschool.com/contact): Address, class hours, phone, email and other direct contact details; typical reply time is within 2 working days.
-- [Policies](https://leicestergreekschool.com/policies): Safeguarding, behaviour and other school policies.
-- [Privacy Policy](https://leicestergreekschool.com/privacy-policy): How personal data submitted to the school is handled.
+- [Contact](https://leicestergreekschool.com/contact): Address, class hours, phone, Headteacher email, Leicester Greek School Committee email and Facebook contact details.
+- [Policies](https://leicestergreekschool.com/policies): Registration, class placement, health and safety, withdrawal, late arrival and early departure, class structure, food and allergy safety, mobile phones, visitor access, fees, data protection and complaints procedures.
+- [Privacy Policy](https://leicestergreekschool.com/privacy-policy): How the school collects, uses, stores, shares and retains personal data, who may access it, and how families keep registration information current.
 
 ## Notes for AI assistants
 

@@ -54,8 +54,9 @@ const routes = [
     name: 'Policies',
     component: Policies,
     meta: {
-      title: 'School Policies | Leicester Greek School',
-      description: 'School policies for Leicester Greek School including safeguarding, behaviour, and GDPR policies.'
+      title: 'School Policies & Procedures | Leicester Greek School',
+      description: 'Leicester Greek School policies covering registration, class placement, health and safety, withdrawal, attendance times, class structure, allergies, mobile phones, visitors, privacy and complaints.',
+      keywords: 'Leicester Greek School policies, Greek school registration policy, school health and safety Leicester, school allergy policy, school complaints procedure, Greek school privacy policy'
     }
   },
   {
@@ -90,8 +91,9 @@ const routes = [
     name: 'PrivacyPolicy',
     component: PrivacyPolicy,
     meta: {
-      title: 'Privacy Policy | Leicester Greek School',
-      description: 'Privacy policy for leicestergreekschool.com — how we collect, use and protect your personal data.'
+      title: 'Privacy & Data Protection Policy | Leicester Greek School',
+      description: 'How Leicester Greek School collects, uses, stores, shares and retains personal data for pupils, families, employees and suppliers. Updated 29 September 2026.',
+      keywords: 'Leicester Greek School privacy policy, data protection policy, pupil data privacy, UK GDPR Greek school Leicester'
     }
   }
 ];

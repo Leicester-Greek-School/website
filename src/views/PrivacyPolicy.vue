@@ -79,8 +79,16 @@
         <div class="contact-box">
           <p><strong>Leicester Greek School</strong><br>
           Saint Nicholas and Xenophon<br>
+          2A Sawday Street<br>
+          Leicester<br>
+          LE2 7JW<br>
+          United Kingdom<br><br>
+          Saturday Classes: 09:30 - 13:00 and 13:30 - 17:00<br>
+          Thursday: Adult Classes<br><br>
           Headteacher: <a href="mailto:headteacher@leicestergreekschool.com">headteacher@leicestergreekschool.com</a><br>
-          Leicester Greek School Committee: <a href="mailto:officers@leicestergreekschool.com">officers@leicestergreekschool.com</a></p>
+          Leicester Greek School Committee: <a href="mailto:officers@leicestergreekschool.com">officers@leicestergreekschool.com</a><br>
+          Telephone: <a href="tel:+447784957591">07784 957591</a><br>
+          Facebook: <a href="https://www.facebook.com/Leicester.Greek" target="_blank" rel="noopener noreferrer">Leicester Greek School</a></p>
         </div>
       </div>
     </div>
@@ -210,9 +218,6 @@
 
 .contact-box p:last-child {
   margin-bottom: 0;
-  font-size: 0.9rem;
-  font-style: italic;
-  color: var(--text-medium);
 }
 
 .contact-box a {

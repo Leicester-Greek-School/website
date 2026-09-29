@@ -64,8 +64,15 @@
               <li class="contact-item">
                 <span class="contact-method-icon"><i class="bi bi-envelope-fill"></i></span>
                 <div class="contact-method-content">
-                  <strong>Email:</strong>
+                  <strong>Headteacher Email:</strong>
                   <a href="mailto:headteacher@leicestergreekschool.com" class="contact-link">headteacher@leicestergreekschool.com</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <span class="contact-method-icon"><i class="bi bi-envelope-fill"></i></span>
+                <div class="contact-method-content">
+                  <strong>Leicester Greek School Committee Email:</strong>
+                  <a href="mailto:officers@leicestergreekschool.com" class="contact-link">officers@leicestergreekschool.com</a>
                 </div>
               </li>
               <li class="contact-item">
@@ -87,12 +94,6 @@
             </ul>
           </div>
 
-          <div class="response-time-box">
-            <p class="mb-0">
-              <strong><i class="bi bi-hourglass-split me-1"></i> Response Time:</strong><br>
-              We aim to respond to all enquiries within 2 working days.
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -361,19 +362,6 @@ export default {
   border-bottom: 2px solid var(--link-hover);
 }
 
-/* Response Time Box */
-.response-time-box {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-  color: var(--white);
-  padding: 2rem;
-  border-radius: 12px;
-  margin-top: 2.5rem;
-  box-shadow: var(--shadow-lg);
-  font-size: 1rem;
-  line-height: 1.8;
-  letter-spacing: 0.2px;
-}
-
 .info-title {
   font-size: 1.25rem;
   color: var(--primary-color);
@@ -458,19 +446,6 @@ address {
   border-bottom: 3px solid var(--primary-color);
 }
 
-/* Response Time Box */
-.response-time-box {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-  color: var(--white);
-  padding: 2rem;
-  border-radius: 12px;
-  margin-top: 2.5rem;
-  box-shadow: var(--shadow-lg);
-  font-size: 1rem;
-  line-height: 1.8;
-  letter-spacing: 0.2px;
-}
-
 @media (max-width: 768px) {
   .breadcrumb-section {
     padding: 1rem 0;
@@ -519,9 +494,5 @@ address {
     font-size: 1.1rem;
   }
 
-  .response-time-box {
-    padding: 1.5rem;
-    font-size: 0.95rem;
-  }
 }
 </style>
