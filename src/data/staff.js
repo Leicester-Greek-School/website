@@ -67,39 +67,51 @@ export const TEACHING_GROUPS = [
 
 export const TEACHING_GROUPS_ONLINE = [
   {
+    id: 'year1_online',
+    role_el: 'Year 1 ',
+    role_en: 'Year 1 ',
+    teacher: 'LGS Teacher'
+  },
+  {
+    id: 'year1_plus_online',
+    role_el: 'Year 1+ ',
+    role_en: 'Year 1+ ',
+    teacher: 'LGS Teacher'
+  },
+  {
     id: 'year4_online',
     role_el: 'Year 4 ',
     role_en: 'Year 4 ',
     teacher: '(ΚΕΑ)'
   },
   {
-    id: 'complex_class_online',
-    role_el: 'Complex Class ',
-    role_en: 'Complex Class ',
-    teacher: '(ΚΕΑ)'
-  },
-  {
     id: 'pre_gcse_online',
     role_el: 'Pre-GCSE ',
     role_en: 'Pre-GCSE ',
-    teacher: 'Sonia Phocas'
+    teacher: '(KEA)'
+  },
+  {
+    id: 'gcse1_online',
+    role_el: 'GCSE 1 ',
+    role_en: 'GCSE 1 ',
+    teacher: '(ΚΕΑ)'
   },
   {
     id: 'gcse2_online',
-    role_el: 'GCSE II ',
-    role_en: 'GCSE II ',
+    role_el: 'GCSE 2 ',
+    role_en: 'GCSE 2 ',
     teacher: '(ΚΕΑ)'
   },
   {
     id: 'a_levels_online',
-    role_el: 'A-levels ',
-    role_en: 'A-levels ',
+    role_el: 'A Level',
+    role_en: 'A Level',
     teacher: '(KEA)'
   },
   {
     id: 'adult_class_3_online',
-    role_el: 'Ενήλικες - Τάξη 3',
-    role_en: 'Adult class Level 3',
+    role_el: 'Ενήλικες',
+    role_en: 'Adult class',
     teacher: 'Ρουμπίνη Ζακοπούλου'
   }
 ];
