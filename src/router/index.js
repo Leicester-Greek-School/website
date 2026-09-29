@@ -18,7 +18,7 @@ const routes = [
     component: Home,
     meta: {
       title: 'Greek School in Leicester | In-Person Greek Classes for Children & Teens',
-      description: 'Leicester Greek School offers in-person Greek classes in Leicester for children and teenagers, plus online Greek lessons for children and adults. Modern Greek, GCSE and A Level preparation with qualified GCSE examiners, songs and culture.',
+      description: 'Leicester Greek School offers in-person Modern Greek teaching from Nursery through A-Level, adult classes and online lessons. GCSE preparation is supported by teachers who also serve as GCSE examiners.',
       keywords: 'Greek school Leicester, Greek classes Leicester, Greek lessons for children Leicester, Greek lessons for teenagers Leicester, online Greek lessons children, online Greek lessons adults, GCSE Greek Leicester, GCSE Greek examiners'
     }
   },

@@ -40,9 +40,9 @@
 
             <h3 class="section-title">What We Offer</h3>
             <ul class="info-list">
-              <li>In-person and online Modern Greek language classes for children from age 4 and teenagers</li>
-              <li>GCSE and A Level Greek preparation for students in Leicester and Leicestershire</li>
-              <li>Examiners for GCSE exams in Modern Greek language</li>
+              <li>In-person Modern Greek classes from Nursery through to A-Level, plus online Greek lessons for children and adults</li>
+              <li>GCSE and A-Level Greek preparation for students in Leicester and Leicestershire</li>
+              <li>GCSE Modern Greek exam preparation supported by teachers who also serve as GCSE examiners</li>
             </ul>
 
             <h3 class="section-title">What We Teach</h3>
@@ -65,11 +65,23 @@
             </div>
 
             <p class="text-justify">
-              Our school organises various events of national and educational significance aimed at cultivating national consciousness and strengthening our community identity in Leicester. Our teachers are native Greek speakers with excellent knowledge of English and a strong understanding of Greek language and culture. Qualifications in education and previous teaching experience are highly desirable under our recruitment policy.
+              Our school organises events of national and educational significance that strengthen our
+              community identity in Leicester. Under our recruitment policy, teachers must have Greek as
+              their first language, excellent knowledge of English, and a strong understanding of Greek
+              language and culture. A degree in education and previous teaching experience are highly desirable.
             </p>
 
             <p class="text-justify">
-              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages, including <strong>GCSE Greek preparation</strong>, <strong>Greek classes for adults</strong> on Thursday evenings, and <strong>online private Greek lessons for children and adults</strong>.
+              Children must be 4 years old by 31 August in the academic year in which they join Nursery;
+              children joining Primary must be 6 by the same date. We offer teaching from Nursery through
+              to A-Level, <strong>adult Greek classes</strong> on Thursday evenings, and <strong>online private
+              Greek lessons for children and adults</strong>.
+            </p>
+
+            <p class="text-justify">
+              Every student must have a completed and signed registration form before attending classes or
+              school activities. The school assesses each student's academic level, Greek-language proficiency,
+              development, and individual learning needs before confirming the appropriate class placement.
             </p>
 
           </div>
