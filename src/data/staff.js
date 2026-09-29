@@ -33,14 +33,6 @@ export const TEACHING_GROUPS = [
     assistant: ''
   },
   {
-    id: 'year_b',
-    role_el: 'Β΄ Τάξη',
-    role_en: 'Year 2 and 3',
-    teacher: 'Θεοδώρα Κ.',
-    teacherImage: '',
-    assistant: ''
-  },
-  {
     id: 'adult_class_1',
     role_el: 'Ενήλικες - Τάξη 1 (Onsite)',
     role_en: 'Adult class Level 1 (Onsite)',
