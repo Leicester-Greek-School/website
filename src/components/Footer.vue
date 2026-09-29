@@ -11,7 +11,6 @@
           <h6 class="footer-heading">About</h6>
           <ul class="footer-links">
             <li><router-link to="/">Homepage</router-link></li>
-            <li><router-link to="/about">Information</router-link></li>
             <li><router-link to="/teaching">Teaching Staff</router-link></li>
             <li><router-link to="/committee">Committee</router-link></li>
           </ul>
@@ -22,24 +21,26 @@
             <li><router-link to="/register">Register</router-link></li>
             <li><router-link to="/announcements">Announcements</router-link></li>
             <li><router-link to="/policies">Policies</router-link></li>
+            <li><router-link to="/support-us">Support Us</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>
           </ul>
         </div>
         <div class="col-md-3">
           <h6 class="footer-heading">Connect</h6>
           <p class="footer-text small">
-            Part of the Cyprus Educational Mission (KEA) in the UK
+            Curriculum provided by the Cyprus Educational Mission (KEA) in the UK
           </p>
           <p class="footer-text small">
             <strong>Saturday Classes:</strong><br>
-            11:00 – 15:30
+            Morning shift: 09:30 - 13:00<br>
+            Afternoon shift: 13:30 - 17:00
           </p>
           <p class="footer-text small">
             <strong>Adult Classes:</strong><br>
-            Wednesday &amp; Saturday
+            Thursday
           </p>
           <a href="https://www.facebook.com/Leicester.Greek" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Leicester Greek School on Facebook">
-            <span class="footer-social-icon">👍</span> Facebook
+            <span class="footer-social-icon"><i class="bi bi-facebook"></i></span> Facebook
           </a>
         </div>
       </div>
@@ -53,7 +54,8 @@
             <span itemprop="addressLocality">Leicester</span>,
             <span itemprop="postalCode">LE2 7JW</span> —
             <a href="tel:+447784957591" class="footer-nap-link" itemprop="telephone">07784 957591</a> —
-            <a href="mailto:headteacher@leicestergreekschool.com" class="footer-nap-link" itemprop="email">headteacher@leicestergreekschool.com</a>
+            Headteacher: <a href="mailto:headteacher@leicestergreekschool.com" class="footer-nap-link" itemprop="email">headteacher@leicestergreekschool.com</a><br>
+            Leicester Greek School Committee: <a href="mailto:officers@leicestergreekschool.com" class="footer-nap-link">officers@leicestergreekschool.com</a>
           </address>
         </div>
       </div>
@@ -290,6 +292,7 @@ export default {
 }
 
 .footer-social-icon {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: var(--accent-gold);
 }
 </style>

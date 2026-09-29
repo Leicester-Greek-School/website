@@ -50,8 +50,8 @@ export default {
         {
           title: 'Welcome Back to the New Term',
           body: 'Classes resume this Saturday. We look forward to seeing all students and welcoming new families.',
-          dateISO: '2025-09-06',
-          dateDisplay: '6 Sep 2025'
+          dateISO: '2026-09-05',
+          dateDisplay: '5 Sep 2026'
         }
       ]
     };

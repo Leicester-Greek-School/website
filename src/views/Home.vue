@@ -1,3 +1,5 @@
+<script setup>
+</script>
 <template>
   <div class="home">
     <!-- Hero Section -->
@@ -9,16 +11,13 @@
             <div class="hero-text-wrapper">
               <h1 class="hero-title">Welcome to Leicester Greek School</h1>
               <p class="hero-subtitle">Saint Nicholas and Xenophon</p>
-              <p class="hero-description">
-                Celebrating Greek language and culture in Leicester and Leicestershire since the 1980s. A vibrant community school teaching Modern Greek, dance and music — welcoming children from age 4 and adults of all levels.
-              </p>
               <div class="hero-cta-buttons">
                 <router-link to="/register" class="btn btn-primary btn-lg">
                   <span>Register Now</span>
                 </router-link>
-                <router-link to="/about" class="btn btn-outline-primary btn-lg">
+                <a href="#information" class="btn btn-outline-primary btn-lg">
                   <span>Learn More</span>
-                </router-link>
+                </a>
               </div>
             </div>
           </div>
@@ -27,7 +26,7 @@
     </section>
 
     <!-- Main Content -->
-    <section class="container my-5 py-3">
+    <section id="information" class="container my-5 py-3">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="welcome-card">
@@ -39,77 +38,52 @@
               <a href="http://kea.schools.ac.cy/" target="_blank" rel="noopener noreferrer" class="external-link">Cyprus Educational Mission in the UK</a>.
             </p>
 
+            <h3 class="section-title">What We Offer</h3>
+            <ul class="info-list">
+              <li>In-person Modern Greek classes from Nursery through to A-Level, plus online Greek lessons for children and adults</li>
+              <li>GCSE and A-Level Greek preparation for students in Leicester and Leicestershire</li>
+              <li>GCSE Modern Greek exam preparation supported by teachers who also serve as GCSE examiners</li>
+            </ul>
+
             <h3 class="section-title">What We Teach</h3>
 
             <div class="aims-list-wrapper">
               <div class="aims-list">
                 <div class="aim-item">
-                  <span class="aim-icon">🗣️</span>
-                  <span>Modern Greek language — children &amp; adults</span>
+                  <span class="aim-icon"><i class="bi bi-chat-square-text-fill"></i></span>
+                  <span>Modern Greek language — in person for children and teenagers, online for children and adults</span>
                 </div>
                 <div class="aim-item">
-                  <span class="aim-icon">🎵</span>
-                  <span>Greek and Cypriot music and dancing</span>
+                  <span class="aim-icon"><i class="bi bi-music-note-beamed"></i></span>
+                  <span>Greek and Cypriot songs</span>
                 </div>
                 <div class="aim-item">
-                  <span class="aim-icon">📚</span>
+                  <span class="aim-icon"><i class="bi bi-book-fill"></i></span>
                   <span>History of Greece and Cyprus, and their culture</span>
                 </div>
               </div>
             </div>
 
             <p class="text-justify">
-              Our school organises various events of national and educational significance aimed at cultivating national consciousness and strengthening our community identity in Leicester. Our teaching staff consists of native Greek speakers with university degrees in education, extensive teaching experience, and a genuine passion for education.
+              Our school organises events of national and educational significance that strengthen our
+              community identity in Leicester. Under our recruitment policy, teachers must have Greek as
+              their first language, excellent knowledge of English, and a strong understanding of Greek
+              language and culture. A degree in education and previous teaching experience are highly desirable.
             </p>
 
             <p class="text-justify">
-              We welcome children from the age of 4 in our Nursery class and offer programmes for all ages, including <strong>GCSE Greek preparation</strong> and <strong>Greek classes for adults</strong> on Wednesday evenings and Saturday mornings.
+              Children must be 4 years old by 31 August in the academic year in which they join Nursery;
+              children joining Primary must be 6 by the same date. We offer teaching from Nursery through
+              to A-Level, <strong>adult Greek classes</strong> on Thursday evenings, and <strong>online private
+              Greek lessons for children and adults</strong>.
             </p>
 
-            <div class="call-to-action-box">
-              <h4 class="cta-title">Ready to Join?</h4>
-              <p class="cta-text">For more information about our programmes in Leicester — opening days, hours, fees and how to enrol children or adults — please check our information page.</p>
-              <div class="d-flex flex-wrap gap-2">
-                <router-link to="/about" class="btn btn-secondary btn-sm">
-                  <span>School Information</span>
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <p class="text-justify">
+              Every student must have a completed and signed registration form before attending classes or
+              school activities. The school assesses each student's academic level, Greek-language proficiency,
+              development, and individual learning needs before confirming the appropriate class placement.
+            </p>
 
-    <hr class="accent my-5">
-
-    <!-- Sponsors Section -->
-    <section class="container my-5 py-3">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="page-title mb-4">Our Sponsors</h2>
-          <p class="text-justify sponsor-intro">
-            We would like to extend our heartfelt gratitude to our sponsors for their generous support and commitment to our community:
-          </p>
-
-          <div class="row mt-4 mb-5 g-4">
-            <div class="col-md-6">
-              <div class="card sponsor-card h-100 shadow-md">
-                <div class="card-body text-center">
-                  <div class="sponsor-icon">🏢</div>
-                  <h5 class="card-title sponsor-name">A.D</h5>
-                  <p class="card-text sponsor-description">Painting, Decorating & Wood Floor</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card sponsor-card h-100 shadow-md">
-                <div class="card-body text-center">
-                  <div class="sponsor-icon">🏪</div>
-                  <h5 class="card-title sponsor-name">Hellenic Supplies LTD</h5>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -207,16 +181,6 @@
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.hero-description {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  color: var(--white);
-  line-height: 1.9;
-  margin-bottom: 2.5rem;
-  max-width: 650px;
-  letter-spacing: 0.4px;
-  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 .hero-cta-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -231,6 +195,40 @@
   transition: var(--transition-smooth);
 }
 
+
+/* Information List */
+.info-list {
+  margin-left: 0;
+  margin-bottom: 2rem;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  list-style: none;
+  border-left: 5px solid var(--accent-gold);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 1rem;
+}
+
+.info-list li {
+  line-height: 1.8;
+  color: var(--text-dark);
+  position: relative;
+  padding-left: 2.25rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+
+.info-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 1;
+}
 
 /* Main Content */
 .welcome-card {
@@ -323,11 +321,17 @@
 }
 
 .aim-icon {
-  font-size: 1.75rem;
+  font-size: 1.4rem;
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 50px;
+  min-height: 50px;
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
 }
 
 /* External Link */
@@ -382,83 +386,6 @@
   color: var(--white);
 }
 
-/* Sponsors Section */
-.sponsor-intro {
-  font-size: 1.05rem;
-  color: var(--text-medium);
-  margin-bottom: 2.5rem;
-  line-height: 1.8;
-}
-
-.sponsor-card {
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
-  transition: var(--transition-smooth);
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--white) 0%, var(--primary-light) 100%);
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sponsor-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-gold));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.sponsor-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary-color);
-  box-shadow: var(--shadow-lg);
-}
-
-.sponsor-card:hover::before {
-  opacity: 1;
-}
-
-.sponsor-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  display: inline-block;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.sponsor-name {
-  color: var(--primary-color);
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
-  letter-spacing: 0.3px;
-}
-
-.sponsor-description {
-  color: var(--text-medium);
-  font-size: 0.95rem;
-  margin-bottom: 0;
-  line-height: 1.6;
-  letter-spacing: 0.2px;
-  font-weight: 500;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .hero-section {
@@ -466,6 +393,10 @@
   }
 
   .welcome-card {
+    padding: 1.5rem;
+  }
+
+  .info-list {
     padding: 1.5rem;
   }
 
@@ -493,10 +424,6 @@
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .hero-description {
     font-size: 0.95rem;
   }
 

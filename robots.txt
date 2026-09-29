@@ -4,3 +4,6 @@ Allow: /
 # Sitemap
 Sitemap: https://leicestergreekschool.com/sitemap.xml
 
+# LLM / AI assistant context file (https://llmstxt.org)
+# See: https://leicestergreekschool.com/llms.txt
+
