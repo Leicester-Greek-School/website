@@ -36,8 +36,8 @@ export const TEACHING_GROUPS = [
     id: 'year_b',
     role_el: 'Β΄ Τάξη',
     role_en: 'Year 2 and 3',
-    teacher: 'Θεοδώρα Καμανά',
-    teacherImage: 'Theodora_Kamana.png',
+    teacher: 'Θεοδώρα Κ.',
+    teacherImage: '',
     assistant: ''
   },
   {
