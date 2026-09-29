@@ -65,7 +65,7 @@
             </div>
 
             <p class="text-justify">
-              Our school organises various events of national and educational significance aimed at cultivating national consciousness and strengthening our community identity in Leicester. Our teaching staff consists of native Greek speakers with university degrees in education, extensive teaching experience, and a genuine passion for education.
+              Our school organises various events of national and educational significance aimed at cultivating national consciousness and strengthening our community identity in Leicester. Our teachers are native Greek speakers with excellent knowledge of English and a strong understanding of Greek language and culture. Qualifications in education and previous teaching experience are highly desirable under our recruitment policy.
             </p>
 
             <p class="text-justify">

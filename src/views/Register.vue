@@ -89,11 +89,16 @@
       <div class="info-section mt-4">
         <h3 class="section-title">How to Register</h3>
         <ol class="registration-steps">
-          <li>Complete the Google Registration Form (link below)</li>
-          <li>We will contact you to confirm enrollment</li>
-          <li>Attend an introductory session</li>
-          <li>Get admission to the appropriate class</li>
+          <li>Complete and sign the registration form, including contact, emergency, medical, allergy, and educational information</li>
+          <li>Submit the completed form electronically or to the school before the student's first day</li>
+          <li>The school will assess the student's academic level, Greek language proficiency, and individual learning needs</li>
+          <li>We will contact you to confirm the appropriate class placement and any transition support required</li>
         </ol>
+        <p class="text-justify small-note">
+          Students cannot attend classes or school activities until a completed registration form has
+          been submitted. If an emergency prevents you from completing the form before the first day,
+          please contact the school in advance.
+        </p>
       </div>
 
       <div class="registration-online mt-4">

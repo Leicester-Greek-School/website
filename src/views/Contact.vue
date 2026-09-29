@@ -47,7 +47,11 @@
                   <h4 class="contact-card-title">Hours</h4>
                 </div>
                 <div class="contact-card-body">
-                  <p class="mb-2"><strong>Saturday Classes:</strong><br>09:30 - 17:00</p>
+                  <p class="mb-2">
+                    <strong>Saturday Classes:</strong><br>
+                    Morning shift: 09:30 - 13:00<br>
+                    Afternoon shift: 13:30 - 17:00
+                  </p>
                   <p class="mb-0"><strong>Thursday:</strong><br>Adult Classes</p>
                 </div>
               </div>

@@ -155,7 +155,7 @@
         </p>
         <ul class="policy-list">
           <li>Personal information is collected only for school purposes</li>
-          <li>Data is stored securely and accessed only by authorized personnel</li>
+          <li>Data is stored securely and accessed only by the LGSC and Headteacher</li>
           <li>Information is not shared with third parties without consent unless disclosure is legally required</li>
           <li>Data may be shared in specific situations with local authorities, examining bodies, or service providers</li>
           <li>Personal data is retained only as long as necessary to provide school services, meet legal obligations, or deal with claims</li>

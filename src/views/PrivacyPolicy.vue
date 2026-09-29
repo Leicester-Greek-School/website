@@ -65,7 +65,7 @@
         </p>
         <ul class="policy-list">
           <li>Secure storage of physical and electronic records</li>
-          <li>Limited access to personal data on a need-to-know basis</li>
+          <li>Access to personal data is limited to the Leicester Greek School Committee and Headteacher</li>
           <li>Regular staff training on data protection</li>
           <li>Secure disposal of data when no longer required</li>
         </ul>
@@ -130,7 +130,8 @@
         <div class="contact-box">
           <p><strong>Leicester Greek School</strong><br>
           Saint Nicholas and Xenophon<br>
-          Email: <a href="mailto:info@leicestergreekschool.org">info@leicestergreekschool.org</a></p>
+          Headteacher: <a href="mailto:headteacher@leicestergreekschool.com">headteacher@leicestergreekschool.com</a><br>
+          Leicester Greek School Committee: <a href="mailto:officers@leicestergreekschool.com">officers@leicestergreekschool.com</a></p>
           <p>
             You also have the right to lodge a complaint with the Information Commissioner's Office (ICO)
             if you believe your data protection rights have been violated.
@@ -317,4 +318,3 @@
   border-bottom: 3px solid var(--primary-color);
 }
 </style>
-

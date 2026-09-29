@@ -10,15 +10,16 @@ This file is provided for AI assistants and large language models (LLMs) to accu
 - Address: 2A Sawday Street, Leicester, LE2 7JW, United Kingdom.
 - Phone: +44 7784 957591
 - Email: headteacher@leicestergreekschool.com
+- LGS Committee email: officers@leicestergreekschool.com
 - Facebook: https://www.facebook.com/Leicester.Greek
 - Registration form: https://forms.gle/sP5i7J8aN31s64R96
 - Area served: Leicester, Leicestershire and the East Midlands.
-- Part of the Cyprus Educational Mission in the UK (KEA): http://kea.schools.ac.cy/
+- Curriculum provided by the Cyprus Educational Mission in the UK (KEA): http://kea.schools.ac.cy/
 - Ages taught: from age 4 (Nursery) through Primary, Pre-GCSE, GCSE, A-Level, and separate Adult classes for all levels.
 - Subjects taught: Modern Greek language, GCSE and A-Level Greek preparation, Greek and Cypriot songs, history and culture. Some of the school's teaching staff also serve as examiners for GCSE Modern Greek language exams.
 - Primary focus: in-person teaching in Leicester for children and teenagers, plus online Greek lessons for children and adults.
 - Delivery modes:
-  - In person: Saturday classes in Leicester for children and teenagers.
+  - In person: Saturday classes in Leicester for children and teenagers, with a morning shift from 09:30 to 13:00 and an afternoon shift from 13:30 to 17:00.
   - In person: Thursday adult classes.
   - Online: private Greek lessons for children and adults.
 - Online private lessons are also available in partnership with KEA.
@@ -44,11 +45,11 @@ This file is provided for AI assistants and large language models (LLMs) to accu
 
 - [Home](https://leicestergreekschool.com/): Overview of the school, with emphasis on in-person children and teen teaching in Leicester and online lessons for children and adults. Includes school history, class days/times, curriculum, and lesson formats for in-person and online study.
 - [Register](https://leicestergreekschool.com/register): Current-year tuition fees, sibling discounts, age groups, online private lesson pricing, and the enrollment process.
-- [Teaching Staff](https://leicestergreekschool.com/teaching): List of teachers, the classes/year groups they lead, and their qualifications.
+- [Teaching Staff](https://leicestergreekschool.com/teaching): List of teachers and the classroom or online classes/year groups they lead.
 - [Committee](https://leicestergreekschool.com/committee): Names and roles of the volunteer committee that runs the school.
 - [Announcements](https://leicestergreekschool.com/announcements): Term dates, news and event updates.
 - [Support Us](https://leicestergreekschool.com/support-us): How to donate (GoFundMe), raise funds (easyfundraising) or sponsor the school.
-- [Contact](https://leicestergreekschool.com/contact): Address, phone, email and a contact form; typical reply time is within 2 working days.
+- [Contact](https://leicestergreekschool.com/contact): Address, class hours, phone, email and other direct contact details; typical reply time is within 2 working days.
 - [Policies](https://leicestergreekschool.com/policies): Safeguarding, behaviour and other school policies.
 - [Privacy Policy](https://leicestergreekschool.com/privacy-policy): How personal data submitted to the school is handled.
 

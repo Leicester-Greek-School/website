@@ -28,11 +28,12 @@
         <div class="col-md-3">
           <h6 class="footer-heading">Connect</h6>
           <p class="footer-text small">
-            Part of the Cyprus Educational Mission (KEA) in the UK
+            Curriculum provided by the Cyprus Educational Mission (KEA) in the UK
           </p>
           <p class="footer-text small">
             <strong>Saturday Classes:</strong><br>
-            09:30 - 17:00
+            Morning shift: 09:30 - 13:00<br>
+            Afternoon shift: 13:30 - 17:00
           </p>
           <p class="footer-text small">
             <strong>Adult Classes:</strong><br>
