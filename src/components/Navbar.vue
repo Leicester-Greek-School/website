@@ -2,18 +2,27 @@
   <div>
     <div class="top-header border-top-primary">
       <div class="container py-3">
-        <div class="d-flex justify-content-start align-items-center flex-wrap gap-3">
-          <div class="logo-container">
-            <img src="@/assets/images/lgs-logo.jpg" alt="Leicester Greek School Logo" class="school-logo" />
+        <div class="header-inner">
+          <div class="brand-group">
+            <div class="logo-container">
+              <img src="@/assets/images/lgs-logo.jpg" alt="Leicester Greek School Logo" class="school-logo" />
+            </div>
+            <div class="school-info">
+              <p class="school-title mb-0">
+                <router-link to="/" class="text-decoration-none" aria-label="Leicester Greek School - Home">
+                  Leicester Greek School
+                </router-link>
+              </p>
+              <p class="school-subtitle mb-0">Saint Nicholas and Xenophon</p>
+            </div>
           </div>
-          <div class="school-info">
-            <p class="school-title mb-0">
-              <router-link to="/" class="text-decoration-none" aria-label="Leicester Greek School - Home">
-                Leicester Greek School
-              </router-link>
-            </p>
-            <p class="school-subtitle mb-0">Saint Nicholas and Xenophon</p>
-          </div>
+          <router-link to="/calendar" class="calendar-quick-link" aria-label="School Calendar 2026–2027">
+            <span class="calendar-link-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></span>
+            <span class="calendar-link-copy">
+              <strong><span class="calendar-link-desktop">School </span>Calendar</strong>
+              <span class="calendar-link-year">2026–2027</span>
+            </span>
+          </router-link>
         </div>
       </div>
     </div>
@@ -39,9 +48,6 @@
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/announcements">Announcements</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/calendar">School Calendar</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/support-us">Support Us</router-link>
@@ -91,6 +97,88 @@ export default {
   border-top: 5px solid var(--primary-color);
   box-shadow: var(--shadow-md);
   padding: 1rem 0;
+}
+
+.header-inner, .brand-group {
+  display: flex;
+  align-items: center;
+}
+
+.header-inner {
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.brand-group {
+  min-width: 0;
+  gap: 1rem;
+}
+
+.calendar-quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  padding: 0.6rem 0.9rem;
+  border: 2px solid var(--accent-gold);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--primary-color);
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+}
+
+.calendar-quick-link:hover, .calendar-quick-link:focus-visible {
+  color: var(--primary-color);
+  background: #fffaf3;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.calendar-quick-link:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+.calendar-quick-link.router-link-active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff !important;
+}
+
+.calendar-link-icon {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--primary-color);
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.calendar-quick-link.router-link-active .calendar-link-icon {
+  color: var(--primary-color);
+  background: #fff;
+}
+
+.calendar-link-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.calendar-link-copy strong {
+  font-size: 0.98rem;
+  white-space: nowrap;
+}
+
+.calendar-link-year {
+  margin-top: 0.22rem;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
 .logo-container {
@@ -339,18 +427,33 @@ export default {
 }
 
 @media (max-width: 576px) {
+  .header-inner { gap: 0.6rem; }
+  .brand-group { gap: 0.6rem; }
+  .school-info { min-width: 0; }
   .school-logo {
-    width: 60px;
-    max-height: 60px;
+    width: 55px;
+    max-height: 55px;
   }
 
   .school-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
   }
 
   .school-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
   }
+
+  .calendar-quick-link {
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 4.6rem;
+    padding: 0.4rem 0.2rem;
+    text-align: center;
+  }
+
+  .calendar-link-icon { width: 2.8rem; height: 2.8rem; font-size: 1.55rem; }
+  .calendar-link-copy strong { font-size: 0.72rem; }
+  .calendar-link-desktop, .calendar-link-year { display: none; }
 
   .navbar-register-btn {
     padding: 0.6rem 1.2rem !important;
