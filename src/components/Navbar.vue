@@ -7,11 +7,11 @@
             <img src="@/assets/images/lgs-logo.jpg" alt="Leicester Greek School Logo" class="school-logo" />
           </div>
           <div class="school-info">
-            <h1 class="school-title mb-0">
+            <p class="school-title mb-0">
               <router-link to="/" class="text-decoration-none" aria-label="Leicester Greek School - Home">
                 Leicester Greek School
               </router-link>
-            </h1>
+            </p>
             <p class="school-subtitle mb-0">Saint Nicholas and Xenophon</p>
           </div>
         </div>
@@ -39,6 +39,9 @@
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/announcements">Announcements</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/calendar">School Calendar</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/support-us">Support Us</router-link>
@@ -288,6 +291,12 @@ export default {
 .router-link-active::after {
   width: 70%;
   background: var(--primary-color);
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar .container { max-width: 100%; }
+  .nav-link { padding: 0.75rem 0.6rem !important; font-size: 0.88rem; white-space: nowrap; }
+  .navbar-register-btn { padding: 0.55rem 0.8rem !important; font-size: 0.82rem; }
 }
 
 @media (max-width: 991px) {
