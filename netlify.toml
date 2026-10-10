@@ -8,6 +8,11 @@
 
 # Redirect all requests to index.html for Vue Router to handle
 [[redirects]]
+  from = "/calendar"
+  to = "/calendar/"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

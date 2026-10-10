@@ -37,6 +37,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html'
     }),
+    new HtmlWebpackPlugin({
+      filename: 'calendar/index.html',
+      templateContent: require('./scripts/calendar-page')
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -108,4 +112,3 @@ module.exports = {
     historyApiFallback: true
   }
 };
-

@@ -14,6 +14,7 @@
 
     <div class="container my-5">
       <h2 id="announcementsTitle" class="page-title">News &amp; Announcements</h2>
+      <p class="lead">Looking for dates? See the <router-link to="/calendar">2026–2027 school calendar</router-link> for terms, breaks and celebrations.</p>
       <p class="lead" v-if="announcements.length === 0">No announcements at this time. Please check back soon.</p>
       <ul v-else class="announcement-list" aria-label="Latest announcements">
         <li v-for="(a, i) in announcements" :key="i" class="announcement-item">

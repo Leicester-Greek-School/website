@@ -6,6 +6,7 @@ import Committee from '../views/Committee.vue';
 import Register from '../views/Register.vue';
 import Policies from '../views/Policies.vue';
 import Announcements from '../views/Announcements.vue';
+import SchoolCalendar from '../views/Calendar.vue';
 import PrivacyPolicy from '../views/PrivacyPolicy.vue';
 import SupportUs from '../views/SupportUs.vue';
 
@@ -57,6 +58,17 @@ const routes = [
       title: 'School Policies & Procedures | Leicester Greek School',
       description: 'Leicester Greek School policies covering registration, class placement, health and safety, withdrawal, attendance times, class structure, allergies, mobile phones, visitors, privacy and complaints.',
       keywords: 'Leicester Greek School policies, Greek school registration policy, school health and safety Leicester, school allergy policy, school complaints procedure, Greek school privacy policy'
+    }
+  },
+  {
+    path: '/calendar',
+    alias: '/calendar/',
+    name: 'SchoolCalendar',
+    component: SchoolCalendar,
+    meta: {
+      title: 'School Calendar 2026–2027 | Term Dates & Celebrations | Leicester Greek School',
+      description: 'Leicester Greek School calendar 2026–2027: term dates, half-term breaks, Greek Easter, celebrations and the 31 October AGM in Leicester.',
+      keywords: 'Leicester Greek School calendar 2026 2027, Greek school term dates Leicester, half term, Greek Easter, school celebrations, AGM Leicester Greek School'
     }
   },
   {
@@ -151,11 +163,11 @@ router.afterEach((to) => {
 
   // Update og:url
   const ogUrl = document.querySelector('meta[property="og:url"]');
-  if (ogUrl) ogUrl.setAttribute('content', `https://leicestergreekschool.com${to.path}`);
+  if (ogUrl) ogUrl.setAttribute('content', `https://leicestergreekschool.com${to.path === '/calendar' || to.path === '/calendar/' ? '/calendar/' : to.path}`);
 
   // Update canonical
   const canonical = document.querySelector('link[rel="canonical"]');
-  if (canonical) canonical.setAttribute('href', `https://leicestergreekschool.com${to.path}`);
+  if (canonical) canonical.setAttribute('href', `https://leicestergreekschool.com${to.path === '/calendar' || to.path === '/calendar/' ? '/calendar/' : to.path}`);
 });
 
 export default router;
