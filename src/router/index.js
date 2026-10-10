@@ -67,8 +67,8 @@ const routes = [
     component: SchoolCalendar,
     meta: {
       title: 'School Calendar 2026–2027 | Term Dates & Celebrations | Leicester Greek School',
-      description: 'Leicester Greek School calendar 2026–2027: autumn, spring and summer term dates, half-term breaks, Greek Easter and school celebrations in Leicester.',
-      keywords: 'Leicester Greek School calendar 2026 2027, Greek school term dates Leicester, half term, Greek Easter, school celebrations'
+      description: 'Leicester Greek School calendar 2026–2027: term dates, half-term breaks, Greek Easter, celebrations and the 31 October AGM in Leicester.',
+      keywords: 'Leicester Greek School calendar 2026 2027, Greek school term dates Leicester, half term, Greek Easter, school celebrations, AGM Leicester Greek School'
     }
   },
   {

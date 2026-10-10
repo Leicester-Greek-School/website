@@ -35,7 +35,7 @@
           <span class="event-kind" :class="`kind-${selectedEvent.kind}`">{{ kindLabel(selectedEvent) }}</span>
           <h2 id="event-detail-title">{{ selectedEvent.title }}</h2>
           <p class="event-detail-date">
-            <time :datetime="selectedEvent.start">{{ formatDate(selectedEvent.start, true) }}</time>
+            <time :datetime="selectedEvent.startDateTime || selectedEvent.start">{{ formatDate(selectedEvent.start, true) }}</time>
             <template v-if="selectedEvent.end"> – <time :datetime="selectedEvent.end">{{ formatDate(selectedEvent.end, true) }}</time></template>
           </p>
           <p>{{ selectedEvent.description }}</p>
@@ -93,7 +93,7 @@
               <thead><tr><th scope="col">Date</th><th scope="col">School date</th><th scope="col">Information</th></tr></thead>
               <tbody>
                 <tr v-for="event in eventsByTerm(term.id)" :key="event.id">
-                  <td><time :datetime="event.start">{{ formatDate(event.start, true) }}</time><template v-if="event.end"> – <time :datetime="event.end">{{ formatDate(event.end, true) }}</time></template></td>
+                  <td><time :datetime="event.startDateTime || event.start">{{ formatDate(event.start, true) }}</time><template v-if="event.end"> – <time :datetime="event.end">{{ formatDate(event.end, true) }}</time></template></td>
                   <th scope="row">{{ event.title }}</th>
                   <td><button type="button" class="detail-link" @click="showDetails(event)">More information <span class="visually-hidden">about {{ event.title }}</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></button></td>
                 </tr>
@@ -109,7 +109,7 @@
               <thead><tr><th scope="col">Date</th><th scope="col">Celebration</th><th scope="col">Information</th></tr></thead>
               <tbody>
                 <tr v-for="event in eventsByTerm('celebrations')" :key="event.id">
-                  <td><time :datetime="event.start">{{ formatDate(event.start, true) }}</time></td>
+                  <td><time :datetime="event.startDateTime || event.start">{{ formatDate(event.start, true) }}</time></td>
                   <th scope="row">{{ event.title }}</th>
                   <td><button type="button" class="detail-link" @click="showDetails(event)">More information <span class="visually-hidden">about {{ event.title }}</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></button></td>
                 </tr>
@@ -126,21 +126,12 @@
 
 <script>
 import { nextTick } from 'vue';
-import { terms, events, formatDate } from '@/data/calendar';
+import { terms, events, calendarOnlyEvents, formatDate } from '@/data/calendar';
 import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
 
 const months = Array.from({ length: 11 }, (_, index) => new Date(Date.UTC(2026, 8 + index, 1)));
 const today = new Date();
 const currentIndex = months.findIndex(month => month.getUTCFullYear() === today.getFullYear() && month.getUTCMonth() === today.getMonth());
-const calendarOnlyEvents = [
-  {
-    id: 'agm-2026',
-    kind: 'meeting',
-    title: 'AGM',
-    start: '2026-10-31',
-    description: 'Annual General Meeting (AGM) on Saturday 31 October 2026. Please contact the school for further details.'
-  }
-];
 
 export default {
   name: 'SchoolCalendar',
@@ -189,13 +180,14 @@ export default {
         '@id': `${url}#page`,
         url,
         name: 'School Calendar 2026–2027 | Term Dates & Celebrations | Leicester Greek School',
-        description: 'Leicester Greek School calendar 2026–2027: autumn, spring and summer term dates, half-term breaks, Greek Easter and school celebrations in Leicester.',
+        description: 'Leicester Greek School calendar 2026–2027: term dates, half-term breaks, Greek Easter, celebrations and the 31 October AGM in Leicester.',
+        dateModified: '2026-10-10',
         inLanguage: 'en-GB',
         about: { '@id': 'https://leicestergreekschool.com/#organization' },
         mainEntity: {
           '@type': 'ItemList',
           name: 'Leicester Greek School dates 2026–2027',
-          itemListElement: this.events.map((event, index) => ({
+          itemListElement: [...this.events, ...this.calendarOnlyEvents].sort((a, b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title)).map((event, index) => ({
             '@type': 'ListItem',
             position: index + 1,
             item: {
@@ -203,8 +195,9 @@ export default {
               '@id': `${url}#${event.id}`,
               name: event.title,
               description: event.description,
-              startDate: event.start,
+              startDate: event.startDateTime || event.start,
               ...(event.end ? { endDate: event.end } : {}),
+              ...(event.venueName ? { location: { '@type': 'Place', name: event.venueName, ...(event.venueUrl ? { url: event.venueUrl } : {}) } } : {}),
               organizer: { '@id': 'https://leicestergreekschool.com/#organization' }
             }
           }))

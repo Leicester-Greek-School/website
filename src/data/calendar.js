@@ -3,6 +3,7 @@ import calendar from './calendar.json';
 export const schoolYear = calendar.schoolYear;
 export const terms = calendar.terms;
 export const events = calendar.events;
+export const calendarOnlyEvents = calendar.calendarOnlyEvents;
 
 const shortDate = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const weekdayDate = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
