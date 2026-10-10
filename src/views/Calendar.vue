@@ -60,9 +60,10 @@
             <thead><tr><th v-for="day in weekdays" :key="day" scope="col">{{ day }}</th></tr></thead>
             <tbody>
               <tr v-for="(week, weekIndex) in weeks" :key="weekIndex">
-                <td v-for="(date, dayIndex) in week" :key="dayIndex" :class="{ 'outside-month': !date, 'term-day': date && isTermDay(date), 'break-day': date && isBreakDay(date) }">
+                <td v-for="(date, dayIndex) in week" :key="dayIndex" :class="{ 'outside-month': !date, 'term-day': date && isTermDay(date), 'break-day': date && isBreakDay(date), 'in-person-day': date && isInPersonDay(date) }">
                   <template v-if="date">
                     <span class="day-number">{{ Number(date.slice(-2)) }}</span>
+                    <span v-if="isInPersonDay(date)" class="visually-hidden">In-person classes on this date.</span>
                     <div class="day-events">
                       <button v-for="event in eventsForDay(date)" :key="event.id" type="button" class="calendar-event" :class="`kind-${event.kind}`" :aria-label="`${event.title}, ${formatDate(date, true)}. Show details`" @click="showDetails(event)">
                         {{ event.title }}
@@ -75,6 +76,7 @@
           </table>
         </div>
         <div class="calendar-legend" aria-label="Calendar key">
+          <span><i class="legend-dot in-person" aria-hidden="true"></i> In-person classes (Thursdays &amp; Saturdays)</span>
           <span><i class="legend-dot kind-term" aria-hidden="true"></i> Term start / end</span>
           <span><i class="legend-dot kind-break" aria-hidden="true"></i> Half term / Greek Easter</span>
           <span><i class="legend-dot kind-celebration" aria-hidden="true"></i> Celebration</span>
@@ -218,6 +220,10 @@ export default {
         return date >= termEvents[0].start && date <= termEvents[termEvents.length - 1].start;
       });
     },
+    isInPersonDay(date) {
+      const weekday = new Date(`${date}T12:00:00Z`).getUTCDay();
+      return (weekday === 4 || weekday === 6) && this.isTermDay(date) && !this.isBreakDay(date);
+    },
     kindLabel(event) {
       if (event.kind === 'celebration') return 'School celebration';
       if (event.kind === 'break') return 'School calendar break';
@@ -263,6 +269,8 @@ export default {
 .month-grid td.outside-month { background: #f7f7f7; border-color: transparent; }
 .month-grid td.term-day { background: #fbf7f9; }
 .month-grid td.break-day { background: #fff8e9; }
+.month-grid td.in-person-day { background: #e8f5e9; box-shadow: inset 0 0 0 2px #39824a; }
+.month-grid td.in-person-day .day-number { color: #1d6532; }
 .day-number { display: block; color: var(--text-dark); font-weight: 700; margin-bottom: .3rem; }
 .day-events { display: grid; gap: .3rem; }
 .calendar-event { display: block; width: 100%; border: 0; border-radius: 5px; padding: .3rem .35rem; color: #fff; font-size: .72rem; font-weight: 700; line-height: 1.2; text-align: left; overflow-wrap: anywhere; }
@@ -272,6 +280,7 @@ export default {
 .calendar-event.kind-celebration, .legend-dot.kind-celebration { background: #245e70; }
 .calendar-legend { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; padding: 1rem .2rem; color: var(--text-medium); font-size: .9rem; }
 .legend-dot { display: inline-block; width: .72rem; height: .72rem; border-radius: 50%; margin-right: .35rem; }
+.legend-dot.in-person { background: #39824a; }
 .event-detail { display: flex; justify-content: space-between; gap: 1.5rem; background: var(--primary-light); border-left: 5px solid var(--primary-color); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 0 0 1.5rem; scroll-margin-top: 1rem; }
 .event-detail h2 { font-size: 1.5rem; font-weight: 700; margin: .3rem 0; }
 .event-detail p { margin-bottom: .4rem; line-height: 1.6; }
