@@ -8,7 +8,7 @@
   "events": [
     { "id": "autumn-start", "term": "autumn", "kind": "term", "title": "Autumn term starts", "start": "2026-09-05", "description": "The first day of the autumn term at Leicester Greek School." },
     { "id": "autumn-half-term", "term": "autumn", "kind": "break", "title": "Autumn half term", "start": "2026-10-19", "end": "2026-10-24", "description": "Autumn half-term break, from Monday 19 October through Saturday 24 October 2026." },
-    { "id": "october-celebration", "term": "celebrations", "kind": "celebration", "title": "28th October Celebration", "start": "2026-10-31", "description": "School celebration of 28 October, scheduled for Saturday 31 October 2026. Please contact the school for event details." },
+    { "id": "october-celebration", "term": "celebrations", "kind": "celebration", "title": "28th October Celebration", "start": "2026-10-31", "description": "School celebration of 28 October, scheduled for Saturday 31 October 2026 at 12:30pm. Please contact the school for event details." },
     { "id": "christmas-celebration", "term": "celebrations", "kind": "celebration", "title": "Christmas Celebration", "start": "2026-12-13", "description": "Leicester Greek School Christmas Celebration, scheduled for Sunday 13 December 2026. Please contact the school for event details." },
     { "id": "autumn-end", "term": "autumn", "kind": "term", "title": "Autumn term ends", "start": "2026-12-19", "description": "The last day of the autumn term at Leicester Greek School." },
     { "id": "spring-start", "term": "spring", "kind": "term", "title": "Spring term starts", "start": "2027-01-09", "description": "The first day of the spring term at Leicester Greek School." },

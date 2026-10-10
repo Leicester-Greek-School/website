@@ -80,6 +80,7 @@
           <span><i class="legend-dot kind-term" aria-hidden="true"></i> Term start / end</span>
           <span><i class="legend-dot kind-break" aria-hidden="true"></i> Half term / Greek Easter</span>
           <span><i class="legend-dot kind-celebration" aria-hidden="true"></i> Celebration</span>
+          <span><i class="legend-dot kind-meeting" aria-hidden="true"></i> AGM</span>
         </div>
       </section>
 
@@ -131,6 +132,15 @@ import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
 const months = Array.from({ length: 11 }, (_, index) => new Date(Date.UTC(2026, 8 + index, 1)));
 const today = new Date();
 const currentIndex = months.findIndex(month => month.getUTCFullYear() === today.getFullYear() && month.getUTCMonth() === today.getMonth());
+const calendarOnlyEvents = [
+  {
+    id: 'agm-2026',
+    kind: 'meeting',
+    title: 'AGM',
+    start: '2026-10-31',
+    description: 'Annual General Meeting (AGM) on Saturday 31 October 2026. Please contact the school for further details.'
+  }
+];
 
 export default {
   name: 'SchoolCalendar',
@@ -138,6 +148,7 @@ export default {
     return {
       terms,
       events,
+      calendarOnlyEvents,
       months,
       weekdays: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       monthIndex: currentIndex < 0 ? 0 : currentIndex,
@@ -146,7 +157,7 @@ export default {
     };
   },
   computed: {
-    selectedEvent() { return this.events.find(event => event.id === this.selectedId); },
+    selectedEvent() { return [...this.events, ...this.calendarOnlyEvents].find(event => event.id === this.selectedId); },
     monthLabel() {
       return new Intl.DateTimeFormat('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(this.months[this.monthIndex]);
     },
@@ -212,7 +223,7 @@ export default {
   methods: {
     formatDate,
     eventsByTerm(termId) { return this.events.filter(event => event.term === termId); },
-    eventsForDay(date) { return this.events.filter(event => event.start <= date && (event.end || event.start) >= date); },
+    eventsForDay(date) { return [...this.events, ...this.calendarOnlyEvents].filter(event => event.start <= date && (event.end || event.start) >= date); },
     isBreakDay(date) { return this.events.some(event => event.kind === 'break' && event.start <= date && event.end >= date); },
     isTermDay(date) {
       return this.terms.some(term => {
@@ -225,6 +236,7 @@ export default {
       return (weekday === 4 || weekday === 6) && this.isTermDay(date) && !this.isBreakDay(date);
     },
     kindLabel(event) {
+      if (event.kind === 'meeting') return 'School meeting';
       if (event.kind === 'celebration') return 'School celebration';
       if (event.kind === 'break') return 'School calendar break';
       return this.terms.find(term => term.id === event.term)?.name || 'Term date';
@@ -278,6 +290,7 @@ export default {
 .calendar-event.kind-term, .legend-dot.kind-term { background: var(--primary-color); }
 .calendar-event.kind-break, .legend-dot.kind-break { background: #93651c; }
 .calendar-event.kind-celebration, .legend-dot.kind-celebration { background: #245e70; }
+.calendar-event.kind-meeting, .legend-dot.kind-meeting { background: #514d79; }
 .calendar-legend { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; padding: 1rem .2rem; color: var(--text-medium); font-size: .9rem; }
 .legend-dot { display: inline-block; width: .72rem; height: .72rem; border-radius: 50%; margin-right: .35rem; }
 .legend-dot.in-person { background: #39824a; }
@@ -288,6 +301,7 @@ export default {
 .event-kind { color: var(--primary-color); font-size: .8rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .event-kind.kind-break { color: #795014; }
 .event-kind.kind-celebration { color: #245e70; }
+.event-kind.kind-meeting { color: #514d79; }
 .detail-close { align-self: flex-start; border: 0; background: transparent; color: var(--primary-color); font-size: 1.8rem; line-height: 1; }
 .calendar-table-section { margin: 0 0 2.25rem; }
 .calendar-table-section h2 { font-size: 1.65rem; font-weight: 700; padding-bottom: .65rem; border-bottom: 3px solid var(--accent-gold); }
