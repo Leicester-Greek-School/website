@@ -1,11 +1,11 @@
 // Build a readable HTML version of the calendar for crawlers and visitors without JavaScript.
 // Vue replaces #app with the interactive calendar once the bundle loads.
-const { terms, events, calendarOnlyEvents } = require('../src/data/calendar.json');
+const { terms, events, calendarOnlyEvents, lastUpdated, seoDescription } = require('../src/data/calendar.json');
 const allEvents = [...events, ...calendarOnlyEvents].sort((a, b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
 
 const url = 'https://leicestergreekschool.com/calendar/';
 const title = 'School Calendar 2026–2027 | Term Dates & Celebrations | Leicester Greek School';
-const description = 'Leicester Greek School calendar 2026–2027: term dates, half-term breaks, Greek Easter, celebrations and the 31 October AGM in Leicester.';
+const description = seoDescription;
 const dateFormat = new Intl.DateTimeFormat('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 
 function escapeHtml(value) {
@@ -35,7 +35,7 @@ const schema = {
   url,
   name: title,
   description,
-  dateModified: '2026-10-10',
+  dateModified: lastUpdated,
   inLanguage: 'en-GB',
   about: { '@id': 'https://leicestergreekschool.com/#organization' },
   mainEntity: {
@@ -67,7 +67,7 @@ function renderCalendarPage() {
   <title>${escapeHtml(title)}</title>
   <meta name="title" content="${escapeHtml(title)}">
   <meta name="description" content="${escapeHtml(description)}">
-  <meta name="keywords" content="Leicester Greek School calendar 2026 2027, Greek school term dates Leicester, half term, Greek Easter, school celebrations, AGM Leicester Greek School">
+  <meta name="keywords" content="Leicester Greek School calendar 2026 2027, Greek school term dates Leicester, half term, Greek Easter, Christmas celebration Leicester, school celebrations, AGM Leicester Greek School">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${url}">
@@ -87,7 +87,7 @@ function renderCalendarPage() {
     <main style="font:16px/1.6 system-ui,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#291720">
       <nav aria-label="Breadcrumb"><a href="/">Home</a> / School Calendar</nav>
       <h1>Leicester Greek School Calendar 2026–2027</h1>
-      <p>Official term dates, half-term dates, Greek Easter, school celebrations and the 31 October AGM. Enable JavaScript for the interactive monthly calendar and table toggle.</p>
+      <p>Official term dates, half-term dates, Greek Easter, school celebrations, including the 13 December Christmas Celebration, and the 31 October AGM. Enable JavaScript for the interactive monthly calendar and table toggle.</p>
       <p>In-person classes take place on Thursdays and Saturdays during term time, excluding the listed breaks.</p>
       ${terms.map(term => section(term.id, term.name)).join('\n')}
       ${section('celebrations', 'School celebrations 2026–2027')}

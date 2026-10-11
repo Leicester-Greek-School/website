@@ -126,7 +126,7 @@
 
 <script>
 import { nextTick } from 'vue';
-import { terms, events, calendarOnlyEvents, formatDate } from '@/data/calendar';
+import { terms, events, calendarOnlyEvents, calendarLastUpdated, calendarSeoDescription, formatDate } from '@/data/calendar';
 import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
 
 const months = Array.from({ length: 11 }, (_, index) => new Date(Date.UTC(2026, 8 + index, 1)));
@@ -180,8 +180,8 @@ export default {
         '@id': `${url}#page`,
         url,
         name: 'School Calendar 2026–2027 | Term Dates & Celebrations | Leicester Greek School',
-        description: 'Leicester Greek School calendar 2026–2027: term dates, half-term breaks, Greek Easter, celebrations and the 31 October AGM in Leicester.',
-        dateModified: '2026-10-10',
+        description: calendarSeoDescription,
+        dateModified: calendarLastUpdated,
         inLanguage: 'en-GB',
         about: { '@id': 'https://leicestergreekschool.com/#organization' },
         mainEntity: {

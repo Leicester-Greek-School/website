@@ -7,6 +7,7 @@ import Register from '../views/Register.vue';
 import Policies from '../views/Policies.vue';
 import Announcements from '../views/Announcements.vue';
 import SchoolCalendar from '../views/Calendar.vue';
+import { calendarSeoDescription } from '../data/calendar';
 import PrivacyPolicy from '../views/PrivacyPolicy.vue';
 import SupportUs from '../views/SupportUs.vue';
 
@@ -67,8 +68,8 @@ const routes = [
     component: SchoolCalendar,
     meta: {
       title: 'School Calendar 2026–2027 | Term Dates & Celebrations | Leicester Greek School',
-      description: 'Leicester Greek School calendar 2026–2027: term dates, half-term breaks, Greek Easter, celebrations and the 31 October AGM in Leicester.',
-      keywords: 'Leicester Greek School calendar 2026 2027, Greek school term dates Leicester, half term, Greek Easter, school celebrations, AGM Leicester Greek School'
+      description: calendarSeoDescription,
+      keywords: 'Leicester Greek School calendar 2026 2027, Greek school term dates Leicester, half term, Greek Easter, Christmas celebration Leicester, school celebrations, AGM Leicester Greek School'
     }
   },
   {
