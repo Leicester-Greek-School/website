@@ -1,6 +1,8 @@
 import calendar from './calendar.json';
 
 export const schoolYear = calendar.schoolYear;
+export const calendarLastUpdated = calendar.lastUpdated;
+export const calendarSeoDescription = calendar.seoDescription;
 export const terms = calendar.terms;
 export const events = calendar.events;
 export const calendarOnlyEvents = calendar.calendarOnlyEvents;
