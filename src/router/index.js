@@ -38,8 +38,9 @@ const routes = [
     name: 'Committee',
     component: Committee,
     meta: {
-      title: 'School Committee 2026-2027 | Leicester Greek School',
-      description: 'Meet Leicester Greek School’s 2026-2027 volunteer committee, chaired by George Anastasakis, supporting the school and Greek and Cypriot community.'
+      title: 'School Committee 2026–2027 & Constitution | Leicester Greek School',
+      description: 'Meet Leicester Greek School’s 2026-2027 volunteer committee, chaired by George Anastasakis, and download the school Parents Association Constitution (PDF).',
+      keywords: 'Leicester Greek School committee, Greek school constitution PDF, Leicester Greek School governance, George Anastasakis, Greek community Leicester'
     }
   },
   {
@@ -48,7 +49,8 @@ const routes = [
     component: Register,
     meta: {
       title: 'Register for Greek Classes in Leicester & Online | Leicester Greek School',
-      description: 'Register for in-person Greek classes in Leicester for children and teenagers, adult Greek classes, or online Greek lessons for children and adults at Leicester Greek School.'
+      description: 'Register for in-person Greek classes in Leicester for children, teenagers and adults, or online lessons. Access online Google registration forms for children and adults.',
+      keywords: 'Register Greek school Leicester, Greek classes registration, adult Greek classes Leicester registration form, Greek lessons children Leicester, online Greek lessons registration, Leicester Greek School forms'
     }
   },
   {
@@ -56,9 +58,9 @@ const routes = [
     name: 'Policies',
     component: Policies,
     meta: {
-      title: 'School Policies & Procedures | Leicester Greek School',
-      description: 'Leicester Greek School policies covering registration, class placement, health and safety, withdrawal, attendance times, class structure, allergies, mobile phones, visitors, privacy and complaints.',
-      keywords: 'Leicester Greek School policies, Greek school registration policy, school health and safety Leicester, school allergy policy, school complaints procedure, Greek school privacy policy'
+      title: 'School Policies & Constitution | Leicester Greek School',
+      description: 'Leicester Greek School policies covering registration, class placement, health and safety, attendance, complaints, and the 2026–2027 Parents Association Constitution (PDF).',
+      keywords: 'Leicester Greek School policies, Greek school constitution PDF, Greek school registration policy, school health and safety Leicester, school complaints procedure, Greek school privacy policy'
     }
   },
   {
@@ -78,7 +80,8 @@ const routes = [
     component: Announcements,
     meta: {
       title: 'News & Announcements | Leicester Greek School',
-      description: 'Latest news and announcements from Leicester Greek School. Term dates, events, cultural activities and school updates for the Greek and Cypriot community in Leicester.'
+      description: 'Latest news and announcements from Leicester Greek School, including the 28th October celebration event and poster, school updates, and term dates.',
+      keywords: 'Leicester Greek School announcements, 28 October celebration Leicester Greek School, Greek school events, Greek community Leicester announcements, Oxi Day celebration Leicester'
     }
   },
   {

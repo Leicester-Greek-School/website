@@ -1,7 +1,37 @@
 <template>
   <div class="policies">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-section">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <ol class="breadcrumb-list">
+            <li><router-link to="/">Home</router-link></li>
+            <li class="active" aria-current="page">Policies</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
     <div class="container my-5">
       <h2 class="page-title">School Policies</h2>
+
+      <div class="info-section">
+        <h3 class="section-title">School Constitution &amp; Governance</h3>
+        <p class="text-justify">
+          The operation and governance of Leicester Greek School are guided by the Leicester Greek School
+          Parents Association Constitution. You can download the official document below.
+        </p>
+        <p class="text-justify mb-0">
+          <a
+            class="constitution-download btn btn-outline-primary"
+            href="/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf"
+            download
+          >
+            <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+            Download the 2026–2027 Parents Association Constitution (PDF)
+          </a>
+        </p>
+      </div>
 
       <div class="info-section">
         <h3 class="section-title">Registration and Enrolment</h3>
@@ -193,9 +223,87 @@
   </div>
 </template>
 
+<script>
+import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
+
+export default {
+  name: 'Policies',
+  mounted() {
+    injectJsonLd('breadcrumb-policies', breadcrumbSchema([
+      { name: 'Home', url: 'https://leicestergreekschool.com/' },
+      { name: 'Policies', url: 'https://leicestergreekschool.com/policies' }
+    ]));
+    injectJsonLd('constitution-policy-doc', {
+      '@context': 'https://schema.org',
+      '@type': 'DigitalDocument',
+      'name': 'Leicester Greek School Parents Association Constitution 2026–2027',
+      'description': 'Official constitution and governance document for the Leicester Greek School Parents Association.',
+      'url': 'https://leicestergreekschool.com/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf',
+      'encodingFormat': 'application/pdf',
+      'publisher': {
+        '@type': 'EducationalOrganization',
+        'name': 'Leicester Greek School',
+        'url': 'https://leicestergreekschool.com'
+      }
+    });
+  },
+  beforeUnmount() {
+    removeJsonLd('breadcrumb-policies');
+    removeJsonLd('constitution-policy-doc');
+  }
+};
+</script>
+
 <style scoped>
 .policies {
   background-color: var(--white);
+}
+
+/* Breadcrumb */
+.breadcrumb-section {
+  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(212, 165, 116, 0.05) 100%);
+  border-bottom: 2px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb-nav { display: flex; align-items: center; }
+
+.breadcrumb-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: '›';
+  margin-left: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.breadcrumb-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.breadcrumb-list a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+.breadcrumb-list li.active { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
+
+.constitution-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: normal;
 }
 
 .page-title {

@@ -103,9 +103,23 @@ export default {
       { name: 'Home', url: 'https://leicestergreekschool.com/' },
       { name: 'Committee', url: 'https://leicestergreekschool.com/committee' }
     ]));
+    injectJsonLd('constitution-committee-doc', {
+      '@context': 'https://schema.org',
+      '@type': 'DigitalDocument',
+      'name': 'Leicester Greek School Parents Association Constitution 2026–2027',
+      'description': 'Constitution and governance rules for Leicester Greek School Parents Association 2026–2027.',
+      'url': 'https://leicestergreekschool.com/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf',
+      'encodingFormat': 'application/pdf',
+      'publisher': {
+        '@type': 'EducationalOrganization',
+        'name': 'Leicester Greek School',
+        'url': 'https://leicestergreekschool.com'
+      }
+    });
   },
   beforeUnmount() {
     removeJsonLd('breadcrumb-committee');
+    removeJsonLd('constitution-committee-doc');
   }
 };
 </script>

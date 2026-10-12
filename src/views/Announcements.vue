@@ -47,9 +47,38 @@ export default {
       { name: 'Home', url: 'https://leicestergreekschool.com/' },
       { name: 'Announcements', url: 'https://leicestergreekschool.com/announcements' }
     ]));
+    injectJsonLd('event-28-october', {
+      '@context': 'https://schema.org',
+      '@type': 'Event',
+      'name': 'Εορτασμός 28ης Οκτωβρίου 1940 / 28th October Celebration',
+      'description': 'Leicester Greek School celebration for 28 October 1940 (Oxi Day), held at the Greek Orthodox Church of St Nicholas and St Xenophon.',
+      'startDate': '2026-10-31T12:30:00+00:00',
+      'endDate': '2026-10-31T13:30:00+00:00',
+      'eventStatus': 'https://schema.org/EventScheduled',
+      'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
+      'location': {
+        '@type': 'Place',
+        'name': 'Greek Orthodox Church of St Nicholas and St Xenophon',
+        'url': 'https://gocleicester.com/',
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': '2A Sawday Street',
+          'addressLocality': 'Leicester',
+          'postalCode': 'LE2 7JW',
+          'addressCountry': 'GB'
+        }
+      },
+      'image': 'https://leicestergreekschool.com' + octoberCelebrationPoster,
+      'organizer': {
+        '@type': 'EducationalOrganization',
+        'name': 'Leicester Greek School',
+        'url': 'https://leicestergreekschool.com'
+      }
+    });
   },
   beforeUnmount() {
     removeJsonLd('breadcrumb-announcements');
+    removeJsonLd('event-28-october');
   },
   data() {
     return {

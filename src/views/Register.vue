@@ -170,9 +170,47 @@ export default {
       { name: 'Home', url: 'https://leicestergreekschool.com/' },
       { name: 'Register', url: 'https://leicestergreekschool.com/register' }
     ]));
+    injectJsonLd('registration-courses', {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Course',
+          'name': 'Greek Language Classes for Children and Teenagers',
+          'description': 'In-person Greek language classes from Nursery through A-Level on Saturdays in Leicester.',
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'Leicester Greek School',
+            'sameAs': 'https://leicestergreekschool.com'
+          },
+          'offers': {
+            '@type': 'Offer',
+            'category': 'Tuition',
+            'url': 'https://forms.gle/sP5i7J8aN31s64R96'
+          }
+        },
+        {
+          '@type': 'Course',
+          'name': 'Adult Greek Language Classes',
+          'description': 'In-person Greek classes for adults of all levels on Thursday evenings in Leicester.',
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'Leicester Greek School',
+            'sameAs': 'https://leicestergreekschool.com'
+          },
+          'offers': {
+            '@type': 'Offer',
+            'price': '430',
+            'priceCurrency': 'GBP',
+            'category': 'Tuition',
+            'url': 'https://forms.gle/gjyPGaKfer785pV39'
+          }
+        }
+      ]
+    });
   },
   beforeUnmount() {
     removeJsonLd('breadcrumb-register');
+    removeJsonLd('registration-courses');
   }
 };
 </script>
