@@ -55,8 +55,9 @@ export default {
     return {
       announcements: [
         {
-          title: '28th October Celebration – Saturday 31 October 2026',
-          body: 'We invite all our students, families, and friends to our 28th October 1940 (Oxi Day) celebration on Saturday 31 October 2026, from 12:30 to 13:30 at the Greek Orthodox Church of St Nicholas and St Xenophon.',
+          title: 'Εορτασμός 28ης Οκτωβρίου',
+          body:
+              'Σας ενημερώνουμε ότι η σχολική μας γιορτή για την επέτειο της 28ης Οκτωβρίου θα πραγματοποιηθεί το Σάββατο 31 Οκτωβρίου 2026, στις 12:30 μ.μ., στην εκκλησία των Αγίων Νικολάου και Ξενοφώντος.',
           dateISO: '2026-10-12',
           dateDisplay: '12 Oct 2026',
           image: octoberCelebrationPoster,
