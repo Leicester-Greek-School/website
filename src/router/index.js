@@ -59,8 +59,8 @@ const routes = [
     component: Policies,
     meta: {
       title: 'School Policies & Procedures | Leicester Greek School',
-      description: 'Leicester Greek School policies covering registration, class placement, health and safety, attendance, mobile phones, visitor access, fees, data protection and complaints.',
-      keywords: 'Leicester Greek School policies, Greek school registration policy, school health and safety Leicester, school complaints procedure, Greek school privacy policy'
+      description: 'Leicester Greek School 2026-2027 policies covering registration, health and safety, attendance, mobile phones, fees, data protection and complaints. Download the full policy PDF.',
+      keywords: 'Leicester Greek School policies, Greek school policy 2026-2027 PDF, Greek school registration policy, school health and safety Leicester, school complaints procedure, Greek school privacy policy'
     }
   },
   {
