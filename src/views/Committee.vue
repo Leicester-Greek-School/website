@@ -70,7 +70,11 @@
           </li>
         </ul>
 
-        <h3 class="section-title">School Constitution</h3>
+        <h3 class="section-title">PA Constitution</h3>
+        <p class="text-justify">
+          The operation and governance of Leicester Greek School are guided by the Leicester Greek School
+          Parents Association Constitution. You can download the official document below.
+        </p>
         <p class="text-justify">
           <a
             class="constitution-download btn btn-outline-primary"

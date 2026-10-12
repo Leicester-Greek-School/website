@@ -16,24 +16,6 @@
       <h2 class="page-title">School Policies</h2>
 
       <div class="info-section">
-        <h3 class="section-title">School Constitution &amp; Governance</h3>
-        <p class="text-justify">
-          The operation and governance of Leicester Greek School are guided by the Leicester Greek School
-          Parents Association Constitution. You can download the official document below.
-        </p>
-        <p class="text-justify mb-0">
-          <a
-            class="constitution-download btn btn-outline-primary"
-            href="/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf"
-            download
-          >
-            <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
-            Download the 2026–2027 Parents Association Constitution (PDF)
-          </a>
-        </p>
-      </div>
-
-      <div class="info-section">
         <h3 class="section-title">Registration and Enrolment</h3>
         <p class="text-justify">
           Every student must complete the school's registration process before attending classes or
@@ -233,23 +215,9 @@ export default {
       { name: 'Home', url: 'https://leicestergreekschool.com/' },
       { name: 'Policies', url: 'https://leicestergreekschool.com/policies' }
     ]));
-    injectJsonLd('constitution-policy-doc', {
-      '@context': 'https://schema.org',
-      '@type': 'DigitalDocument',
-      'name': 'Leicester Greek School Parents Association Constitution 2026–2027',
-      'description': 'Official constitution and governance document for the Leicester Greek School Parents Association.',
-      'url': 'https://leicestergreekschool.com/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf',
-      'encodingFormat': 'application/pdf',
-      'publisher': {
-        '@type': 'EducationalOrganization',
-        'name': 'Leicester Greek School',
-        'url': 'https://leicestergreekschool.com'
-      }
-    });
   },
   beforeUnmount() {
     removeJsonLd('breadcrumb-policies');
-    removeJsonLd('constitution-policy-doc');
   }
 };
 </script>
@@ -298,13 +266,6 @@ export default {
 
 .breadcrumb-list a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
 .breadcrumb-list li.active { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
-
-.constitution-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: normal;
-}
 
 .page-title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);

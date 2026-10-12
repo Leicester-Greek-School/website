@@ -38,9 +38,9 @@ const routes = [
     name: 'Committee',
     component: Committee,
     meta: {
-      title: 'School Committee 2026–2027 & Constitution | Leicester Greek School',
-      description: 'Meet Leicester Greek School’s 2026-2027 volunteer committee, chaired by George Anastasakis, and download the school Parents Association Constitution (PDF).',
-      keywords: 'Leicester Greek School committee, Greek school constitution PDF, Leicester Greek School governance, George Anastasakis, Greek community Leicester'
+      title: 'School Committee 2026–2027 & PA Constitution | Leicester Greek School',
+      description: 'Meet Leicester Greek School’s 2026-2027 volunteer committee, chaired by George Anastasakis, and download the Parents Association (PA) Constitution (PDF).',
+      keywords: 'Leicester Greek School committee, PA constitution PDF, Greek school constitution PDF, Leicester Greek School governance, George Anastasakis, Greek community Leicester'
     }
   },
   {
@@ -58,9 +58,9 @@ const routes = [
     name: 'Policies',
     component: Policies,
     meta: {
-      title: 'School Policies & Constitution | Leicester Greek School',
-      description: 'Leicester Greek School policies covering registration, class placement, health and safety, attendance, complaints, and the 2026–2027 Parents Association Constitution (PDF).',
-      keywords: 'Leicester Greek School policies, Greek school constitution PDF, Greek school registration policy, school health and safety Leicester, school complaints procedure, Greek school privacy policy'
+      title: 'School Policies & Procedures | Leicester Greek School',
+      description: 'Leicester Greek School policies covering registration, class placement, health and safety, attendance, mobile phones, visitor access, fees, data protection and complaints.',
+      keywords: 'Leicester Greek School policies, Greek school registration policy, school health and safety Leicester, school complaints procedure, Greek school privacy policy'
     }
   },
   {

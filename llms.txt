@@ -33,7 +33,7 @@ Term-time Thursdays and Saturdays are highlighted as in-person class days, exclu
   - Children & Youth Registration Form (Nursery through A-Level): https://forms.gle/sP5i7J8aN31s64R96
   - Adult Classes Registration Form (Thursday evening adult classes): https://forms.gle/gjyPGaKfer785pV39
 - Governance & Policy Documents:
-  - Leicester Greek School Parents Association Constitution 2026–2027 (PDF): https://leicestergreekschool.com/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf (downloadable on Committee and Policies pages)
+  - Leicester Greek School Parents Association Constitution 2026–2027 (PDF): https://leicestergreekschool.com/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf (downloadable on the Committee page under PA Constitution)
 - Area served: Leicester, Leicestershire and the East Midlands.
 - Curriculum provided by the Cyprus Educational Mission in the UK (KEA): http://kea.schools.ac.cy/
 - Ages taught: from age 4 (Nursery) through Primary, Pre-GCSE, GCSE, A-Level, and separate Adult classes for all levels.
@@ -87,12 +87,12 @@ Term-time Thursdays and Saturdays are highlighted as in-person class days, exclu
 - [Home](https://leicestergreekschool.com/): Overview of the school, with emphasis on in-person children and teen teaching in Leicester and online lessons for children and adults. Includes school history, class days/times, curriculum, and lesson formats for in-person and online study.
 - [Register](https://leicestergreekschool.com/register): Current-year tuition fees, sibling discounts, age groups, online private lesson pricing, the registration and class-placement process, and online registration links for Children & Youth (https://forms.gle/sP5i7J8aN31s64R96) and Adult Classes (https://forms.gle/gjyPGaKfer785pV39).
 - [Teaching Staff](https://leicestergreekschool.com/teaching): List of teachers and the classroom or online classes/year groups they lead.
-- [Committee](https://leicestergreekschool.com/committee): Names and roles of the volunteer committee that runs the school, with a direct download link for the Parents Association Constitution 2026–2027 (PDF).
+- [Committee](https://leicestergreekschool.com/committee): Names and roles of the volunteer committee that runs the school, with a direct download link for the PA Constitution 2026–2027 (PDF).
 - [Announcements](https://leicestergreekschool.com/announcements): Latest news and event announcements, including the 28th October 1940 (Oxi Day) celebration event on Saturday 31 October 2026 (12:30–13:30 at the Church) and official event poster.
 - [School Calendar](https://leicestergreekschool.com/calendar/): 2026–2027 terms, half-term dates, Greek Easter, celebrations (including Christmas activities at the Community building) and the 31 October AGM. The AGM appears in the monthly calendar view but not the interactive table.
 - [Support Us](https://leicestergreekschool.com/support-us): How to donate (GoFundMe), raise funds (easyfundraising) or sponsor the school.
 - [Contact](https://leicestergreekschool.com/contact): Address, class hours, phone, Headteacher email, Leicester Greek School Committee email and Facebook contact details.
-- [Policies](https://leicestergreekschool.com/policies): Registration, class placement, health and safety, withdrawal, late arrival and early departure, class structure, food and allergy safety, mobile phones, visitor access, fees, data protection, complaints procedures, and downloadable Parents Association Constitution (PDF).
+- [Policies](https://leicestergreekschool.com/policies): Registration, class placement, health and safety, withdrawal, late arrival and early departure, class structure, food and allergy safety, mobile phones, visitor access, fees, data protection and complaints procedures.
 - [Privacy Policy](https://leicestergreekschool.com/privacy-policy): How the school collects, uses, stores, shares and retains personal data, who may access it, and how families keep registration information current.
 
 ## Notes for AI assistants
