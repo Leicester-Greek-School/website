@@ -24,6 +24,11 @@
               <time :datetime="a.dateISO">{{ a.dateDisplay }}</time>
             </p>
             <p class="announcement-body">{{ a.body }}</p>
+            <div v-if="a.image" class="announcement-media">
+              <a :href="a.image" target="_blank" rel="noopener noreferrer" class="announcement-image-link" aria-label="View full size poster">
+                <img :src="a.image" :alt="a.imageAlt || a.title" class="announcement-image" loading="lazy" />
+              </a>
+            </div>
           </article>
         </li>
       </ul>
@@ -33,6 +38,7 @@
 
 <script>
 import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
+import octoberCelebrationPoster from '@/assets/images/posters/28-october-celebration-2026.jpeg';
 
 export default {
   name: 'Announcements',
@@ -48,6 +54,14 @@ export default {
   data() {
     return {
       announcements: [
+        {
+          title: '28th October Celebration – Saturday 31 October 2026',
+          body: 'We invite all our students, families, and friends to our 28th October 1940 (Oxi Day) celebration on Saturday 31 October 2026, from 12:30 to 13:30 at the Greek Orthodox Church of St Nicholas and St Xenophon.',
+          dateISO: '2026-10-12',
+          dateDisplay: '12 Oct 2026',
+          image: octoberCelebrationPoster,
+          imageAlt: '28 October 1940 celebration poster for Saturday 31 October 2026, 12:30 - 13:30 at the Church'
+        },
         {
           title: 'Welcome Back to the New Term',
           body: 'Classes resume this Saturday. We look forward to seeing all students and welcoming new families.',
@@ -187,6 +201,35 @@ article {
   color: var(--text-dark);
   font-size: 1rem;
   letter-spacing: 0.2px;
+}
+
+.announcement-media {
+  margin-top: 1.5rem;
+}
+
+.announcement-image-link {
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.announcement-image-link:hover,
+.announcement-image-link:focus {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.announcement-image {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  max-height: 520px;
+  height: auto;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
