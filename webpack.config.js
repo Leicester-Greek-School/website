@@ -95,6 +95,10 @@ module.exports = {
           to: 'docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf'
         },
         {
+          from: 'public/docs/Leicester-Greek-School-Policy-2026-2027.pdf',
+          to: 'docs/Leicester-Greek-School-Policy-2026-2027.pdf'
+        },
+        {
           // Copy logo to dist root so /lgs-logo.jpg resolves for og:image
           from: 'src/assets/images/lgs-logo.jpg',
           to: 'lgs-logo.jpg',

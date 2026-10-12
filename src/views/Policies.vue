@@ -16,6 +16,21 @@
       <h2 class="page-title">School Policies</h2>
 
       <div class="info-section">
+        <h3 class="section-title">2026-2027 School Policy</h3>
+        <p class="text-justify">
+          Download the Leicester Greek School policy for the 2026-2027 academic year.
+        </p>
+        <a
+          class="btn btn-primary"
+          href="/docs/Leicester-Greek-School-Policy-2026-2027.pdf"
+          download
+        >
+          <i class="bi bi-download" aria-hidden="true"></i>
+          Download the 2026-2027 Policy (PDF)
+        </a>
+      </div>
+
+      <div class="info-section">
         <h3 class="section-title">Registration and Enrolment</h3>
         <p class="text-justify">
           Every student must complete the school's registration process before attending classes or
