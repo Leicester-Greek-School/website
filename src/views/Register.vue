@@ -102,28 +102,59 @@
       </div>
 
       <div class="registration-online mt-4">
-        <h3 class="section-title">2026–27 Φόρμα εγγραφής / Registration form</h3>
-        <p class="text-justify">
-          (Το όριο εγγραφής στο Νηπιαγωγείο έχει καθοριστεί στα 4 έτη, συμπληρωμένα πριν την έναρξη της σχολικής χρονιάς. /
-          Τhe lower age limit for admissions to our Nursery class is set at 4 years old, that is children can start from
-          the September following their fourth birthday.)
-        </p>
-        <div class="d-grid d-sm-inline-flex gap-2">
-          <a
-            href="https://forms.gle/sP5i7J8aN31s64R96"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary custom-btn"
-            aria-label="Open Google Registration Form in a new tab"
-          >
-            Open Google Registration Form
-          </a>
+        <h3 class="section-title">2026–27 Online Registration Forms / Φόρμες εγγραφής</h3>
+
+        <div class="registration-option mb-4 pb-4 border-divider">
+          <h4 class="form-heading">Children &amp; Youth Registration Form / Φόρμα εγγραφής μαθητών</h4>
+          <p class="text-justify">
+            For Nursery through A-Level students.
+            <br>
+            <span class="small-note-inline">
+              (Το όριο εγγραφής στο Νηπιαγωγείο έχει καθοριστεί στα 4 έτη, συμπληρωμένα πριν την έναρξη της σχολικής χρονιάς. /
+              The lower age limit for admissions to our Nursery class is set at 4 years old, that is children can start from
+              the September following their fourth birthday.)
+            </span>
+          </p>
+          <div class="d-grid d-sm-inline-flex gap-2">
+            <a
+              href="https://forms.gle/sP5i7J8aN31s64R96"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary custom-btn"
+              aria-label="Open Children and Youth Google Registration Form in a new tab"
+            >
+              Open Children &amp; Youth Registration Form
+            </a>
+          </div>
+          <p class="mt-3 small">
+            If the button does not work, copy and paste this link into your browser:
+            <br>
+            <a href="https://forms.gle/sP5i7J8aN31s64R96" target="_blank" rel="noopener noreferrer">https://forms.gle/sP5i7J8aN31s64R96</a>
+          </p>
         </div>
-        <p class="mt-3 small">
-          If the button does not work, copy and paste this link into your browser:
-          <br>
-          <a href="https://forms.gle/sP5i7J8aN31s64R96" target="_blank" rel="noopener noreferrer">https://forms.gle/sP5i7J8aN31s64R96</a>
-        </p>
+
+        <div class="registration-option">
+          <h4 class="form-heading">Adult Classes Registration Form / Φόρμα εγγραφής ενηλίκων</h4>
+          <p class="text-justify">
+            For adult Greek language learners of all levels.
+          </p>
+          <div class="d-grid d-sm-inline-flex gap-2">
+            <a
+              href="https://forms.gle/gjyPGaKfer785pV39"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary custom-btn"
+              aria-label="Open Adults Google Registration Form in a new tab"
+            >
+              Open Adults Registration Form
+            </a>
+          </div>
+          <p class="mt-3 small">
+            If the button does not work, copy and paste this link into your browser:
+            <br>
+            <a href="https://forms.gle/gjyPGaKfer785pV39" target="_blank" rel="noopener noreferrer">https://forms.gle/gjyPGaKfer785pV39</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -385,6 +416,24 @@ export default {
   color: var(--white);
   margin-top: 0;
   font-size: 1.5rem;
+}
+
+.form-heading {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.2px;
+}
+
+.border-divider {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.small-note-inline {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .registration-online .text-justify {
