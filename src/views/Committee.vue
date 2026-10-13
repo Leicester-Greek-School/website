@@ -70,6 +70,22 @@
           </li>
         </ul>
 
+        <h3 class="section-title">PA Constitution</h3>
+        <p class="text-justify">
+          The operation and governance of Leicester Greek School are guided by the Leicester Greek School
+          Parents Association Constitution. You can download the official document below.
+        </p>
+        <p class="text-justify">
+          <a
+            class="constitution-download btn btn-outline-primary"
+            href="/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf"
+            download
+          >
+            <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+            Download the 2026–2027 Parents Association Constitution (PDF)
+          </a>
+        </p>
+
         <h3 class="section-title">Get Involved</h3>
         <p class="text-justify">
           We welcome parents and community members who are interested in contributing to the school.
@@ -91,9 +107,23 @@ export default {
       { name: 'Home', url: 'https://leicestergreekschool.com/' },
       { name: 'Committee', url: 'https://leicestergreekschool.com/committee' }
     ]));
+    injectJsonLd('constitution-committee-doc', {
+      '@context': 'https://schema.org',
+      '@type': 'DigitalDocument',
+      'name': 'Leicester Greek School Parents Association Constitution 2026–2027',
+      'description': 'Constitution and governance rules for Leicester Greek School Parents Association 2026–2027.',
+      'url': 'https://leicestergreekschool.com/docs/Leicester-Greek-school-parents-association-constitution-2026-2027.pdf',
+      'encodingFormat': 'application/pdf',
+      'publisher': {
+        '@type': 'EducationalOrganization',
+        'name': 'Leicester Greek School',
+        'url': 'https://leicestergreekschool.com'
+      }
+    });
   },
   beforeUnmount() {
     removeJsonLd('breadcrumb-committee');
+    removeJsonLd('constitution-committee-doc');
   }
 };
 </script>
@@ -329,6 +359,13 @@ export default {
 .member-email:focus {
   color: var(--primary-color);
   border-bottom: 2px solid var(--primary-color);
+}
+
+.constitution-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: normal;
 }
 
 @media (max-width: 768px) {

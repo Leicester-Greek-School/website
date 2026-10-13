@@ -91,6 +91,10 @@ module.exports = {
           force: true
         },
         {
+          from: 'public/docs',
+          to: 'docs'
+        },
+        {
           // Copy logo to dist root so /lgs-logo.jpg resolves for og:image
           from: 'src/assets/images/lgs-logo.jpg',
           to: 'lgs-logo.jpg',

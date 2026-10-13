@@ -1,7 +1,34 @@
 <template>
   <div class="policies">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-section">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <ol class="breadcrumb-list">
+            <li><router-link to="/">Home</router-link></li>
+            <li class="active" aria-current="page">Policies</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
     <div class="container my-5">
       <h2 class="page-title">School Policies</h2>
+
+      <div class="info-section">
+        <h3 class="section-title">2026-2027 School Policy</h3>
+        <p class="text-justify">
+          Download the Leicester Greek School policy for the 2026-2027 academic year.
+        </p>
+        <a
+          class="btn btn-primary"
+          href="/docs/Leicester-Greek-School-Policy-2026-2027.pdf"
+          download
+        >
+          <i class="bi bi-download" aria-hidden="true"></i>
+          Download the 2026-2027 Policy (PDF)
+        </a>
+      </div>
 
       <div class="info-section">
         <h3 class="section-title">Registration and Enrolment</h3>
@@ -193,10 +220,67 @@
   </div>
 </template>
 
+<script>
+import { injectJsonLd, removeJsonLd, breadcrumbSchema } from '@/utils/seo';
+
+export default {
+  name: 'Policies',
+  mounted() {
+    injectJsonLd('breadcrumb-policies', breadcrumbSchema([
+      { name: 'Home', url: 'https://leicestergreekschool.com/' },
+      { name: 'Policies', url: 'https://leicestergreekschool.com/policies' }
+    ]));
+  },
+  beforeUnmount() {
+    removeJsonLd('breadcrumb-policies');
+  }
+};
+</script>
+
 <style scoped>
 .policies {
   background-color: var(--white);
 }
+
+/* Breadcrumb */
+.breadcrumb-section {
+  background: linear-gradient(135deg, var(--primary-light) 0%, rgba(212, 165, 116, 0.05) 100%);
+  border-bottom: 2px solid var(--border-color);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.breadcrumb-nav { display: flex; align-items: center; }
+
+.breadcrumb-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb-list li:not(:last-child)::after {
+  content: '›';
+  margin-left: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.breadcrumb-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.breadcrumb-list a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+.breadcrumb-list li.active { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
 
 .page-title {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
