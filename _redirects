@@ -1,2 +1,4 @@
 /calendar    /calendar/    301
+/announcements    /news    301
+# News routes
 /*    /index.html   200

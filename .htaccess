@@ -1,9 +1,18 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+  # News slug redirects
+  RewriteRule ^announcements/?$ /news [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+news(?:/[^\s?]*)?\.html[\s?] [NC]
+  RewriteRule ^(news(?:/[^/]+)?)\.html$ /$1 [R=301,L]
+  RewriteRule ^(news(?:/[^/]+)?)/$ /$1 [R=301,L]
+  RewriteRule ^news$ /news.html [END]
+  RewriteCond %{DOCUMENT_ROOT}/news/$1.html -f
+  RewriteRule ^news/([a-z0-9-]+)$ /news/$1.html [END]
+  RewriteRule ^news/ - [R=404,L]
+  ErrorDocument 404 /news-not-found.html
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
-

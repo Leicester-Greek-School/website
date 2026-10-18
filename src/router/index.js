@@ -10,6 +10,7 @@ import SchoolCalendar from '../views/Calendar.vue';
 import { calendarSeoDescription } from '../data/calendar';
 import PrivacyPolicy from '../views/PrivacyPolicy.vue';
 import SupportUs from '../views/SupportUs.vue';
+import { detailedAnnouncements, announcementPath, announcementMetadata } from '../data/announcements';
 
 const BASE_TITLE = 'Leicester Greek School';
 
@@ -76,12 +77,31 @@ const routes = [
   },
   {
     path: '/announcements',
+    redirect: '/news'
+  },
+  {
+    path: '/news',
     name: 'Announcements',
     component: Announcements,
+    meta: announcementMetadata()
+  },
+  ...detailedAnnouncements.flatMap(announcement => [
+    {
+      path: announcementPath(announcement),
+      component: Announcements,
+      props: { slug: announcement.slug },
+      meta: announcementMetadata(announcement)
+    },
+    ...(announcement.previousSlugs || []).map(slug => ({ path: `/news/${slug}`, redirect: announcementPath(announcement) }))
+  ]),
+  {
+    path: '/news/:pathMatch(.*)*',
+    component: Announcements,
+    props: route => ({ slug: [].concat(route.params.pathMatch).join('/') }),
     meta: {
-      title: 'News & Announcements | Leicester Greek School',
-      description: 'Latest news and announcements from Leicester Greek School, including the 28th October celebration event and poster, school updates, and term dates.',
-      keywords: 'Leicester Greek School announcements, 28 October celebration Leicester Greek School, Greek school events, Greek community Leicester announcements, Oxi Day celebration Leicester'
+      title: 'Announcement not found | Leicester Greek School',
+      description: 'This announcement is unavailable or the link is incorrect.',
+      noindex: true
     }
   },
   {
@@ -133,6 +153,22 @@ router.afterEach((to) => {
   const title = to.meta?.title || BASE_TITLE;
   document.title = title;
 
+  // Static news pages and client navigation must use the same metadata.
+  const defaultImage = 'https://leicestergreekschool.com/lgs-logo.jpg';
+  for (const [selector, value] of [
+    ['meta[property="og:type"]', to.meta.type || 'website'],
+    ['meta[property="og:image"]', to.meta.image || defaultImage],
+    ['meta[name="twitter:image"]', to.meta.image || defaultImage],
+    ['meta[property="og:image:alt"]', to.meta.imageAlt || 'Leicester Greek School Logo'],
+    ['meta[name="twitter:image:alt"]', to.meta.imageAlt || 'Leicester Greek School Logo'],
+    ['meta[name="robots"]', to.meta.noindex ? 'noindex, follow' : 'index, follow']
+  ]) {
+    document.querySelector(selector)?.setAttribute('content', value);
+  }
+  // A poster must not inherit the homepage logo's advertised dimensions.
+  document.querySelector('meta[property="og:image:width"]')?.remove();
+  document.querySelector('meta[property="og:image:height"]')?.remove();
+
   const titleEl = document.querySelector('meta[name="title"]');
   if (titleEl) {
     titleEl.setAttribute('content', title);
@@ -167,11 +203,21 @@ router.afterEach((to) => {
 
   // Update og:url
   const ogUrl = document.querySelector('meta[property="og:url"]');
-  if (ogUrl) ogUrl.setAttribute('content', `https://leicestergreekschool.com${to.path === '/calendar' || to.path === '/calendar/' ? '/calendar/' : to.path}`);
+  const canonicalPath = to.meta.canonicalPath || (to.path === '/calendar' || to.path === '/calendar/' ? '/calendar/' : to.path);
+  if (ogUrl) ogUrl.setAttribute('content', `https://leicestergreekschool.com${canonicalPath}`);
 
   // Update canonical
-  const canonical = document.querySelector('link[rel="canonical"]');
-  if (canonical) canonical.setAttribute('href', `https://leicestergreekschool.com${to.path === '/calendar' || to.path === '/calendar/' ? '/calendar/' : to.path}`);
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (to.meta.noindex) {
+    canonical?.remove();
+  } else {
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', `https://leicestergreekschool.com${canonicalPath}`);
+  }
 });
 
 export default router;

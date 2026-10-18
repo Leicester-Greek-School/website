@@ -100,6 +100,24 @@ The website uses an accessible color scheme based on the Leicester Greek School 
 
 All color combinations meet WCAG 2.1 Level AA standards for accessibility where applicable.
 
+## Editing announcements
+
+Edit `src/data/announcements.json` and rebuild the site. Keep each `id` unique;
+announcements are displayed newest first by `dateISO`.
+
+- For a short notice, use `id`, `title`, `body` and `dateISO` without a `slug`.
+- To give an announcement its own page, add a unique lowercase, hyphen-separated
+  `slug`. The title and Read More link will open `/news/{slug}`, displaying the same
+  `body`. Optional `image`, `imageAlt` and `language` are supported.
+- Keep published slugs unchanged when editing titles. If a slug must change, add
+  its old value to `previousSlugs`; the build creates permanent redirects.
+- Dates, poster and event information for the October celebration are in the same
+  record. Update those facts there rather than adding separate event markup.
+
+The build validates content and slugs and generates news HTML, sitemap entries
+and hosting routes. `/announcements` continues to work through a redirect to `/news`.
+There is no admin interface or backend; all announcement data is public.
+
 ## License
 
 Copyright © 2025 Leicester Greek School. All rights reserved.
