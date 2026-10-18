@@ -25,7 +25,7 @@
                 <template v-else>{{ a.title }}</template>
               </h2>
               <p class="announcement-meta"><time :datetime="a.dateISO">{{ formatDate(a.dateISO) }}</time></p>
-              <p class="announcement-body" :lang="a.language || 'en-GB'">{{ a.body }}</p>
+              <p class="announcement-body" :lang="a.language || 'en-GB'">{{ announcementSummary(a) }}</p>
               <div v-if="a.image" class="announcement-media">
                 <a :href="a.image" target="_blank" rel="noopener noreferrer" class="announcement-image-link" aria-label="View full size poster (opens in a new tab)">
                   <img :src="a.image" :alt="a.imageAlt || a.title" class="announcement-image" loading="lazy" />
@@ -41,9 +41,12 @@
 
       <article v-else-if="selected" class="announcement-detail" aria-labelledby="announcementsTitle">
         <h1 id="announcementsTitle" ref="pageTitle" tabindex="-1" class="page-title" :lang="selected.language || 'en-GB'">{{ selected.title }}</h1>
-        <p class="announcement-meta">Published <time :datetime="selected.dateISO">{{ formatDate(selected.dateISO) }}</time></p>
+        <p class="announcement-meta">
+          Published <time :datetime="selected.dateISO">{{ formatDate(selected.dateISO) }}</time>
+          <template v-if="selected.updatedISO && selected.updatedISO !== selected.dateISO"> · Updated <time :datetime="selected.updatedISO">{{ formatDate(selected.updatedISO) }}</time></template>
+        </p>
         <div class="announcement-copy" :lang="selected.language || 'en-GB'">
-          <p>{{ selected.body }}</p>
+          <component v-for="(paragraph, index) in bodyParagraphs(selected.body)" :key="index" :is="isSectionHeading(paragraph) ? 'h2' : 'p'">{{ paragraph }}</component>
         </div>
         <dl v-if="selected.event" class="event-details" lang="en-GB">
           <div v-for="detail in eventDetails(selected.event)" :key="detail.label">
@@ -55,6 +58,7 @@
             <img :src="selected.image" :alt="selected.imageAlt || selected.title" class="announcement-image" />
           </a>
         </div>
+        <AnnouncementGallery v-if="selected.images?.length" :key="selected.id" :images="galleryImages(selected)" />
         <p class="back-link"><router-link to="/news">← Back to News &amp; Announcements</router-link></p>
       </article>
       <template v-else>
@@ -68,10 +72,13 @@
 
 <script>
 import { injectJsonLd, removeJsonLd } from '@/utils/seo';
-import { announcements, hasDetail, announcementPath, getAnnouncement, formatDate, eventDetails, announcementSchema } from '@/data/announcements';
+import AnnouncementGallery from '@/components/AnnouncementGallery.vue';
+import { announcements, hasDetail, announcementPath, getAnnouncement, formatDate, eventDetails, announcementSchema,
+  bodyParagraphs, announcementSummary, isSectionHeading, galleryImages } from '@/data/announcements';
 
 export default {
   name: 'Announcements',
+  components: { AnnouncementGallery },
   props: { slug: { type: String, default: null } },
   data() { return { announcements }; },
   computed: {
@@ -89,7 +96,7 @@ export default {
     }
   },
   beforeUnmount() { removeJsonLd('news-data'); },
-  methods: { hasDetail, announcementPath, formatDate, eventDetails }
+  methods: { hasDetail, announcementPath, formatDate, eventDetails, bodyParagraphs, announcementSummary, isSectionHeading, galleryImages }
 };
 </script>
 
@@ -262,6 +269,7 @@ article {
 .announcement-title a { color: inherit; text-decoration: underline; text-underline-offset: 4px; }
 .announcement-detail { max-width: 850px; margin: 0 auto; }
 .announcement-copy { line-height: 1.8; font-size: 1.05rem; }
+.announcement-copy h2 { font-size: 1.4rem; line-height: 1.4; margin: 2rem 0 1rem; color: var(--primary-color); }
 .event-details { background: var(--primary-light); padding: 1.5rem; border-radius: 12px; }
 .event-details > div { margin-bottom: 1rem; }
 .event-details > div:last-child, .event-details dd { margin-bottom: 0; }

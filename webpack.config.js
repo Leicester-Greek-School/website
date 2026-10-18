@@ -2,8 +2,25 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { detailedAnnouncements, announcementPath, siteUrl } = require('./src/data/announcements');
+const fs = require('fs');
+const sharp = require('sharp');
+const { announcements, detailedAnnouncements, announcementPath, announcementLastModified, siteUrl } = require('./src/data/announcements');
 const renderNewsPage = require('./scripts/announcements-page');
+
+for (const announcement of announcements) {
+  for (const image of announcement.images || []) {
+    if (!fs.existsSync(path.join(__dirname, 'src/assets/images/news', image.file))) {
+      throw new Error(`Missing news image: ${image.file}`);
+    }
+  }
+}
+
+// Replace the checked-in news block so new/removed slugs cannot leave stale URLs.
+const newsLastModified = announcements.map(announcementLastModified).sort().pop();
+const newsSitemap = '  <!-- News URLs:start -->\n' + [
+  { path: '/news', modified: newsLastModified },
+  ...detailedAnnouncements.map(announcement => ({ path: announcementPath(announcement), modified: announcementLastModified(announcement) }))
+].map(page => `  <url>\n    <loc>${siteUrl}${page.path}</loc>${page.modified ? `\n    <lastmod>${page.modified}</lastmod>` : ''}\n  </url>`).join('\n') + '\n  <!-- News URLs:end -->';
 
 const newsRedirects = [
   // Netlify matches both slash variants; slash-only redirects would loop.
@@ -90,11 +107,12 @@ module.exports = {
           to: '[name][ext]',
           noErrorOnMissing: true,
           force: true,
-          transform: content => content.toString()
-            .replace(`${siteUrl}/announcements`, `${siteUrl}/news`)
-            .replace('</urlset>', detailedAnnouncements.map(announcement =>
-              `  <url><loc>${siteUrl}${announcementPath(announcement)}</loc><lastmod>${announcement.dateISO}</lastmod></url>`
-            ).join('\n') + '\n</urlset>')
+          transform: content => {
+            const source = content.toString();
+            const newsBlock = /  <!-- News URLs:start -->[\s\S]*?  <!-- News URLs:end -->/;
+            if (!newsBlock.test(source)) throw new Error('sitemap.xml is missing its news URL block.');
+            return source.replace(newsBlock, newsSitemap);
+          }
         },
         {
           from: 'llms.txt',
@@ -128,6 +146,20 @@ module.exports = {
           to: 'posters'
         },
         {
+          from: 'src/assets/images/news/*.{jpg,jpeg,png,webp}',
+          to: 'news-images/thumbnails/[name].webp',
+          noErrorOnMissing: true,
+          globOptions: { caseSensitiveMatch: false },
+          transform: content => sharp(content).rotate().resize({ width: 640, height: 480, fit: 'inside', withoutEnlargement: true }).webp({ quality: 76 }).toBuffer()
+        },
+        {
+          from: 'src/assets/images/news/*.{jpg,jpeg,png,webp}',
+          to: 'news-images/[name].webp',
+          noErrorOnMissing: true,
+          globOptions: { caseSensitiveMatch: false },
+          transform: content => sharp(content).rotate().resize({ width: 1440, height: 1440, fit: 'inside', withoutEnlargement: true }).webp({ quality: 76 }).toBuffer()
+        },
+        {
           // Copy logo to dist root so /lgs-logo.jpg resolves for og:image
           from: 'src/assets/images/lgs-logo.jpg',
           to: 'lgs-logo.jpg',
@@ -144,6 +176,7 @@ module.exports = {
     }
   },
   devServer: {
+    host: '127.0.0.1',
     port: 3000,
     hot: true,
     historyApiFallback: true

@@ -161,9 +161,26 @@ router.afterEach((to) => {
     ['meta[name="twitter:image"]', to.meta.image || defaultImage],
     ['meta[property="og:image:alt"]', to.meta.imageAlt || 'Leicester Greek School Logo'],
     ['meta[name="twitter:image:alt"]', to.meta.imageAlt || 'Leicester Greek School Logo'],
-    ['meta[name="robots"]', to.meta.noindex ? 'noindex, follow' : 'index, follow']
+    ['meta[name="robots"]', to.meta.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large']
   ]) {
     document.querySelector(selector)?.setAttribute('content', value);
+  }
+  for (const [property, value] of [
+    ['og:locale', to.meta.locale || 'en_GB'],
+    ['article:published_time', to.meta.publishedTime],
+    ['article:modified_time', to.meta.modifiedTime]
+  ]) {
+    let element = document.querySelector(`meta[property="${property}"]`);
+    if (!value) {
+      element?.remove();
+    } else {
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute('property', property);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', value);
+    }
   }
   // A poster must not inherit the homepage logo's advertised dimensions.
   document.querySelector('meta[property="og:image:width"]')?.remove();
@@ -181,8 +198,8 @@ router.afterEach((to) => {
   }
 
   const keywordsEl = document.querySelector('meta[name="keywords"]');
-  if (keywordsEl && to.meta?.keywords) {
-    keywordsEl.setAttribute('content', to.meta.keywords);
+  if (keywordsEl) {
+    keywordsEl.setAttribute('content', to.meta?.keywords || '');
   }
 
   // Update og:title

@@ -24,7 +24,7 @@ Run the development server:
 npm run dev
 ```
 
-The application will be available at `http://localhost:8080`
+The application will be available at `http://127.0.0.1:3000` (or `http://localhost:3000`).
 
 ## Build for Production
 
@@ -109,13 +109,33 @@ announcements are displayed newest first by `dateISO`.
 - To give an announcement its own page, add a unique lowercase, hyphen-separated
   `slug`. The title and Read More link will open `/news/{slug}`, displaying the same
   `body`. Optional `image`, `imageAlt` and `language` are supported.
+- Separate paragraphs in `body` with a blank line (`\n\n` in JSON). The listing
+  shows the first paragraph of a linked article; its detail page shows the full text.
 - Keep published slugs unchanged when editing titles. If a slug must change, add
   its old value to `previousSlugs`; the build creates permanent redirects.
+- When an article changes, set its optional `updatedISO` to the actual update date
+  (`YYYY-MM-DD`). It appears in the article metadata, structured data and sitemap.
 - Dates, poster and event information for the October celebration are in the same
   record. Update those facts there rather than adding separate event markup.
 
+For an article photo gallery, place originals in `src/assets/images/news/` and add
+an `images` array to the announcement, in the order they should appear:
+
+```json
+"images": [
+  { "file": "school-visit.jpeg", "alt": "A description of the photo" }
+]
+```
+
+Add another array entry to include another image. The build automatically creates
+WebP thumbnails (up to 640 × 480) and larger versions (up to 1440 × 1440), preserving
+aspect ratios and originals. Select a thumbnail to enlarge it; Escape or Close photo
+closes the viewer. Without JavaScript, the larger image opens in a new tab.
+
 The build validates content and slugs and generates news HTML, sitemap entries
 and hosting routes. `/announcements` continues to work through a redirect to `/news`.
+The news block in `sitemap.xml` is regenerated from the announcement records during
+each build, preserving other pages. Keep `llms.txt` current when news facts change.
 There is no admin interface or backend; all announcement data is public.
 
 ## License
