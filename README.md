@@ -129,13 +129,18 @@ an `images` array to the announcement, in the order they should appear:
 
 Add another array entry to include another image. The build automatically creates
 WebP thumbnails (up to 640 × 480) and larger versions (up to 1440 × 1440), preserving
-aspect ratios and originals. Select a thumbnail to enlarge it; Escape or Close photo
-closes the viewer. Without JavaScript, the larger image opens in a new tab.
+aspect ratios and originals. Select a thumbnail to enlarge it. Previous/Next buttons
+and the left/right arrow keys navigate the photos. Previous is disabled on the first
+photo; Next wraps from the last photo to the first.
+Escape or Close photo closes the viewer. Without JavaScript, the larger image opens
+in a new tab.
 
 The build validates content and slugs and generates news HTML, sitemap entries
 and hosting routes. `/announcements` continues to work through a redirect to `/news`.
 The news block in `sitemap.xml` is regenerated from the announcement records during
-each build, preserving other pages. Keep `llms.txt` current when news facts change.
+each build, including article image URLs and preserving other pages. The shared
+renderer is `scripts/news-sitemap.js`; keep the checked-in news block in sync with
+its output. Keep `llms.txt` current when news facts change.
 There is no admin interface or backend; all announcement data is public.
 
 ## License

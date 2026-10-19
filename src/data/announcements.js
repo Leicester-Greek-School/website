@@ -100,14 +100,21 @@ function announcementSchema(announcement) {
   }];
   if (!announcement) graph.push({
     '@type': 'CollectionPage', '@id': `${siteUrl}/news#page`, url: `${siteUrl}/news`,
-    name: listingTitle, description: listingDescription, inLanguage: 'en-GB'
+    name: listingTitle, description: listingDescription, inLanguage: 'en-GB',
+    mainEntity: {
+      '@type': 'ItemList', numberOfItems: detailedAnnouncements.length,
+      itemListElement: detailedAnnouncements.map((item, index) => ({
+        '@type': 'ListItem', position: index + 1, name: item.title, url: siteUrl + announcementPath(item)
+      }))
+    }
   });
   if (announcement) {
     const url = siteUrl + announcementPath(announcement);
     const organization = { '@type': 'EducationalOrganization', name: 'Leicester Greek School', url: siteUrl };
     const images = [...(announcement.image ? [announcement.image] : []), ...galleryImages(announcement).map(image => image.full)];
     graph.push({
-      '@type': 'Article', '@id': `${url}#article`, mainEntityOfPage: url,
+      '@type': 'Article', '@id': `${url}#article`, url, mainEntityOfPage: url,
+      isPartOf: { '@type': 'CollectionPage', '@id': `${siteUrl}/news#page`, url: `${siteUrl}/news` },
       headline: announcement.title, description: announcementSummary(announcement), datePublished: announcement.dateISO,
       dateModified: announcementLastModified(announcement), articleBody: announcement.body,
       inLanguage: announcement.language || 'en-GB', author: organization, publisher: organization,

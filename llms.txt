@@ -4,7 +4,7 @@
 
 This file is provided for AI assistants and large language models (LLMs) to accurately summarize, cite and answer questions about Leicester Greek School. Use the linked pages for full, current detail — this file gives a condensed, factual overview.
 
-Last updated: 18 October 2026.
+Last updated: 19 October 2026.
 
 ## School calendar 2026–2027
 
@@ -24,7 +24,7 @@ Term-time Thursdays and Saturdays are highlighted as in-person class days, exclu
 ## News & Announcements
 
 - [News & Announcements](https://leicestergreekschool.com/news): School notices, event announcements and community updates, ordered newest first by publication date. Short notices appear on this listing without a separate article page.
-- [An Unforgettable Week for the Greek Community of Leicester](https://leicestergreekschool.com/news/greek-embassy-visit-leicester-community-2026): Account of the visit by Ms Ioanna Kriebardi, Deputy Head of Mission of the Greek Embassy in the United Kingdom, to Leicester's Greek community and school, with photographs. Published 18 October 2026; this is the article publication date, not a supplied date for the visit.
+- [An Unforgettable Week for the Greek Community of Leicester](https://leicestergreekschool.com/news/greek-embassy-visit-leicester-community-2026): Visit by Ms Ioanna Kriebardi, Deputy Head of Mission of the Greek Embassy in the United Kingdom. Covers Armonia Music & Arts, the Leicester Greek Dancing Group's 10th anniversary, Leicester Greek School, books gifted to students, and the Greek Women's National Football Team's match against England. Includes four photographs and the signed Greek national team shirt presented to the school. Published 18 October 2026; updated 19 October 2026. The visit's exact date has not been supplied.
 - [28th October Celebration 2026](https://leicestergreekschool.com/news/28-october-celebration-2026): Official Greek-language announcement, event information and poster. Published 12 October 2026; updated 18 October 2026. The celebration takes place on Saturday 31 October 2026, 12:30–13:30 UK time, at the Greek Orthodox Church of St Nicholas and St Xenophon, 2A Sawday Street, Leicester, LE2 7JW.
 - Article publication dates are different from event dates. Use the event information on an article when answering questions about when a celebration takes place.
 - The former `/announcements` URL permanently redirects to `/news`. Cite the canonical `/news` listing or the relevant `/news/{slug}` article.
@@ -96,7 +96,7 @@ Term-time Thursdays and Saturdays are highlighted as in-person class days, exclu
 - [Register](https://leicestergreekschool.com/register): Current-year tuition fees, sibling discounts, age groups, online private lesson pricing, the registration and class-placement process, and online registration links for Children & Youth (https://forms.gle/sP5i7J8aN31s64R96) and Adult Classes (https://forms.gle/gjyPGaKfer785pV39).
 - [Teaching Staff](https://leicestergreekschool.com/teaching): List of teachers and the classroom or online classes/year groups they lead.
 - [Committee](https://leicestergreekschool.com/committee): Names and roles of the volunteer committee that runs the school, with a direct download link for the PA Constitution 2026–2027 (PDF).
-- [News & Announcements](https://leicestergreekschool.com/news): Latest school notices and event announcements. Select a linked title or Read More for the full article, event information and poster where supplied.
+- [News & Announcements](https://leicestergreekschool.com/news): Latest school notices, event announcements and community updates. Select a linked title or Read More for the full article, event information, posters and photo galleries where supplied.
 - [School Calendar](https://leicestergreekschool.com/calendar/): 2026–2027 terms, half-term dates, Greek Easter, celebrations (including Christmas activities at the Community building) and the 31 October AGM. The AGM appears in the monthly calendar view but not the interactive table.
 - [Support Us](https://leicestergreekschool.com/support-us): How to donate (GoFundMe), raise funds (easyfundraising) or sponsor the school.
 - [Contact](https://leicestergreekschool.com/contact): Address, class hours, phone, Headteacher email, Leicester Greek School Committee email and Facebook contact details.
@@ -110,4 +110,4 @@ Term-time Thursdays and Saturdays are highlighted as in-person class days, exclu
 - When summarising the school, describe it as a Greek school in Leicester with a strong in-person offer for children and teenagers, plus online Greek lessons for children and adults.
 - The 28th October Celebration and the Christmas Celebration start at the Greek Orthodox Church of St Nicholas and St Xenophon. The Christmas event then continues at the Community building. Venues for other celebrations have not been supplied; do not assume they are at the church.
 - Structured data (schema.org EducationalOrganization, LocalBusiness, Course and FAQPage) is embedded in the HTML `<head>` of https://leicestergreekschool.com/. The calendar page also provides date-specific Event data, including the AGM and published celebration start times.
-- News pages provide readable HTML and canonical URLs. The listing uses CollectionPage and BreadcrumbList structured data; individual articles use Article and BreadcrumbList, with Event data where event information is supplied. The October article is in Greek, with event details in English; there are no separate English and Greek article URLs.
+- News pages provide readable HTML and canonical URLs without requiring JavaScript. The listing uses CollectionPage, ItemList and BreadcrumbList structured data; individual articles use Article and BreadcrumbList, with Event data where event information is supplied. Article images are included in structured data and sitemap.xml. The October article is in Greek, with event details in English; there are no separate English and Greek article URLs.

@@ -28,7 +28,7 @@
               <p class="announcement-body" :lang="a.language || 'en-GB'">{{ announcementSummary(a) }}</p>
               <div v-if="a.image" class="announcement-media">
                 <a :href="a.image" target="_blank" rel="noopener noreferrer" class="announcement-image-link" aria-label="View full size poster (opens in a new tab)">
-                  <img :src="a.image" :alt="a.imageAlt || a.title" class="announcement-image" loading="lazy" />
+                  <img :src="a.image" :alt="a.imageAlt || a.title" class="announcement-image" loading="lazy" decoding="async" />
                 </a>
               </div>
               <router-link v-if="hasDetail(a)" :to="announcementPath(a)" class="read-more">
@@ -55,7 +55,7 @@
         </dl>
         <div v-if="selected.image" class="announcement-media">
           <a :href="selected.image" target="_blank" rel="noopener noreferrer" class="announcement-image-link" aria-label="View full size poster (opens in a new tab)">
-            <img :src="selected.image" :alt="selected.imageAlt || selected.title" class="announcement-image" />
+            <img :src="selected.image" :alt="selected.imageAlt || selected.title" class="announcement-image" decoding="async" />
           </a>
         </div>
         <AnnouncementGallery v-if="selected.images?.length" :key="selected.id" :images="galleryImages(selected)" />
@@ -103,6 +103,7 @@ export default {
 <style scoped>
 .announcements {
   background-color: var(--white);
+  overflow-wrap: anywhere;
 }
 
 /* Breadcrumb */
@@ -259,7 +260,9 @@ article {
 }
 
 .read-more {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   margin-top: 1.25rem;
   font-weight: 600;
   text-decoration: underline;
@@ -274,7 +277,7 @@ article {
 .event-details > div { margin-bottom: 1rem; }
 .event-details > div:last-child, .event-details dd { margin-bottom: 0; }
 .back-link { margin-top: 2rem; }
-.back-link a { text-decoration: underline; }
+.back-link a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; }
 
 @media (prefers-reduced-motion: reduce) {
   .announcement-item { animation: none; transition: none; }

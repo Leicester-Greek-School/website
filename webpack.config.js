@@ -4,8 +4,9 @@ const { VueLoaderPlugin } = require('vue-loader');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const fs = require('fs');
 const sharp = require('sharp');
-const { announcements, detailedAnnouncements, announcementPath, announcementLastModified, siteUrl } = require('./src/data/announcements');
+const { announcements, detailedAnnouncements, announcementPath } = require('./src/data/announcements');
 const renderNewsPage = require('./scripts/announcements-page');
+const renderNewsSitemap = require('./scripts/news-sitemap');
 
 for (const announcement of announcements) {
   for (const image of announcement.images || []) {
@@ -14,13 +15,6 @@ for (const announcement of announcements) {
     }
   }
 }
-
-// Replace the checked-in news block so new/removed slugs cannot leave stale URLs.
-const newsLastModified = announcements.map(announcementLastModified).sort().pop();
-const newsSitemap = '  <!-- News URLs:start -->\n' + [
-  { path: '/news', modified: newsLastModified },
-  ...detailedAnnouncements.map(announcement => ({ path: announcementPath(announcement), modified: announcementLastModified(announcement) }))
-].map(page => `  <url>\n    <loc>${siteUrl}${page.path}</loc>${page.modified ? `\n    <lastmod>${page.modified}</lastmod>` : ''}\n  </url>`).join('\n') + '\n  <!-- News URLs:end -->';
 
 const newsRedirects = [
   // Netlify matches both slash variants; slash-only redirects would loop.
@@ -111,7 +105,7 @@ module.exports = {
             const source = content.toString();
             const newsBlock = /  <!-- News URLs:start -->[\s\S]*?  <!-- News URLs:end -->/;
             if (!newsBlock.test(source)) throw new Error('sitemap.xml is missing its news URL block.');
-            return source.replace(newsBlock, newsSitemap);
+            return source.replace(newsBlock, renderNewsSitemap());
           }
         },
         {
