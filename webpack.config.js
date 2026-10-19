@@ -2,6 +2,31 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const fs = require('fs');
+const sharp = require('sharp');
+const { announcements, detailedAnnouncements, announcementPath } = require('./src/data/announcements');
+const renderNewsPage = require('./scripts/announcements-page');
+const renderNewsSitemap = require('./scripts/news-sitemap');
+
+for (const announcement of announcements) {
+  for (const image of announcement.images || []) {
+    if (!fs.existsSync(path.join(__dirname, 'src/assets/images/news', image.file))) {
+      throw new Error(`Missing news image: ${image.file}`);
+    }
+  }
+}
+
+const newsRedirects = [
+  // Netlify matches both slash variants; slash-only redirects would loop.
+  '/news.html /news 301!',
+  '/news /news.html 200!',
+  ...detailedAnnouncements.flatMap(announcement => [
+    `${announcementPath(announcement)}.html ${announcementPath(announcement)} 301!`,
+    `${announcementPath(announcement)} ${announcementPath(announcement)}.html 200!`,
+    ...(announcement.previousSlugs || []).map(slug => `/news/${slug} /news/${announcement.slug} 301!`)
+  ]),
+  '/news/* /news-not-found.html 404'
+].join('\n');
 
 module.exports = {
   entry: './src/main.js',
@@ -41,19 +66,29 @@ module.exports = {
       filename: 'calendar/index.html',
       templateContent: require('./scripts/calendar-page')
     }),
+    new HtmlWebpackPlugin({ filename: 'news.html', templateContent: () => renderNewsPage() }),
+    ...detailedAnnouncements.map(announcement => new HtmlWebpackPlugin({
+      filename: `news/${announcement.slug}.html`,
+      templateContent: () => renderNewsPage(announcement)
+    })),
+    new HtmlWebpackPlugin({ filename: 'news-not-found.html', templateContent: () => renderNewsPage(null, true) }),
     new CopyWebpackPlugin({
       patterns: [
         {
           from: '.htaccess',
           to: '[name][ext]',
           noErrorOnMissing: true,
-          force: true
+          force: true,
+          transform: content => content.toString().replace('# News slug redirects', detailedAnnouncements.flatMap(announcement =>
+            (announcement.previousSlugs || []).map(slug => `  RewriteRule ^news/${slug}/?$ ${announcementPath(announcement)} [R=301,L]`)
+          ).join('\n'))
         },
         {
           from: '_redirects',
           to: '[name][ext]',
           noErrorOnMissing: true,
-          force: true
+          force: true,
+          transform: content => content.toString().replace('# News routes', newsRedirects)
         },
         {
           from: 'robots.txt',
@@ -65,7 +100,13 @@ module.exports = {
           from: 'sitemap.xml',
           to: '[name][ext]',
           noErrorOnMissing: true,
-          force: true
+          force: true,
+          transform: content => {
+            const source = content.toString();
+            const newsBlock = /  <!-- News URLs:start -->[\s\S]*?  <!-- News URLs:end -->/;
+            if (!newsBlock.test(source)) throw new Error('sitemap.xml is missing its news URL block.');
+            return source.replace(newsBlock, renderNewsSitemap());
+          }
         },
         {
           from: 'llms.txt',
@@ -95,6 +136,38 @@ module.exports = {
           to: 'docs'
         },
         {
+          from: 'src/assets/images/posters',
+          to: 'posters'
+        },
+        {
+          // Retain the originals for existing links and social previews.
+          from: 'src/assets/images/posters/*.{jpg,jpeg,png}',
+          to: 'posters/[name].webp',
+          noErrorOnMissing: true,
+          globOptions: { caseSensitiveMatch: false },
+          transform: content => sharp(content).rotate().webp({ quality: 76 }).toBuffer()
+        },
+        {
+          from: 'src/assets/images/news/*.{jpg,jpeg,png,webp}',
+          to: 'news-images/thumbnails/[name].webp',
+          noErrorOnMissing: true,
+          globOptions: { caseSensitiveMatch: false },
+          transform: content => sharp(content).rotate().resize({ width: 640, height: 480, fit: 'inside', withoutEnlargement: true }).webp({ quality: 76 }).toBuffer()
+        },
+        {
+          from: 'src/assets/images/news/*.{jpg,jpeg,png,webp}',
+          to: 'news-images/[name].webp',
+          noErrorOnMissing: true,
+          globOptions: { caseSensitiveMatch: false },
+          transform: content => sharp(content).rotate().resize({ width: 1440, height: 1440, fit: 'inside', withoutEnlargement: true }).webp({ quality: 76 }).toBuffer()
+        },
+        {
+          // The header displays at 80px; 160px supports a 2x pixel density.
+          from: 'src/assets/images/lgs-logo.jpg',
+          to: 'lgs-logo.webp',
+          transform: content => sharp(content).rotate().resize({ width: 160, withoutEnlargement: true }).webp({ lossless: true }).toBuffer()
+        },
+        {
           // Copy logo to dist root so /lgs-logo.jpg resolves for og:image
           from: 'src/assets/images/lgs-logo.jpg',
           to: 'lgs-logo.jpg',
@@ -111,6 +184,7 @@ module.exports = {
     }
   },
   devServer: {
+    host: '127.0.0.1',
     port: 3000,
     hot: true,
     historyApiFallback: true

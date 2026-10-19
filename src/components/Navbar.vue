@@ -5,7 +5,7 @@
         <div class="header-inner">
           <div class="brand-group">
             <div class="logo-container">
-              <img src="@/assets/images/lgs-logo.jpg" alt="Leicester Greek School Logo" class="school-logo" />
+              <img src="/lgs-logo.webp" alt="Leicester Greek School Logo" class="school-logo" width="160" height="139" decoding="async" />
             </div>
             <div class="school-info">
               <p class="school-title mb-0">

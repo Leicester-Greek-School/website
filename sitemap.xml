@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://leicestergreekschool.com/</loc>
     <lastmod>2026-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-gb" href="https://leicestergreekschool.com/"/>
-    <xhtml:link rel="alternate" hreflang="el" href="https://leicestergreekschool.com/"/>
   </url>
 
 
@@ -33,16 +31,39 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- News URLs:start -->
   <url>
-    <loc>https://leicestergreekschool.com/announcements</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://leicestergreekschool.com/news</loc>
+    <lastmod>2026-10-19</lastmod>
   </url>
+  <url>
+    <loc>https://leicestergreekschool.com/news/greek-embassy-visit-leicester-community-2026</loc>
+    <lastmod>2026-10-19</lastmod>
+    <image:image>
+      <image:loc>https://leicestergreekschool.com/news-images/lgs-mfa-embasy-of-greece-visit-group-photo.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://leicestergreekschool.com/news-images/lgs-mfa-embasy-of-greece-visit-gift-books.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://leicestergreekschool.com/news-images/lgs-mfa-embasy-of-greece-visit-ioanna-kriebardi-with-student.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://leicestergreekschool.com/news-images/lgs-mfa-embassy-of-greece-national-team-shirt-signed.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://leicestergreekschool.com/news/28-october-celebration-2026</loc>
+    <lastmod>2026-10-18</lastmod>
+    <image:image>
+      <image:loc>https://leicestergreekschool.com/posters/28-october-celebration-2026.jpeg</image:loc>
+    </image:image>
+  </url>
+  <!-- News URLs:end -->
 
   <url>
     <loc>https://leicestergreekschool.com/teaching</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
