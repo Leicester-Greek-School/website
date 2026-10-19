@@ -27,8 +27,8 @@
               <p class="announcement-meta"><time :datetime="a.dateISO">{{ formatDate(a.dateISO) }}</time></p>
               <p class="announcement-body" :lang="a.language || 'en-GB'">{{ announcementSummary(a) }}</p>
               <div v-if="a.image" class="announcement-media">
-                <a :href="a.image" target="_blank" rel="noopener noreferrer" class="announcement-image-link" aria-label="View full size poster (opens in a new tab)">
-                  <img :src="a.image" :alt="a.imageAlt || a.title" class="announcement-image" loading="lazy" decoding="async" />
+                <a :href="announcementImage(a)" target="_blank" rel="noopener noreferrer" class="announcement-image-link" aria-label="View full size poster (opens in a new tab)">
+                  <img :src="announcementImage(a)" :alt="a.imageAlt || a.title" class="announcement-image" loading="lazy" decoding="async" />
                 </a>
               </div>
               <router-link v-if="hasDetail(a)" :to="announcementPath(a)" class="read-more">
@@ -54,8 +54,8 @@
           </div>
         </dl>
         <div v-if="selected.image" class="announcement-media">
-          <a :href="selected.image" target="_blank" rel="noopener noreferrer" class="announcement-image-link" aria-label="View full size poster (opens in a new tab)">
-            <img :src="selected.image" :alt="selected.imageAlt || selected.title" class="announcement-image" decoding="async" />
+          <a :href="announcementImage(selected)" target="_blank" rel="noopener noreferrer" class="announcement-image-link" aria-label="View full size poster (opens in a new tab)">
+            <img :src="announcementImage(selected)" :alt="selected.imageAlt || selected.title" class="announcement-image" decoding="async" />
           </a>
         </div>
         <AnnouncementGallery v-if="selected.images?.length" :key="selected.id" :images="galleryImages(selected)" />
@@ -74,7 +74,7 @@
 import { injectJsonLd, removeJsonLd } from '@/utils/seo';
 import AnnouncementGallery from '@/components/AnnouncementGallery.vue';
 import { announcements, hasDetail, announcementPath, getAnnouncement, formatDate, eventDetails, announcementSchema,
-  bodyParagraphs, announcementSummary, isSectionHeading, galleryImages } from '@/data/announcements';
+  bodyParagraphs, announcementSummary, isSectionHeading, galleryImages, announcementImage } from '@/data/announcements';
 
 export default {
   name: 'Announcements',
@@ -96,7 +96,7 @@ export default {
     }
   },
   beforeUnmount() { removeJsonLd('news-data'); },
-  methods: { hasDetail, announcementPath, formatDate, eventDetails, bodyParagraphs, announcementSummary, isSectionHeading, galleryImages }
+  methods: { hasDetail, announcementPath, formatDate, eventDetails, bodyParagraphs, announcementSummary, isSectionHeading, galleryImages, announcementImage }
 };
 </script>
 

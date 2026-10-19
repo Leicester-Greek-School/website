@@ -140,6 +140,14 @@ module.exports = {
           to: 'posters'
         },
         {
+          // Retain the originals for existing links and social previews.
+          from: 'src/assets/images/posters/*.{jpg,jpeg,png}',
+          to: 'posters/[name].webp',
+          noErrorOnMissing: true,
+          globOptions: { caseSensitiveMatch: false },
+          transform: content => sharp(content).rotate().webp({ quality: 76 }).toBuffer()
+        },
+        {
           from: 'src/assets/images/news/*.{jpg,jpeg,png,webp}',
           to: 'news-images/thumbnails/[name].webp',
           noErrorOnMissing: true,
@@ -152,6 +160,12 @@ module.exports = {
           noErrorOnMissing: true,
           globOptions: { caseSensitiveMatch: false },
           transform: content => sharp(content).rotate().resize({ width: 1440, height: 1440, fit: 'inside', withoutEnlargement: true }).webp({ quality: 76 }).toBuffer()
+        },
+        {
+          // The header displays at 80px; 160px supports a 2x pixel density.
+          from: 'src/assets/images/lgs-logo.jpg',
+          to: 'lgs-logo.webp',
+          transform: content => sharp(content).rotate().resize({ width: 160, withoutEnlargement: true }).webp({ lossless: true }).toBuffer()
         },
         {
           // Copy logo to dist root so /lgs-logo.jpg resolves for og:image

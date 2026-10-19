@@ -1,13 +1,14 @@
 // Like calendar-page.js, these pages remain readable without JavaScript.
 const { siteUrl, announcements, hasDetail, announcementPath, formatDate, eventDetails,
-  announcementMetadata, announcementSchema, bodyParagraphs, announcementSummary, isSectionHeading, galleryImages } = require('../src/data/announcements');
+  announcementMetadata, announcementSchema, bodyParagraphs, announcementSummary, isSectionHeading, galleryImages, announcementImage } = require('../src/data/announcements');
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 }
 
 function image(announcement) {
-  return announcement.image ? `<p><a href="${escapeHtml(announcement.image)}" target="_blank" rel="noopener noreferrer" aria-label="View full size poster (opens in a new tab)"><img src="${escapeHtml(announcement.image)}" alt="${escapeHtml(announcement.imageAlt || announcement.title)}" loading="lazy" decoding="async" style="max-width:100%;max-height:520px;height:auto"></a></p>` : '';
+  const source = announcementImage(announcement);
+  return source ? `<p><a href="${escapeHtml(source)}" target="_blank" rel="noopener noreferrer" aria-label="View full size poster (opens in a new tab)"><img src="${escapeHtml(source)}" alt="${escapeHtml(announcement.imageAlt || announcement.title)}" loading="lazy" decoding="async" style="max-width:100%;max-height:520px;height:auto"></a></p>` : '';
 }
 
 function gallery(announcement) {

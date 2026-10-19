@@ -13,6 +13,14 @@ const bodyParagraphs = body => body.split(/\r?\n\s*\r?\n/);
 const announcementSummary = announcement => hasDetail(announcement) ? bodyParagraphs(announcement.body)[0] : announcement.body;
 const isSectionHeading = paragraph => ['🎨', '💃', '🏫', '⚽', '🙏'].some(icon => paragraph.startsWith(`${icon} `));
 
+// Page images use the build's WebP posters; social/schema URLs keep the originals.
+function announcementImage(announcement) {
+  const image = announcement?.image;
+  return /^\/posters\/[^/]+\.(?:jpe?g|png)$/i.test(image || '')
+    ? image.replace(/\.[^.]+$/, '.webp')
+    : image;
+}
+
 function galleryImages(announcement) {
   return (announcement?.images || []).map(image => {
     const name = image.file.replace(/\.[^.]+$/, '');
@@ -130,4 +138,4 @@ function announcementSchema(announcement) {
 
 module.exports = { siteUrl, announcements, detailedAnnouncements, hasDetail, announcementPath, getAnnouncement,
   formatDate, eventDetails, announcementMetadata, announcementSchema, announcementLastModified, validateAnnouncements,
-  bodyParagraphs, announcementSummary, isSectionHeading, galleryImages };
+  bodyParagraphs, announcementSummary, isSectionHeading, galleryImages, announcementImage };
