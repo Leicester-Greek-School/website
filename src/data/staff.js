@@ -41,6 +41,14 @@ export const TEACHING_GROUPS = [
     assistant: ''
   },
   {
+    id: 'year_d',
+    role_el: 'Δ΄ Τάξη',
+    role_en: 'Year 4',
+    teacher: 'Lamprini Tsiapara',
+    teacherImage: '',
+    assistant: ''
+  },
+  {
     id: 'adult_class_1',
     role_el: 'Ενήλικες - Τάξη 1 (Onsite)',
     role_en: 'Adult class Level 1 (Onsite)',
