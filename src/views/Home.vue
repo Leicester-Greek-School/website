@@ -1,7 +1,9 @@
 <script setup>
+import ChristmasSaleSplash from '@/components/ChristmasSaleSplash.vue';
 </script>
 <template>
   <div class="home">
+    <ChristmasSaleSplash />
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-overlay"></div>
