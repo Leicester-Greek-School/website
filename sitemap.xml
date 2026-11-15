@@ -4,7 +4,7 @@
 
   <url>
     <loc>https://leicestergreekschool.com/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -34,7 +34,14 @@
   <!-- News URLs:start -->
   <url>
     <loc>https://leicestergreekschool.com/news</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
+    <loc>https://leicestergreekschool.com/news/christmas-sale-2026</loc>
+    <lastmod>2026-11-15</lastmod>
+    <image:image>
+      <image:loc>https://leicestergreekschool.com/posters/Leicester-Greek-School-Christmas-sale-2026.jpeg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://leicestergreekschool.com/news/greek-embassy-visit-leicester-community-2026</loc>
